@@ -9,20 +9,22 @@
       
       
       
+        <link rel="prev" href="../nssm/">
       
-        <link rel="next" href="systemd/">
+      
+        <link rel="next" href="../LICENSE/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
-        <title>MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+        <title>Pràctica 3 - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
       
       
 
@@ -41,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#benvinguts" class="md-skip">
+        <a href="#practica-actualitzacio-i-personalitzacio-del-kernel-ubuntu" class="md-skip">
           Skip to content
         </a>
       
@@ -79,7 +81,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inici
+              Pràctica 3
             
           </span>
         </div>
@@ -171,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -186,18 +188,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -206,7 +199,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -217,7 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="systemd/" class="md-nav__link">
+      <a href="../systemd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -236,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nssm/" class="md-nav__link">
+      <a href="../nssm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -253,9 +245,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="kernel/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -264,6 +265,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -274,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LICENSE/" class="md-nav__link">
+      <a href="../LICENSE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -320,24 +322,49 @@
                   
 
 
-<h1 id="benvinguts">Benvinguts</h1>
-<p>Hola! Sóc Josep Pellisa, alumne de 2n d’ASIX a l’Institut de l’Ebre. En aquesta web presentare la meva memoria del Mòdul Professional 0374 – Administració de Sistemes Operatius, on exploro diferents aspectes de la gestió i configuració de sistemes operatius tant en entorns Windows com Linux.</p>
-<p>Durant aquest mòdul, he treballarem en:</p>
-<ul>
-<li><strong>Configuració d’inici amb serveis personalitzats (Windows)</strong></li>
-<li><strong>Creació d’entorn d’arrencada amb systemd (Linux)</strong></li>
-<li><strong>Gestió de kernels i mòduls del sistema</strong></li>
-<li><strong>Servidor d’impressió amb Windows i control d’accés per domini</strong></li>
-<li><strong>Servidor d’impressió a Ubuntu amb CUPS/Samba</strong></li>
-<li><strong>Connexió de clients Windows i Ubuntu a servidors d’impressió heterogenis</strong></li>
-<li><strong>Automatització funcional adaptada al context d’ús (Windows i Linux)</strong></li>
-<li><strong>RSAT, VPN i RDP (Windows)</strong></li>
-<li><strong>Centralització d’usuaris amb Active Directory</strong></li>
-<li><strong>Comparativa Ansible vs FOG</strong></li>
-<li><strong>Personalització del sistema operatiu (Linux)</strong></li>
-<li><strong>Configuració de NAS</strong></li>
-</ul>
-<p>Aquesta pàgina servirà com a <strong>resum i guia</strong> del que he après i configurat durant el mòdul.</p>
+<h1 id="practica-actualitzacio-i-personalitzacio-del-kernel-ubuntu">Pràctica: Actualització i Personalització del Kernel Ubuntu</h1>
+<p>Aquesta pràctica ens introduirà en la gestió avançada del kernel Linux mitjançant compilació i personalització, on aprendrem a descarregar i compilar el kernel Linux des del codi font, actualitzar des de la versió 6.8.0 a la 6.8.1, aplicar parxers personalitzats, utilitzar menuconfig per personalitzar les opcions del kernel (especialment desactivant funcionalitats de xarxa), gestionar els mòduls del kernel, i configurar el gestor d'arrencada per a múltiples kernels. L'objectiu final és capacitar-nos per modificar i optimitzar el kernel segons necessitats específiques, entendre el procés de desenvolupament del kernel Linux, i resoldre problemes comuns en la compilació i implantació de kernels personalitzats en entorns Ubuntu de producció.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_077.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_078.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_079.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_080.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_081.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_082.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_083.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_084.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_085.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_086.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_087.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_088.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_089.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_090.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_091.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_092.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_093.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_094.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_095.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_096.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_097.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_098.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_099.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_100.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_101.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_102.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_103.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_104.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_105.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_106.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_107.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_108.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_109.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_110.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_111.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_112.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_113.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_114.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_115.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_116.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_117.png" /></p>
 
 
 
@@ -375,10 +402,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
     
   </body>
