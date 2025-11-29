@@ -324,46 +324,89 @@
 
 <h1 id="practica-actualitzacio-i-personalitzacio-del-kernel-ubuntu">Pràctica: Actualització i Personalització del Kernel Ubuntu</h1>
 <p>Aquesta pràctica ens introduirà en la gestió avançada del kernel Linux mitjançant compilació i personalització, on aprendrem a descarregar i compilar el kernel Linux des del codi font, actualitzar des de la versió 6.8.0 a la 6.8.1, aplicar parxers personalitzats, utilitzar menuconfig per personalitzar les opcions del kernel (especialment desactivant funcionalitats de xarxa), gestionar els mòduls del kernel, i configurar el gestor d'arrencada per a múltiples kernels. L'objectiu final és capacitar-nos per modificar i optimitzar el kernel segons necessitats específiques, entendre el procés de desenvolupament del kernel Linux, i resoldre problemes comuns en la compilació i implantació de kernels personalitzats en entorns Ubuntu de producció.</p>
+<p>Actualitzem els repositoris del sistema amb apt update per obtenir les últimes versions dels paquets disponibles i després executem apt upgrade per aplicar les actualitzacions al sistema però en aquest cas el sistema ja està completament actualitzat i no hi ha canvis per fer.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_077.png" /></p>
+<p>Veiem que tenim un swapfile de 2GB actiu</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_078.png" /></p>
+<p>Primer desactivem la swap actual amb <code>swapoff -a</code> i eliminem l'arxiu swap antic de 2GB, després creem un nou arxiu swap de 30GB amb <code>fallocate</code>, li assignem els permisos correctes i finalment l'activem amb <code>mkswap</code> i <code>swapon</code> per tenir més memòria d'intercanvi disponible.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_079.png" /></p>
+<p>Estem editant el fitxer fstab per configurar la swap permanent, afegim la línia corresponent al swapfile per assegurar que es carregui automàticament en engegar el sistema, i així la nova configuració de 30GB quedi permanent.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_080.png" /></p>
+<p>Comprovem l'estat de la swap amb swapon --show i confirmem que ara tenim un swapfile de 30GB actiu i funcionant correctament</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_081.png" /></p>
+<p>Comprovem la versió del kernel actual amb <code>uname -r</code> i veiem que estem utilitzant la versió 6.8.0-87-generic, aquesta informació és important per saber quin kernel tenim abans de procedir amb l'actualització a la versió 6.8.1.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_082.png" /></p>
+<p>Estem descarregant les versions del kernel Linux 6.8 des del repositori oficial, tenim múltiples versions disponibles des de la 6.8.1 fins a la 6.8.12 en diferents formats comprimits i ens hem fixat en la versió 6.8.1 que és la que volem instal·lar per actualitzar el nostre kernel actual.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_083.png" /></p>
+<p>Hem descomprimit el fitxer del kernel Linux 6.8.1 i ara veiem l'estructura de directoris del codi font, amb totes les carpetes principals com arch, drivers, fs, net i la resta de components necessaris per a la compilació del kernel.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_084.png" /></p>
+<p>Estem instal·lant totes les eines necessàries per a la compilació del kernel amb <code>apt install</code>, aquests paquets inclouen compiladors com gcc i g++, llibreries de desenvolupament, i eines específiques com flex, bison i dkms que són essencials per poder configurar i compilar correctament el nou kernel Linux.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_085.png" /></p>
+<p>Hem finalitzat la instal·lació de totes les eines de compilació amb èxit, els paquets com gcc, g++, build-essential i dkms s'han configurat correctament i ja tenim tot el necessari per poder compilar el kernel Linux 6.8.1 al nostre sistema.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_086.png" /></p>
+<p>Estem descarregant el paquet kernel-package.deb que ens proporciona les eines necessàries per crear paquets Debian del kernel, això ens permetrà empaquetar el nostre kernel compilat en un fitxer .deb per a una instal·lació més neta i fàcil gestió.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_087.png" /></p>
+<p>Estem intentant instal·lar el paquet kernel-package amb dpkg -i per poder crear paquets Debian del kernel, però ens trobem amb un error de dependències ja que el paquet requereix po-debconf que no està instal·lat al sistema.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_088.png" /></p>
+<p>Estem resolent les dependències del paquet kernel-package amb <code>apt -f install</code>, el sistema està instal·lant automàticament tots els paquets necessaris incloent llibreries Perl, fonts i eines de documentació que es requereixen per a la correcta creació de paquets Debian del kernel.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_089.png" /></p>
+<p>Hem instal·lat correctament el paquet kernel-package amb totes les seves dependències, el sistema ha configurat totes les eines necessàries incloent xmlto i els paquets de LaTeX, i ja estem preparats per crear els paquets Debian del nostre kernel compilat.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_090.png" /></p>
+<p>Estem editant el fitxer de configuració de GRUB <code>/etc/default/grub</code> per personalitzar les opcions d'arrencada del sistema, podem veure configuracions com el temps d'espera, els paràmetres per defecte del kernel i la distribució, i és important recordar executar <code>update-grub</code> després de fer canvis per aplicar les modificacions.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_091.png" /></p>
+<p>Estem afegint les línies deb-src al fitxer sources.list per habilitar els repositoris de codi font, això ens permetrà descarregar el codi font dels paquets oficials d'Ubuntu que necessitem per a la compilació del kernel i les seves dependències.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_092.png" /></p>
+<p>Estem habilitant els repositoris de codi font al fitxer sources.list descomentant les línies deb-src per poder accedir al codi font dels paquets oficials d'Ubuntu, necessari per a la compilació del kernel i les seves dependències.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_093.png" /></p>
+<p>Estem actualitzant els repositoris amb <code>apt update</code> després d'habilitar els repositoris de codi font, el sistema està descarregant la informació dels nous repositoris incloent les fonts dels paquets que necessitem per a la compilació del kernel.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_094.png" /></p>
+<p>Estem editant el codi font del kernel al fitxer <code>init/main.c</code> i hem afegit la línia <code>pr_notice("Hola Pellisa");</code> just després del missatge de benvinguda del kernel, aquesta modificació personalitzada ens permetrà veure el nostre missatge personalitzat quan el kernel s'inicialitzi durant l'arrencada del sistema.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_095.png" /></p>
+<p>Estem creant i aplicant un parxe personalitzat al kernel, primer generem el parxe amb <code>diff</code> que captura les nostres modificacions i després l'apliquem amb <code>patch</code> per assegurar que els canvis queden registrats correctament, finalment verifiquem que la nostra modificació "Hola Pellisa" està present al codi font.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_096.png" /></p>
+<p>Estem instal·lant totes les dependències de compilació del kernel amb <code>apt build-dep linux</code>, el sistema està descarregant i preparant més de 100 paquets necessaris incloent eines de desenvolupament, llibreries i compiladors que ens permetran compilar correctament el nostre kernel personalitzat.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_097.png" /></p>
+<p>Estem preparant-nos per executar la següent comanda de configuració del kernel després d'haver instal·lat totes les dependències necessàries, el sistema està llest per continuar amb el procés de compilació del kernel Linux 6.8.1 personalitzat.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_098.png" /></p>
+<p>Estem configurant el kernel amb <code>make menuconfig</code> i hem desactivat completament el suport de xarxa desmarcant "Networking support", aquesta configuració personalitzada crearà un kernel més lleuger i segur sense capacitats de xarxa segons els requisits de la pràctica.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_099.png" /></p>
+<p>Estem guardant la configuració del kernel al fitxer <code>.config</code> per preservar totes les nostres personalitzacions incloent la desactivació del suport de xarxa, aquest fitxer serà utilitzat durant el procés de compilació per generar el kernel amb les nostres opcions específiques.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_100.png" /></p>
+<p>Hem guardat correctament la configuració del kernel al fitxer <code>.config</code> amb totes les nostres personalitzacions aplicades, ja tenim el kernel configurat segons els nostres requisits i estem preparats per iniciar el procés de compilació.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_101.png" /></p>
+<p>Estem copiant la configuració del kernel actual des de <code>/boot/config-6.8.0-87-generic</code> al directori de treball per utilitzar-la com a base per al nostre nou kernel 6.8.1, això ens assegura compatibilitat amb el maquinari del sistema mentre actualitzem la versió.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_102.png" /></p>
+<p>Estem executant <code>make oldconfig</code> per actualitzar la configuració del kernel anterior a la nova versió 6.8.1, el sistema està demanant decisions sobre noves opcions de configuració que no existien en la versió anterior, començant per les característiques del processador i multi-processament.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_103.png" /></p>
+<p>Estem configurant les opcions del verificador de comportament indefinit (UBSAN) que ajuda a detectar errors de programació durant l'execució, hem activat diverses comprovacions com les de límits d'arrays i valors booleans però hem deixat desactivades algunes com la divisió per zero, finalment hem guardat la configuració completada al fitxer .config.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_104.png" /></p>
+<p>Estem revisant la configuració final del kernel al fitxer .config específicament les opcions de certificats i signatures per a mòduls, podem veure que està configurat per utilitzar claus RSA per signar mòduls i té habilitats els keyrings de confiança del sistema per a la seguretat dels mòduls del kernel.Ho desactivem.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_105.png" /></p>
+<p>Estem revisant les opcions de depuració del kernel al fitxer .config, hem desactivat la informació de depuració extensiva (DEBUG_INFO=n i DEBUG_INFO_DWARF5=n) per reduir la mida del kernel i accelerar la compilació, però mantenim algunes opcions bàsiques de depuració actives per a un desenvolupament més eficient.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_106.png" /></p>
+<p>Estem iniciant la compilació del kernel i la creació dels paquets Debian amb <code>make-kpkg</code>, aquesta comanda generarà dos paquets: <code>kernel_image</code> per al nucli del sistema i <code>kernel_headers</code> per als encapçalaments necessaris per a la compilació de mòduls, utilitzant la configuració que hem preparat anteriorment.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_107.png" /></p>
+<p>El sistema està compilant activament el kernel i les eines associades, podem veure com s'estan generant els fitxers d'encapçalament per a les arquitectures x86, compilant els scripts necessaris i enllaçant les eines de desenvolupament com genksyms i kallsyms que són essencials per al procés de construcció del kernel.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_108.png" /></p>
+<p>Hem canviat al directori Descargas i llistat els fitxers amb <code>ls</code>, podem veure que s'han generat amb èxit els dos paquets Debian del kernel: <code>linux-image-6.8.1</code> per al nucli del sistema i <code>linux-headers-6.8.1</code> pels encapçalaments, a més dels fitxers originals de la pràctica.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_109.png" /></p>
+<p>Estem instal·lant els paquets del kernel compilat amb <code>dpkg -i</code>, el sistema està processant la instal·lació de la imatge del kernel 6.8.1 personalitzat i executant els scripts pre-instal·lació incloent el de microcodi Intel, preparant el sistema per a la nova versió del kernel.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_110.png" /></p>
+<p>El sistema està executant els scripts post-instal·lació del kernel, està generant la imatge initramfs per al nou kernel 6.8.1, actualitzant els mòduls DKMS i configurant els components de VirtualBox per assegurar la compatibilitat amb el nou kernel personalitzat.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_111.png" /></p>
+<p>El sistema ha finalitzat la instal·lació del nou kernel 6.8.1, ha actualitzat correctament GRUB amb les noves entrades d'arrencada incloent el kernel personalitzat i ha processat els scripts post-instal·lació dels encapçalaments, ara tenim el kernel compilat i configurat correctament al sistema.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_112.png" /></p>
+<p>Estem actualitzant GRUB amb <code>update-grub</code> i confirmem que el nou kernel 6.8.1 personalitzat apareix correctament a la llista d'imatges del sistema juntament amb les versions anteriors 6.8.0-87 i 6.8.0-40, el sistema està preparat per arrencar amb el nostre kernel compilat.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_113.png" /></p>
+<p>Encara estem utilitzant el kernel antic 6.8.0-87-generic, necessitem reiniciar el sistema per carregar el nou kernel 6.8.1 personalitzat que hem instal·lat i configurat correctament a GRUB.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_114.png" /></p>
+<p><strong>Hem reiniciat el sistema i confirmem que estem executant el nou kernel 6.8.1 personalitzat</strong>, la compilació i instal·lació s'ha completat amb èxit i ara tenim el nostre kernel modificat funcionant amb totes les personalitzacions aplicades incloent el missatge "Hola Pellisa" durant l'arrencada.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_115.png" /></p>
+<p><strong>Hem verificat que el nostre missatge personalitzat "Hola Pellisa" apareix durant l'arrencada del kernel</strong> utilitzant la comanda <code>dmesg | grep -i hola</code>, confirmant que la modificació que vam fer al codi font del kernel s'ha aplicat correctament i es mostra en el procés d'inicialització del sistema.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_118.png" /></p>
+<p>Veiem que tenim la xarxa desactivada per defecte.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_116.png" /></p>
+<p>I donem per finalitzada aquesta pràctica.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_117.png" /></p>
 
 
