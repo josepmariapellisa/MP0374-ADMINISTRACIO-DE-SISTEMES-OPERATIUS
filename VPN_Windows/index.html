@@ -1,0 +1,629 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kernel/">
+      
+      
+        <link rel="next" href="../LICENSE/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Pràctica 4 - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-implementacio-dinfraestructura-corporativa-amb-windows-server-2025-i-windows-11-ad-vpn" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pràctica 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràtica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio-i-context-de-la-practica" class="md-nav__link">
+    Introducció i Context de la Pràctica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-de-xarxa-i-configuracio-dinterficies" class="md-nav__link">
+    Arquitectura de Xarxa i Configuració d'Interfícies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fases-de-la-practica-i-tecniques-implementades" class="md-nav__link">
+    Fases de la Pràctica i Tècniques Implementades
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio-i-context-de-la-practica" class="md-nav__link">
+    Introducció i Context de la Pràctica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-de-xarxa-i-configuracio-dinterficies" class="md-nav__link">
+    Arquitectura de Xarxa i Configuració d'Interfícies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fases-de-la-practica-i-tecniques-implementades" class="md-nav__link">
+    Fases de la Pràctica i Tècniques Implementades
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-implementacio-dinfraestructura-corporativa-amb-windows-server-2025-i-windows-11-ad-vpn"><strong>Pràctica: Implementació d'Infraestructura Corporativa amb Windows Server 2025 i Windows 11 (AD + VPN)</strong></h1>
+<h2 id="introduccio-i-context-de-la-practica"><strong>Introducció i Context de la Pràctica</strong></h2>
+<p>Aquesta pràctica, dins del mòdul de <strong>Administració de Sistemes Operatius</strong> de 2n d'ASIX, té com a objectiu principal la implementació d'una infraestructura de xarxa corporativa completa utilitzant tecnologies Microsoft. Simularem un escenari real d'empresa mitjana on necessitem configurar un servidor central que gestioni els recursos de la companyia i permeti l'accés remot segur dels empleats. Utilitzarem <strong>Oracle VirtualBox</strong> com a hipervisor per crear dues màquines virtuals: una amb <strong>Windows Server 2025</strong> (que farà de servidor principal) i una altra amb <strong>Windows 11</strong> (que farà de client de l'empresa). Aquesta configuració ens permetrà treballar en un entorn aïllat sense afectar els nostres sistemes reals, alhora que aprenem les tecnologies actuals del mercat laboral.</p>
+<p>Els objectius concrets inclouen la instal·lació i configuració de <strong>Active Directory Domain Services (AD DS)</strong> per a la gestió centralitzada d'usuaris i recursos, la creació i protecció d'un <strong>recurs compartit d'arxius</strong> amb permisos granulars, i la implementació d'un <strong>servidor VPN</strong> mitjançant el rol Remote Access de Windows Server. La part més interessant de la pràctica és la simulació d'una arquitectura de xarxa complexa amb dues interfícies diferents: una per a la xarxa local interna de l'empresa i una altra per simular la connexió pública d'Internet per on s'establirà el túnel VPN.</p>
+<h2 id="arquitectura-de-xarxa-i-configuracio-dinterficies"><strong>Arquitectura de Xarxa i Configuració d'Interfícies</strong></h2>
+<p>Per entendre bé la pràctica, cal imaginar-nos que estem muntant una empresa petita amb seu física i treballadors que necessiten accedir des de casa. Per simular aquest escenari a VirtualBox, configurarem el servidor Windows Server 2025 amb <strong>dues interfícies de xarxa</strong>. La primera interfície, que anomenarem <strong>LAN interna</strong>, estarà configurada amb l'adreça IP <code>192.168.2.101/24</code> i simularà la xarxa cablejada de l'oficina. Aquesta xarxa serà de tipus "interna" a VirtualBox, el que significa que només es podran comunicar les màquines virtuals que estiguin connectades a aquesta mateixa xarxa interna, recreant així un entorn tancat i controlat com seria la xarxa local d'una empresa real.</p>
+<p>La segona interfície, que anomenarem <strong>xarxa externa VPN</strong>, serà la que simuli la connexió a Internet. Aquí assignarem al servidor l'adreça <code>10.10.1.1</code> i al client Windows 11 l'adreça <code>10.10.1.2</code>. Aquesta configuració simula que tant el servidor com el client tenen adreces IP públiques diferents, com passaria a la vida real quan un servidor empresarial té una IP pública i un treballador es connecta des de casa amb la seva pròpia IP pública. El "truc" és que tot això ho fem dins del nostre ordinador amb VirtualBox, sense necessitat d'equipament físic ni connexions reals a Internet. A més, quan configurem el servidor VPN, li assignarem un pool d'adreces IP privades (<code>172.16.0.0</code> fins a <code>172.16.0.10</code>) que seran les que rebràn els clients VPN quan es connectin, creant una xarxa virtual privada dins de la nostra infraestructura simulada.</p>
+<h2 id="fases-de-la-practica-i-tecniques-implementades"><strong>Fases de la Pràctica i Tècniques Implementades</strong></h2>
+<p>La pràctica es desenvoluparà en <strong>quatre fases principals</strong>, cadascuna amb els seus procediments específics i verificacions. A la primera fase, centrada en la <strong>configuració del domini</strong>, instal·larem el rol d'Active Directory Domain Services al Windows Server 2025 i promocionarem el servidor a controlador de domini. Crearem una estructura d'OU (Unitats Organitzatives) bàsica, definirem usuaris i grups d'Active Directory, i establirem algunes polítiques de grup inicials. Aquest procés ens ensenyarà com es centralitza l'administració d'una empresa mitjançant directoris, una competència fonamental per a qualsevol administrador de sistemes.</p>
+<p>La segona fase es centrarà en la <strong>creació i gestió del recurs compartit</strong>. Aquí aprendrem a crear carpetes al servidor, configurar els permisos NTFS (que gestionen l'accés als fitxers) i els permisos de compartició (que controlen l'accés per xarxa). Practicarem amb els diferents tipus de permisos (lectura, canvis, control total) i com es combinen quan un usuari pertany a múltiples grups. També configurarem les característiques avançades de compartició com l'accés anònim controlat o les opcions de caching.</p>
+<p>La tercera fase, probablement la més tècnica, serà la <strong>instal·lació i configuració del servidor VPN</strong>. Utilitzarem el rol Remote Access (RRAS) de Windows Server i configurarem una VPN de tipus "site-to-site" o "client-to-site" segons les indicacions. Aprendrem sobre els diferents protocols VPN disponibles (SSTP, IKEv2, L2TP/IPsec) i les seves implicacions de seguretat. Configurarem els mètodes d'autenticació, els ports de xarxa necessaris i les regles de tallafoc per permetre les connexions entrants de forma segura.</p>
+<p>Finalment, a la quarta fase <strong>configurarem el client Windows 11</strong> perquè s'uneixi al domini creat, estableixi la connexió VPN i accedeixi als recursos compartits. Verificarem tot el funcionament provant l'accés als arxius a través del túnel VPN i comprovant que les polítiques de grup s'apliquen correctament al client. Aquesta fase integradora ens permetrà veure com totes les parts treballen conjuntament en un entorn realista.</p>
+<h1 id="preparacio-entorn-servidor">PREPARACIÓ ENTORN SERVIDOR</h1>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_119.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_120.png" /></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_121.png" /></p>
+<h1 id="domini">DOMINI</h1>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_126.png" />
+Seleccionem la instal·lació basada en rols per configurar el servidor amb Active Directory i els serveis necessaris.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_127.png" />
+Seleccionem el servidor SERVER25 com a destí per instal·lar els rols i característiques necessàries per a la nostra infraestructura.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_128.png" /></p>
+<p>L'assistent ens demana instalar les dependències necessàries per a Active Directory i seleccionem incloure les eines d'administració.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_129.png" />
+Confirmem la instal·lació d'Active Directory amb totes les eines d'administració necessàries abans de procedir amb la configuració del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_130.png" />
+La instal·lació d'Active Directory s'ha completat correctament però necessitem promocionar el servidor a controlador de domini per a la configuració final.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_131.png" />
+Configurem el domini creant un nou bosc amb el nom de domini <code>josep.lar</code> per a la nostra infraestructura corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_132.png" />
+Configurem les opcions del controlador de domini amb DNS i catàleg global, establint els nivells funcionals a Windows Server 2025 i definint la contrasenya DSRM.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_133.png" />
+Verifiquem el nom NetBIOS del domini com a <code>JOSEP</code> i confirmem les opcions addicionals abans de procedir amb la instal·lació del controlador de domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_134.png" />
+Revisem totes les opcions de configuració del domini confirmant que serà el primer controlador de domini del nou bosc <code>josep.lan</code> amb DNS i catàleg global habilitats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_135.png" />
+Iniciem la instal·lació del controlador de domini després de revisar totes les opcions, el sistema comença a promocionar el servidor a controlador de domini del nou bosc.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_136.png" /></p>
+<p>El sistema es reinicia automàticament per completar la instal·lació d'Active Directory, necessari per aplicar els canvis de controlador de domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_137.png" /></p>
+<p>Hem iniciat sessió com a administrador del domini <code>JOSEP</code> després del reinici, confirmant que el servidor està funcionant com a controlador de domini actiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_138.png" /></p>
+<p>Verifiquem les propietats del servidor confirmant que està correctament un al domini <code>josep.lan</code> com a <code>SERVER25</code>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_140.png" /></p>
+<p>Estem creant un nou usuari d'Active Directory anomenat <code>josep pellisa</code> amb les seves credencials d'inici de sessió per al nou domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_141.png" /></p>
+<p>Configurem la contrasenya de l'usuari <code>josep pellisa</code> amb opcions de seguretat com no exigir canvi de contrasenya al primer accés i contrasenya que mai expira per facilitar la gestió.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_142.png" /></p>
+<p>Ho comprovem.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_143.png" /></p>
+<p>Creem un nou objecte equip anomenat <code>equipjp</code> per al domini, configurant-lo perquè pugui unir-se al domini <code>josep.lan</code> utilitzant els administradors per defecte del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_144.png" /></p>
+<p>Creem una nova unitat organitzativa anomenada <code>PràcticaVPN</code> dins del domini <code>josep.lan</code> i la protegem contra l'eliminació accidental per mantenir l'estructura organitzativa del directori.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_145.png" /></p>
+<p>Veiem l'estructura completada d'Active Directory amb la unitat organitzativa <code>PràcticaVPN</code> que conté l'usuari <code>josep pellisa</code> i l'equip <code>equipjp</code> creats correctament dins del domini.</p>
+<h1 id="recurs-compartit">RECURS COMPARTIT</h1>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_146.png" /></p>
+<p>Inicialitzem un disc nou amb l'estil de partició GPT per preparar l'emmagatzematge per al recurs compartit del servidor dins de la infraestructura del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_147.png" /></p>
+<p>Formatem el nou volum com a NTFS amb l'etiqueta <code>Recurs_compartit_IPI</code> i format ràpid per crear el recurs compartit dins del servidor per a l'accés de la xarxa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_148.png" /></p>
+<p>Hem completat la creació del volum NTFS a la unitat E: amb 50GB per al recurs compartit, preparat per configurar els permisos d'accés de xarxa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_149.png" /></p>
+<p>Tenim el disc local C: i el nou recurs compartit E: preparat amb 50GB de capacitat per emmagatzemar els fitxers compartits del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_150.png" /></p>
+<p>Seleccionem el perfil de compartició SMB Ràpid per crear un recurs compartit bàsic compatible amb Windows que després podrem configurar amb opcions avançades i permisos.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_151.png" /></p>
+<p>Seleccionem el volum E: al servidor SERVER25 per crear el recurs compartit dins del directori \Recursos, aprofitant els 50GB de capacitat disponible per als arxius corporatius.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_152.png" /></p>
+<p>Seleccionem la carpeta al volum E: del servidor per crear el recurs compartit dins de la xarxa del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_153.png" /></p>
+<p>Confirmem la carpeta <code>E:\Recursos</code> com a ubicació per al recurs compartit que utilitzaran els usuaris del domini per accedir als arxius corporatius.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_154.png" /></p>
+<p>Configurem el recurs compartit utilitzant la ruta personalitzada <code>E:\Recursos</code> al servidor SERVER25 per crear l'estructura de compartició d'arxius del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_155.png" /></p>
+<p>Especifiquem el nom del recurs compartit com a <code>Recursos</code> amb la ruta local <code>E:\Recursos</code> i accessible remotament com <code>\\SERVER25\Recursos</code> per als usuaris del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_156.png" /></p>
+<p>Seleccionem l'usuari <code>josep pellisa</code> del domini <code>josep.lan</code> per assignar-li permisos específics al recurs compartit que hem creat al servidor.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_157.png" /></p>
+<p>Assignem permisos de <strong>Control total</strong> a l'usuari <code>josep pellisa</code> per permetre'ls gestionar completament el recurs compartit <code>Recursos</code> i tot el seu contingut.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_159.png" /></p>
+<p>Revisem la configuració final de permisos on veiem que <code>josep pellisa</code> té control total del recurs compartit juntament amb administradors i system, mentre els usuaris normals tenen accés limitat de lectura.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_160.png" /></p>
+<p>Confirmem la creació del recurs compartit <code>Recursos</code> al servidor SERVER25 amb protocol SMB i tota la configuració de permisos i propietats definida per al seu ús dins del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_161.png" /></p>
+<p>El recurs compartit SMB <code>Recursos</code> s'ha creat correctament al servidor amb tots els permisos configurats i està llest per ser utilitzat pels usuaris del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_162.png" /></p>
+<p>Veiem els tres recursos compartits actius del servidor: NETLOGON i SYSVOL (automàtics del domini) i el nostre <code>Recursos</code> creat manualment, tots funcionant amb protocol SMB.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_163.png" /></p>
+<p>Accedim al disc E: i veiem la carpeta <code>Recursos</code> creada correctament, preparada per emmagatzemar els fitxers compartits de l'empresa dins del recurs compartit configurat.</p>
+<h1 id="vpn">VPN</h1>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_220.png" /></p>
+<p>Configurem la interfície de xarxa VPN amb adreça IP estàtica <code>10.10.1.1</code> i servidor DNS del domini per a la comunicació VPN amb el client remot.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_221.png" /></p>
+<p>Configurem la interfície LAN interna amb IP <code>192.168.2.101</code> i gateway <code>10.10.1.1</code> per permetre la comunicació entre les xarxes VPN i LAN dins de la nostra infraestructura corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_222.png" /></p>
+<p>Tenim les dues interfícies de xarxa configurades i reconegudes pel domini: la VPN (10.10.1.1) i la LAN (192.168.2.101), ambdues funcionant correctament dins del domini <code>josep.lan</code>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_139.png" /></p>
+<p>Configurem el tallafoc per permetre la comunicació VPN i LAN, tenint activada l'administració remota per al domini i configurant les interfícies per IPv4 amb les adreces assignades.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_164.png" /></p>
+<p>Seleccionem la instal·lació basada en rols per afegir el rol de Remote Access i configurar el servidor VPN dins de la nostra infraestructura corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_165.png" /></p>
+<p>Seleccionem el servidor <code>SERVER25.josep.lan</code> com a destí per instal·lar el rol de Remote Access, mostrant les seves dues adreces IP configurades (10.10.1.1 i 192.168.2.101).</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_166.png" /></p>
+<p>Seleccionem el rol d'<strong>Accés remot</strong> per instal·lar els serveis VPN al servidor, permetent la connectivitat DirectAccess i VPN tradicional per a la connexió remota dels clients al domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_167.png" /></p>
+<p>Seleccionem els serveis de rol <strong>DirectAccess i VPN (RAS)</strong> i <strong>Enrutament</strong> per permetre connexions VPN clients i funcionalitat d'enrutament entre xarxes dins de la nostra infraestructura corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_169.png" /></p>
+<p>Confirmem la instal·lació del rol d'Accés remot amb totes les eines d'administració necessàries per configurar i gestionar el servidor VPN de la infraestructura corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_170.png" /></p>
+<p>El sistema està procedint amb la instal·lació del rol d'Accés remot, concretament els components de DirectAccess i VPN (RAS), al servidor <code>SERVER25.josep.lan</code>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_175.png" /></p>
+<p>Seleccionem <strong>Accés remot (telefònic o VPN)</strong> per permetre als clients remots connectar-se al servidor mitjançant VPN i accedir als recursos del domini des de localitzacions externes.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_176.png" /></p>
+<p>Seleccionem la interfície <strong>VPN</strong> amb adreça <code>10.10.1.1</code> com a connexió a Internet per permetre a clients VPN externs accedir al servidor a través d'aquesta interfície pública simulada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_177.png" /></p>
+<p>Seleccionem assignar adreces IP des d'un <strong>interval especificat</strong> per controlar manualment el pool d'adreces VPN que s'assignaran als clients que es connectin al servidor.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_178.png" /></p>
+<p>Configurem l'interval d'adreces IP VPN des de <code>172.16.0.0</code> fins a <code>172.16.0.10</code>, creant un pool de 11 adreces per als clients que es connectin a la nostra xarxa virtual privada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_179.png" /></p>
+<p>Confirmem l'interval d'adreces IP VPN configurat de <code>172.16.0.0</code> a <code>172.16.0.10</code> amb 11 adreces disponibles per assignar als clients que es connectin al servidor remotament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_180.png" /></p>
+<p>Seleccionem <strong>No, utilitzar Enrutament i accés remot per autenticar les sol·licituds de connexió</strong> per gestionar l'autenticació localment al servidor sense necessitat de servidor RADIUS extern.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_181.png" /></p>
+<p>Hem finalitzat la configuració del servidor VPN, els clients es connectaran a la interfície VPN (10.10.1.1) i obtindran adreces del pool 172.16.0.0-10, amb autenticació a través d'Active Directory.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_182.png" /></p>
+<p>El sistema ens alerta que cal <strong>obrir manualment els ports del firewall</strong> per permetre connexions VPN, ja que el procés automàtic ha fallat i és necessari configurar manualment les regles de firewall per al servei RRAS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_183.png" /></p>
+<p>L'assistent ha finalitzat i s'està <strong>iniciant el servei d'Administració d'accés remot</strong>, preparant el servidor per acceptar connexions VPN dels clients mitjançant la interfície VPN configurada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_184.png" /></p>
+<p>Tenim la consola d'<strong>Enrutament i accés remot</strong> oberta, preparada per configurar la nostra porta d'enllaç VPN i gestionar les connexions dels clients remots al domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_185.png" /></p>
+<p>Veiem la consola d'<strong>Enrutament i accés remot</strong> amb els ports VPN configurats (SSTP, IKEv2, PPTP, L2TP, GRE) però tots inactius, esperant connexions de clients al servidor VPN configurat.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_224.png" /></p>
+<p>Configurem les propietats dels ports VPN, tenint activats els protocols <strong>SSTP</strong> i <strong>IKEv2</strong> per RAS, mentre que <strong>L2TP</strong> està configurat com a "Cap" i PPTP com a "RAS/Enrutamiento" segons els nostres requisits de seguretat.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_225.png" /></p>
+<p>Configurem el dispositiu <strong>WAN Miniport (PPTP)</strong> per permetre <strong>connexions d'accés remot (només d'entrada)</strong> amb un nombre màxim de ports que determinarem segons la necessitat de connexions VPN concurrents al servidor.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_186.png" /></p>
+<p>Configurem les propietats de <strong>marcat per l'usuari <code>josep pellisa</code></strong> per permetre accés a xarxes via VPN i assignar una adreça IP estàtica dins del pool VPN si és necessari per a la seva connexió remota.</p>
+<h1 id="proves-client-crear-vpn-i-accedir">PROVES CLIENT CREAR VPN I ACCEDIR</h1>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_208.png" /></p>
+<p>Configurem la connexió VPN al client Windows 11 seleccionant <strong>Utilitzar la meva connexió a Internet (VPN)</strong> per establir el túnel xifrat cap al servidor corporatiu a través de la xarxa pública simulada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_209.png" /></p>
+<p>Configurem la connexió VPN amb adreça del servidor <code>10.10.1.1</code> i nom <code>VPN JOSEP</code>, guardant les credencials per facilitar connexions futures al domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_210.png" /></p>
+<p>Tenim la connexió VPN creada anomenada <strong>VPN JOSEP</strong> al client Windows 11, preparada per connectar-se al servidor corporatiu mitjançant l'adreça 10.10.1.1 configurada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_212.png" /></p>
+<p>Iniciem la VPN i accedim amb el usuari pellisa i la seva contrasenya.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_228.png" /></p>
+<p>Veiem l'estat de la <strong>connexió VPN JOSEP activa</strong> durant 6 minuts, mostrant tràfic de dades (34KB enviats, 5KB rebuts) però sense accés a Internet per disseny, ja que només permet accés a la xarxa interna corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_227.png" /></p>
+<p>Tenim la <strong>connexió VPN JOSEP connectada</strong> al client Windows 11 mitjançant protocol PPTP, mostrant les dues interfícies: VPN i Ethernet (xarxa local) funcionant simultàniament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_226.png" /></p>
+<p>El client té <strong>dues interfícies actives</strong>: Ethernet amb IP 10.10.1.2 (xarxa externa) i VPN amb IP 172.16.0.2 (pool VPN intern), connectat correctament al servidor 10.10.1.1.</p>
+<h1 id="unio-al-recurs-compartit">UNIÓ AL RECURS COMPARTIT</h1>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_229.png" /></p>
+<p>Sol·licitem les credencials d'administrador del domini <code>JOSEP\Administrador</code> per autenticar-nos al servidor SERVER25 i accedir als recursos compartits de la xarxa corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_230.png" /></p>
+<p>Hem mapejat amb èxit la unitat <strong>Z:</strong> corresponent al recurs compartit <code>\\SERVER25\Recursos</code>, accessible des del client Windows 11 a través de la connexió VPN establerta.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_231.png" /></p>
+<p>Finalment comprovem que tenim permisos, i amb tot aixo donem per finalitzada aquesta pràtica 4.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
