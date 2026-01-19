@@ -1,0 +1,540 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../VPN_Windows/">
+      
+      
+        <link rel="next" href="../LICENSE/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Pràctica 5 - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pràctica 5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràtica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Pràctica 5</h1>
+
+<p><strong>Introducció i Context</strong></p>
+<p>Aquesta pràctica de 2n d'ASIX integra diverses tecnologies Microsoft i Linux per crear una infraestructura corporativa completa. Partint d'un escenari real empresarial, hem implementat un entorn mixt on un Windows Server 2025 gestiona el domini corporatiu amb Active Directory, mentre un client Ubuntu 22.04 s'uneix al domini per accedir als recursos compartits. La pràctica combina administració de sistemes, xarxes i seguretat, simulant un entorn de producció amb servidors Windows i clients Linux típic d'empreses actuals.</p>
+<p><strong>Arquitectura de la Pràctica</strong></p>
+<p>El disseny de la pràctica segueix una estructura lògica en tres capes: infraestructura de xarxa, serveis de directori i autenticació, i serveis d'aplicació. A la capa de xarxa, configurem dues interfícies al servidor: una LAN interna (192.168.2.101/24) que simula la xarxa corporativa i una interfície externa (10.10.1.1) per a connexions VPN. El client Ubuntu es connecta mitjançant VPN obtenint una adreça del pool 172.16.0.0-172.16.0.10.</p>
+<p>A la capa de serveis de directori, implementem Active Directory Domain Services creant el domini josep.lan amb una estructura organitzativa que inclou usuaris, grups i equips. Configurem polítiques de grup bàsiques i recursos compartits amb permisos NTFS. A la capa d'aplicació, instal·lem Internet Information Services (IIS) per allotjar un lloc web intranet i implementem Servicios de Certificados de Active Directory per crear una PKI corporativa amb certificats SSL.</p>
+<p><strong>Fases d'Implementació</strong></p>
+<ol>
+<li>
+<p>Configuració del Domini Windows
+La primera fase inclou la instal·lació i configuració de Windows Server 2025 com a controlador de domini. Creem el bosc josep.lan amb nivell funcional Windows Server 2025, configurem DNS integrats i implementem estructures OU per organitzar usuaris i equips. Creem usuaris com josep pellisa i configurem permisos granulars als recursos compartits.</p>
+</li>
+<li>
+<p>Integració del Client Linux
+La segona fase se centra en la integració del client Ubuntu al domini Windows. Instal·lem paquets com realmd, sssd, samba i krb5-user per permetre l'autenticació contra Active Directory. Configurem DNS i Kerberos per a la resolució de noms i autenticació, i unim el client al domini utilitzant credencials d'administrador. Verifiquem que els usuaris del domini poden iniciar sessió al client Linux.</p>
+</li>
+<li>
+<p>Implementació de Serveis Web
+A la tercera fase, instal·lem IIS al servidor Windows i creem un lloc web intranet anomenat "INTRANET JOSEP PELLISA". Desenvolupem una pàgina HTML personalitzada amb recursos corporatius i configurem les opcions del servidor web per a un funcionament òptim. Configurem DNS per resoldre josep.lan a l'adreça IP del servidor.</p>
+</li>
+<li>
+<p>Seguretat amb Certificats SSL
+La quarta fase implementa seguretat mitjançant certificats SSL. Creem una entitat de certificació arrel empresarial josep-SERVER25-CA amb clau RSA 4096 i SHA256. Configurem el lloc web IIS per utilitzar HTTPS al port 443 i assignem el certificat SSL per a connexions xifrades. Instal·lem el certificat arrel als clients per establir confiança.</p>
+</li>
+</ol>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_237.png" /></p>
+<p><strong>Estem canviant el nom del host del client Ubuntu</strong> per identificar-lo clarament dins de la xarxa del domini Windows Server, editem el fitxer <code>/etc/hostname</code> i posem <code>ubuntujp</code> com a nom del sistema per a la seva integració al domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_238.png" /></p>
+<p><strong>Comprovem la connectivitat amb el servidor Windows</strong> fent ping a la seva IP 192.168.2.101 des del client Ubuntu, rebem resposta amb pèrdua de paquets zero confirmant que la xarxa està funcionant correctament entre les dues màquines de la pràctica.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_239.png" /></p>
+<p><strong>Afegim la resolució del domini Windows al fitxer hosts</strong> del client Ubuntu, afegim la línia <code>192.168.2.101 josep.lan</code> perquè el sistema pugui resoldre el nom del domini directament sense necessitat de servidor DNS configurat durant les proves de connexió.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_240.png" /></p>
+<p><strong>Configurem el client DNS del Ubuntu</strong> per utilitzar el servidor Windows com a DNS principal, afegim <code>DNS=192.168.2.101</code> i <code>Domains=josep.lan</code> al fitxer resolved.conf perquè el sistema resolgui els noms del domini correctament durant la unió al domini Active Directory.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_241.png" /></p>
+<p><strong>Reiniciem i verifiquem el servei de resolució DNS</strong> al client Ubuntu, després de configurar el DNS fem <code>systemctl restart systemd-resolved</code> i comprovem que estigui actiu i funcionant correctament amb la nova configuració del servidor Windows com a DNS del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_242.png" /></p>
+<p><strong>Instal·lem els paquets necessaris per unir-nos al domini</strong> al client Ubuntu, executem apt install per obtenir realmd, sssd, kerberos, samba i les eines necessàries per a la integració amb l'Active Directory del servidor Windows Server.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_243.png" /></p>
+<p><strong>Continuem amb la instal·lació dels paquets de domini</strong> al Ubuntu, el sistema descarrega i prepara totes les dependències necessàries incloent llibreries de Kerberos, SSSD i Samba per a la integració completa amb l'Active Directory del servidor Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_244.png" /></p>
+<p><strong>Continuem amb la instal·lació dels paquets de domini</strong> al Ubuntu, el sistema descarrega i prepara totes les dependències necessàries incloent llibreries de Kerberos, SSSD i Samba per a la integració completa amb l'Active Directory del servidor Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_250.png" /></p>
+<p><strong>Iniciem el procés d'unió al domini Windows</strong> amb la comanda realm join, ens autentiquem com a Administrator del domini JOSEP.lan i el sistema comença a configurar la unió utilitzant adcli per integrar el client Ubuntu al Active Directory del servidor Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_251.png" /></p>
+<p><strong>Configurem el fitxer de Kerberos krb5.conf</strong> al client Ubuntu, establim <code>default_realm = JOSEP.LAN</code> i altres opcions per assegurar l'autenticació correcta amb el servidor Windows i la integració amb els serveis del domini Active Directory.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_252.png" /></p>
+<p><strong>Completem la unió al domini amb èxit</strong> i configurem el keytab de Kerberos, el sistema afegeix les entrades necessàries al fitxer krb5.keytab i reinicia el servei SSSD, confirmant que el client Ubuntu ja està correctament unit al domini JOSEP.LAN del servidor Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_253.png" /></p>
+<p><strong>Verifiquem l'Active Directory del servidor Windows</strong> i confirmem que el client Ubuntu apareix correctament registrat dins del domini josep.lan, específicament dins de la OU "clientsubuntu" que hem creat per organitzar els equips Linux units al domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_254.png" /></p>
+<p><strong>Configurem el fitxer sssd.conf del client Ubuntu</strong> per a la gestió del domini, establim el proveïdor AD, realm de Kerberos i opcions d'autenticació per permetre als usuaris del domini Windows iniciar sessió al sistema Ubuntu amb les seves credencials d'Active Directory.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_255.png" /></p>
+<p><strong>Reiniciem i verifiquem el servei SSSD</strong> al client Ubuntu, després de configurar sssd.conf fem systemctl restart sssd i comprovem que està actiu i funcionant correctament amb els mòduls per a l'autenticació d'usuaris del domini Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_256.png" /></p>
+<p><strong>Configurem els perfils PAM del sistema Ubuntu</strong> per habilitar l'autenticació SSSD i crear directoris home automàticament, seleccionem les opcions necessàries perquè els usuaris del domini Windows puguin iniciar sessió correctament al client Linux amb totes les funcionalitats habilitades.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_257.png" /></p>
+<p><strong>Iniciem sessió amb un usuari del domini Windows</strong> al client Ubuntu, veiem l'indicador <code>jpellisa@josep.lan@ubuntu9</code> que confirma que estem autenticats amb un compte d'Active Directory i la comanda whoami retorna l'usuari complet del domini correctament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_258.png" /></p>
+<p><strong>Instal·lem el rol de servidor web IIS</strong> al Windows Server, seleccionem "Desenvolupament d'aplicacions" dins del rol Servidor web (IIS) per obtenir totes les característiques necessàries per allotjar pàgines web i crear el lloc web de prova amb funcionalitats dinàmiques.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_259.png" /></p>
+<p><strong>Confirmem la instal·lació del servidor web IIS</strong> amb totes les característiques de desenvolupament d'aplicacions seleccionades, procedim amb la instal·lació al servidor Windows Server per poder crear i allotjar el lloc web de prova dins del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_260.png" /></p>
+<p><strong>Tenim el servidor IIS instal·lat i funcionant</strong> al Windows Server, accedim a la pàgina de benvinguda predeterminada que mostra el missatge en múltiples idiomes confirmant que el servidor web està actiu i preparat per allotjar els nostres llocs web dins del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_261.png" /></p>
+<p><strong>Creem un nou lloc web a IIS</strong> anomenat "INTRANET JOSEP PELLISA", configurem el camí físic a <code>C:\inetpub\inntranetpellisa</code>, port 80 i opcions d'enllaç per allotjar el lloc web corporatiu dins del servidor IIS del domini Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_262.png" /></p>
+<p><strong>Creem l'arxiu index.html per al lloc web</strong> de la intranet corporativa, desenvolupem una pàgina HTML amb estils CSS que mostrarà informació de l'empresa i recursos, preparada per ser allotjada al servidor IIS del domini Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_263.png" /></p>
+<p><strong>Configurem les opcions del lloc web a IIS</strong> per a l'examen de directoris, activem la visualització d'hora i extensió als llistats per millorar la navegació dels usuaris a la intranet corporativa que hem creat al servidor Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_264.png" /></p>
+<p><strong>Veiem el lloc web funcionant</strong> a la intranet corporativa, la pàgina HTML que hem creat mostra correctament el títol "Intranet de Josep Pellisa" amb els recursos interns i informació de l'empresa allotjats al servidor IIS del domini Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_265.png" /></p>
+<p><strong>Configurem el document predeterminat</strong> del lloc web a IIS, establim <code>index_pellisa.htm</code> com a fitxer principal que es carregarà automàticament quan els usuaris accedeixin a la intranet corporativa des del navegador web.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_266.png" /></p>
+<p><strong>Configurem les opcions avançades del lloc web</strong> a IIS, revisem la ruta física, protocols habilitats (només HTTP per ara) i altres configuracions del lloc "INTRANET JOSEP PELLISA" per assegurar el correcte funcionament de la intranet corporativa al servidor Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_267.png" /></p>
+<p><strong>Configurem un nou registre DNS</strong> al servidor Windows per a la intranet, creem un host <code>josep.lan</code> amb adreça IP <code>192.168.2.101</code> perquè els usuaris puguin accedir al lloc web utilitzant el nom del domini en lloc de la IP directa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_268.png" /></p>
+<p><strong>Confirmem la creació exitosa del registre DNS</strong> per al lloc web de la intranet, el registre host <code>josep.lan.josep.lan</code> s'ha creat correctament al servidor DNS del domini Windows, permetent la resolució de noms per al lloc web corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_269.png" /></p>
+<p><strong>Verifiquem el registre DNS creat</strong> al servidor Windows, veiem l'entrada <code>josep</code> de tipus Host (A) amb adreça <code>192.168.2.101</code> dins de la zona <code>josep.lan</code>, confirmant que la resolució de noms per al lloc web funcionarà correctament dins del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_270.png" /></p>
+<p><strong>Accedim al lloc web mitjançant DNS</strong> des del navegador, la pàgina <code>http://josep.lan</code> carrega correctament mostrant la intranet corporativa amb tots els recursos i enllaços, confirmant que la resolució de noms del domini està funcionant perfectament amb el servidor IIS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_271.png" /></p>
+<p><strong>El navegador ens avisa de connexió no segura</strong> al accedir a <code>http://josep.lan</code>, ja que estem utilitzant HTTP sense xifrat SSL/TLS, el proper pas serà crear un certificat de domini per implementar HTTPS i assegurar la comunicació amb el lloc web corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_272.png" /></p>
+<p><strong>Seleccionem el rol de Servicios de certificats d'Active Directory</strong> al Windows Server per crear una autoritat de certificació i poder generar certificats SSL per al nostre domini, afegim també les eines d'administració necessàries per gestionar els certificats correctament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_273.png" /></p>
+<p><strong>Seleccionem el servei de rol "Entitat de certificació"</strong> per a l'AD CS, aquesta configuració ens permetrà crear una CA interna al domini per generar i signar certificats SSL per als serveis web, incloent el nostre lloc IIS de la intranet corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_274.png" /></p>
+<p><strong>Iniciem la instal·lació dels serveis de certificats</strong> al Windows Server, el sistema comença a instal·lar les eines d'administració i el rol AD CS necessaris per configurar l'entitat de certificació del domini i poder crear certificats SSL per al lloc web.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_275.png" /></p>
+<p><strong>Configurem les credencials per als serveis de certificats</strong> del domini, utilitzem l'administrador de domini <code>JOSEP\Administrador</code> per configurar l'entitat de certificació empresarial amb els permisos necessaris per crear certificats SSL per als serveis del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_276.png" /></p>
+<p><strong>Seleccionem configurar només l'Entitat de certificació</strong> dins dels serveis de rol, aquesta opció ens crearà una CA empresarial al domini per signar certificats sense necessitat dels serveis web d'inscripció que instal·larem després per a la gestió de certificats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_277.png" /></p>
+<p><strong>Seleccionem CA empresarial</strong> per a la configuració de l'entitat de certificació, aquest tipus s'integra amb Active Directory i permet gestionar certificats dins del domini, ideal per als nostres serveis web corporatius i més segur que una CA independent per al nostre entorn.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_278.png" /></p>
+<p><strong>Seleccionem CA arrel</strong> per a la nostra entitat de certificació, aquesta serà la primera CA de la jerarquia PKI del domini i emetrà certificats autosignats, ideal per al nostre entorn corporatiu on controlarem tot el cicle de vida dels certificats SSL.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_279.png" /></p>
+<p><strong>Seleccionem crear una nova clau privada</strong> per a la nostra CA arrel, aquesta opció genera un nou parell de claus criptogràfiques que s'utilitzarà per signar tots els certificats que emetrem per als serveis del domini, inclòs el certificat SSL per al lloc web IIS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_280.png" /></p>
+<p><strong>Configurem les opcions criptogràfiques</strong> per a la CA, seleccionem proveïdor RSA amb longitud de clau 4096 bits i algorisme hash SHA256 per garantir la màxima seguretat per als certificats que generarem per al nostre domini corporatiu i el lloc web IIS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_281.png" /></p>
+<p><strong>Definim el nom de la CA</strong> com a <code>josep-SERVER25-CA</code> amb el sufix distintiu del domini, aquest nom apareixerà a tots els certificats emesos i identificarà clarament l'autoritat certificadora del nostre domini corporatiu dins de la jerarquia PKI que estem configurant.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_282.png" /></p>
+<p><strong>Configurem el període de validesa</strong> de la CA a 30 anys, aquest llarg període assegura que la nostra CA arrel romandrà vàlida per a tota la infraestructura del domini, ja que el certificat de la CA ha de ser vàlid més temps que els certificats que emetrà per als serveis corporatius.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_283.png" /></p>
+<p><strong>Configurem les ubicacions de les bases de dades</strong> de la CA, utilitzem les rutes per defecte <code>C:\WINDOWS\system32\CertLog</code> per emmagatzemar els certificats i registres dins del servidor Windows per a una gestió centralitzada de la PKI del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_284.png" /></p>
+<p><strong>Revisem la configuració final</strong> de l'entitat de certificació abans de procedir, confirmem que serà una CA arrel independent amb clau RSA 4096, SHA256, vàlida 30 anys i ubicació correcta de bases de dades per implementar la PKI del nostre domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_285.png" /></p>
+<p><strong>Hem completat la configuració de la CA</strong> amb èxit, tant l'entitat de certificació arrel com el servei web d'inscripció s'han configurat correctament al servidor Windows, ja podem començar a generar certificats SSL per al nostre lloc web IIS del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_286.png" /></p>
+<p><strong>Tenim els nous llocs web de certificats</strong> creats automàticament a IIS, veiem <code>CertEnroll</code> i <code>CertSrv</code> que són les pàgines web per a la gestió i inscripció de certificats, juntament amb el nostre lloc <code>INTRANET JOSEP PELLISA</code> que necessitarà certificat SSL.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_287.png" /></p>
+<p><strong>Accedim al lloc web de certificats</strong> del nostre domini, la pàgina <code>CertSrv</code> permet sol·licitar, revisar i descarregar certificats de la CA corporativa, incloent certificats SSL per al nostre lloc web IIS que necessita HTTPS segur.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_288.png" /></p>
+<p><strong>Seleccionem sol·licitar un certificat avançat</strong> per al lloc web, necessitem una petició específica de certificat SSL per a servidors web amb opcions personalitzades per a la intranet del nostre domini corporatiu i el nom del servidor IIS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_289.png" /></p>
+<p><strong>Configurem l'enllaç HTTPS</strong> al lloc web IIS, seleccionem el port 443 i assignem el certificat de la nostra CA corporativa <code>josep-SERVER25-CA</code> per habilitar SSL/TLS al lloc de la intranet i proporcionar connexions segures HTTPS als usuaris del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_290.png" /></p>
+<p><strong>El navegador mostra error de certificat</strong> per a <code>localhost</code>, ja que el certificat està emès per a un nom diferent (el nom del domini) i no per localhost, necessitarem sol·licitar un certificat específic per al lloc web de la intranet amb el nom correcte o utilitzar el nom del domini per accedir.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_291.png" /></p>
+<p><strong>Compliquem la informació per al certificat</strong> del lloc web, introduïm les dades del domini i servidor per generar un certificat SSL específic per a la intranet corporativa que s'integrarà correctament amb IIS i evitarà els errors de seguretat al navegador.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_292.png" /></p>
+<p><strong>Obtenim un error al sol·licitar el certificat</strong> amb el formulari web, probablement degut a problemes de configuració del servidor de certificats, necessitarem utilitzar una altra via com el snap-in de certificats de Windows o sol·licitar via PowerShell per obtenir el certificat SSL per al lloc web IIS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_293.png" /></p>
+<p><strong>Descarreguem el certificat de la CA</strong> en format Base64 per instal·lar-lo als clients i navegadors, així els sistemes confiaran en els certificats emesos per la nostra CA corporativa i no mostraran errors quan accedeixin al lloc web HTTPS de la intranet.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_294.png" /></p>
+<p><strong>Veiem la informació del certificat de la CA</strong> descarregat, confirmem que està emès i signat per si mateix (autosignat) i vàlid per 30 anys, ara podem instal·lar aquest certificat al magatzem de autoritats de confiança perquè els sistemes acceptin els certificats que emeti la nostra CA corporativa.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_295.png" /></p>
+<p><strong>Importem el certificat de la CA</strong> al magatzem de certificats del sistema, seleccionem l'opció automàtica perquè Windows instal·li el certificat arrel al magatzem d'Autoritats de certificació arrel de confiança, permetent que tots els certificats emesos per la nostra CA siguin confiables als clients.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_296.png" /></p>
+<p><strong>Completem la importació del certificat CA</strong> amb èxit, el certificat arrel de la nostra CA corporativa ara està instal·lat al magatzem d'autoritats de confiança del sistema, permetent que els certificats SSL emesos per aquesta CA siguin acceptats sense errors pels navegadors i clients del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_297.png" /></p>
+<p><strong>Configurem l'enllaç HTTPS per al lloc web</strong> amb IP 192.168.2.101, port 443 i nom de host <code>josep.lan</code>, seleccionem el certificat de la nostra CA per habilitar SSL/TLS i proporcionar accés segur HTTPS al lloc de la intranet corporativa per als usuaris del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_298.png" /></p>
+<p><strong>Configurem les opcions SSL del lloc web</strong> a IIS, seleccionem "Requerir SSL" per forçar connexions HTTPS i "Acceptar" certificats de client per permetre autenticació opcional, assegurant que tot el tràfic cap a la intranet corporativa estigui xifrat i segur dins del domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_299.png" /></p>
+<p><strong>Veiem el certificat del servidor web</strong> instal·lat correctament, el certificat emès per <code>josep-SERVER25-CA</code> està disponible al magatzem personal del servidor IIS i preparat per ser utilitzat amb SSL/TLS al lloc web de la intranet corporativa del domini.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
