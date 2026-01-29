@@ -409,6 +409,28 @@ La quarta fase implementa seguretat mitjançant certificats SSL. Creem una entit
 <p><strong>Configurem els perfils PAM del sistema Ubuntu</strong> per habilitar l'autenticació SSSD i crear directoris home automàticament, seleccionem les opcions necessàries perquè els usuaris del domini Windows puguin iniciar sessió correctament al client Linux amb totes les funcionalitats habilitades.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_257.png" /></p>
 <p><strong>Iniciem sessió amb un usuari del domini Windows</strong> al client Ubuntu, veiem l'indicador <code>jpellisa@josep.lan@ubuntu9</code> que confirma que estem autenticats amb un compte d'Active Directory i la comanda whoami retorna l'usuari complet del domini correctament.</p>
+<p><strong>Script Funcional Unio Domini client Ubuntu</strong></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_317.png" /></p>
+<p><strong>Creem un script Bash per automatitzar la unió al domini</strong> del client Ubuntu, configurem les variables IP i domini, afegim la resolució al fitxer hosts i configuram el DNS per utilitzar el servidor Windows com a servidor de resolució de noms del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_318.png" /></p>
+<p><strong>Continuem el script configurant Kerberos</strong> i sincronitzant hora amb NTP, unim el client al domini amb realm join i configurem PAM per crear directoris home automàtics per als usuaris d'Active Directory quan inicien sessió al sistema Ubuntu per primera vegada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_319.png" /></p>
+<p><strong>Configurem SSSD i reiniciem els serveis</strong> al script, verifiquem que el client està unit al domini amb realm list i indiquem que cal reiniciar el sistema per aplicar totes les configuracions completant així l'automatització de la unió del client Ubuntu al domini Windows Server.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_320.png" /></p>
+<p><strong>Executem el script d'unió al domini</strong> i veiem el procés en temps real, el script configura hosts, DNS, Kerberos, sincronitza l'hora i comença la unió al domini amb adcli, mostrant la comunicació amb el servidor Windows i l'autenticació amb l'administrador del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_321.png" /></p>
+<p><strong>Continuem amb la unió al domini</strong> des del script, el sistema crea el compte d'ordinador <code>ASIX2</code> dins del contenidor Computers d'Active Directory, utilitza keytab de Kerberos i s'autentica correctament amb el servidor Windows, completant la integració del client Ubuntu al domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_322.png" /></p>
+<p><strong>El script finalitza la unió al domini</strong> amb èxit, configura el keytab de Kerberos amb les entrades necessàries, habilita i reinicia el servei SSSD, i confirma que la màquina s'ha inscrit correctament al domini <code>JOSEP.LAN</code>, deixant el client Ubuntu completament integrat al domini corporatiu Windows Server.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_323.png" /></p>
+<p><strong>Verifiquem el servei SSSD actiu</strong> i la configuració del domini, el client Ubuntu té tots els serveis funcionant correctament incloent SSSD amb els mòduls per a autenticació contra Active Directory, confirmant que el procés d'unió al domini s'ha completat amb èxit i el sistema està preparat per a usuaris del domini corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_324.png" /></p>
+<p><strong>Finalitzem l'execució del script</strong> amb totes les comprovacions correctes, mostrem la configuració del domini amb realm list que indica l'estat de la unió i indiquem que cal reiniciar el sistema per aplicar totes les configuracions i completar la integració del client Ubuntu al domini corporatiu Windows Server.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_257.png" /></p>
+<p><strong>Usuari del domini iniciat sessió al client Ubuntu</strong>, veiem l'indicador <code>jpellisa@josep.lan@ubuntu9</code> i whoami confirma l'autenticació com a usuari d'Active Directory, demostrant la integració exitosa del client Linux al domini corporatiu Windows Server.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_325.png" /></p>
+<p><strong>Comprovem l'Active Directory del servidor Windows</strong> i confirmem que els dos clients Ubuntu (<code>ASIX2</code> i <code>UBUNTUJP</code>) apareixen correctament registrats dins del domini <code>josep.lan</code>, verificant que la unió al domini s'ha realitzat amb èxit per a tots dos equips Linux.</p>
+<p><strong>INSTALACIÓ SERVEI WEB</strong></p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_258.png" /></p>
 <p><strong>Instal·lem el rol de servidor web IIS</strong> al Windows Server, seleccionem "Desenvolupament d'aplicacions" dins del rol Servidor web (IIS) per obtenir totes les característiques necessàries per allotjar pàgines web i crear el lloc web de prova amb funcionalitats dinàmiques.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_259.png" /></p>
@@ -493,6 +515,39 @@ La quarta fase implementa seguretat mitjançant certificats SSL. Creem una entit
 <p><strong>Configurem les opcions SSL del lloc web</strong> a IIS, seleccionem "Requerir SSL" per forçar connexions HTTPS i "Acceptar" certificats de client per permetre autenticació opcional, assegurant que tot el tràfic cap a la intranet corporativa estigui xifrat i segur dins del domini.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_299.png" /></p>
 <p><strong>Veiem el certificat del servidor web</strong> instal·lat correctament, el certificat emès per <code>josep-SERVER25-CA</code> està disponible al magatzem personal del servidor IIS i preparat per ser utilitzat amb SSL/TLS al lloc web de la intranet corporativa del domini.</p>
+<p><strong>Solució Error Certificat de Domini AD</strong></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_300.png" /></p>
+<p><strong>Instal·lem la funció de CA amb PowerShell</strong> per solucionar els problemes de certificats del domini, executem <code>Install-WindowsFeature Adcs-Cert-Authority -IncludeManagementTools</code> i confirmem que s'instal·la correctament sense necessitat de reinici, preparant el servidor per gestionar certificats de domini per a l'Active Directory.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_301.png" /></p>
+<p>Has raó, així sona més natural en català:</p>
+<p><strong>Arrenquem el servei CertSvc.</strong> Primer comprovem el seu estat i veiem que està aturat. Després l’engegem i tornem a comprovar per confirmar que ara està en execució. </p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_302.png" /></p>
+<p>A la finestra de <strong>"Propiedades de Servidor web"</strong> podem veure els permisos de seguretat per a diferents comptes d'usuari i grups. S'hi llisten comptes com l'Administrador, els administradors del domini i els usuaris autenticats. Des de aquí és possible afegir, eliminar o modificar els permisos d'accés assignats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_303.png" /></p>
+<p>Aquesta finestra s'anomena <strong>"Agregar o quitar complementos"</strong> i forma part de la <strong>Consola d'Administració de Microsoft (MMC)</strong>. En aquest cas, estem configurant una consola personalitzada per gestionar certificats.</p>
+<p>A la llista de <strong>"Complementos disponibles"</strong> podem veure diversos snap-ins que es poden afegir, com ara Certificats, DNS, Editor ADSI, etc. A la dreta, a la secció <strong>"Complementos seleccionados"</strong>, veiem que actualment la consola només té la "Raíz de consola" i el snap-in de <strong>"Certificats (equipo local)"</strong>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_306.png" /></p>
+<p>Generem una nova plantilla a traves de un clonatje del Servei Web i afegim als usuaris pertinents i amb la caracteristica clau de SAN.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_307.png" /></p>
+<p><strong>Creem un fitxer .inf amb els paràmetres de sol·licitud de certificat.</strong> Especifica el nom del subjecte (<code>josep.lan</code>), la longitud de la clau (2048 bits), el tipus de sol·licitud PKCS10 i la plantilla "WEBSERVER-SAN". També inclou l'extensió per a noms alternatius (SAN) amb el DNS <code>josep.lan</code>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_308.png" /></p>
+<p>Amb el comando <code>certreq -new</code> generem una sol·licitud de certificat a partir del fitxer <code>.inf</code>. El sistema crea el fitxer de petició <code>.req</code> i utilitza la directiva d'inscripció d'Active Directory amb el GUID mostrat. Això permet preparar la petició per signar-la per l'autoritat certificadora.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_309.png" /></p>
+<p>En aquesta captura es mostra la llista d'entitats certificadores (CA) disponibles, on seleccionem <strong>josep-SERVER25-CA</strong>. Després, amb el comandament <code>certreq -submit</code>, enviem la sol·licitud guardada al fitxer <code>.req</code> a aquesta CA per obtenir el certificat signat, que es desarà com a <code>web_pellisa.cert</code>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_310.png" /></p>
+<p>A la consola de l'entitat certificadora (CA), dins de <strong>"Certificats emesos"</strong>, podem veure la sol·licitud d'ID <strong>9</strong> feta per <strong>JOSEP\Administrador</strong>. S'ha emès utilitzant la plantilla <strong>WEBSERVER-SAN</strong>. Això confirma que el certificat ha estat generat i signat correctament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_313.png" /></p>
+<p>Amb el comandament <code>certreq -retrieve 9</code> recuperem el certificat emès amb l'ID de sol·licitud <strong>9</strong> i el desem a <code>web_pellisa.cer</code>. El sistema confirma que el certificat ha estat "Emitit" i recuperat correctament per a l'usuari <code>JOSEP\Administrador</code>.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_314.png" /></p>
+<p>Amb <code>certreq -accept</code> instal·lem el certificat recuperat al magatzem local. El certificat és per a <code>CN=josep.lan</code> amb SAN inclòs, vàlid des de l'1/2026 fins al 1/2027. La empremta digital és <code>8fb12...</code> i el número de sèrie es mostra.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_315.png" /></p>
+<p>A la consola de certificats, dins de <strong>"Certificats (equip local) &gt; Personal"</strong>, podem veure que el certificat per a <strong>josep.lan</strong> emès per <strong>josep-SERVER25-CA</strong> s'ha instal·lat correctament. Això permet al sistema utilitzar-lo per a autenticació o xifratge.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_316.png" /></p>
+<p>A la finestra <strong>"Modificar enllaç de lloc"</strong> estem configurant un lloc web per a HTTPS. Especifiquem l'adreça IP <code>192.168.2.101</code> i el port <code>443</code>. Seleccionem el certificat <strong>josep.lan</strong> per a SSL, el mateix que acabem d'instal·lar. Això permet que el servidor ofereixi connexions segures.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_326.png" /></p>
+<p>Finalment comprovem desde un client unit al domini com podem accedir al servei web via https, per el port 443 i obtenim certificats de domini correctament coonfigurats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_327.png" /></p>
+<p>Aqui observem com la intranet del nostre servidor ja esta segura amb els certificats corresponents.</p>
 
 
 
