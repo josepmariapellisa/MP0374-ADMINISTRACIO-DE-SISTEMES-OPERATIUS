@@ -1,0 +1,562 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../clientsubu_iis_certificats/">
+      
+      
+        <link rel="next" href="../LICENSE/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Pràctica 6 - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-completa-installacio-i-configuracio-de-xampp-amb-virtualhost-ssl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pràctica 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resum-daccions-realitzades" class="md-nav__link">
+    RESUM D'ACCIONS REALITZADES:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultat-obtingut" class="md-nav__link">
+    RESULTAT OBTINGUT:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resum-daccions-realitzades" class="md-nav__link">
+    RESUM D'ACCIONS REALITZADES:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultat-obtingut" class="md-nav__link">
+    RESULTAT OBTINGUT:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-completa-installacio-i-configuracio-de-xampp-amb-virtualhost-ssl"><strong>PRÀCTICA COMPLETA: INSTAL·LACIÓ I CONFIGURACIÓ DE XAMPP AMB VIRTUALHOST SSL</strong></h1>
+<p>En aquesta pràctica hem dut a terme una instal·lació completa de XAMPP en un entorn Linux, configurant un entorn de desenvolupament web funcional amb servidors Apache i MySQL, a més de crear un virtualhost segur amb certificat SSL autosignat.</p>
+<h2 id="resum-daccions-realitzades"><strong>RESUM D'ACCIONS REALITZADES:</strong></h2>
+<ol>
+<li><strong>Descàrrega i instal·lació de XAMPP 8.2.12</strong> amb PHP 8.2.12 per a arquitectura de 64 bits.</li>
+<li><strong>Configuració del panell de control</strong> amb inici dels serveis Apache i MySQL.</li>
+<li><strong>Creació de la base de dades "josep.cat"</strong> via phpMyAdmin amb usuari i contrasenya personalitzats.</li>
+<li><strong>Configuració de virtualhost per al port 80</strong> per al domini josep.cat amb accés local via /etc/hosts.</li>
+<li><strong>Generació de certificat SSL autosignat</strong> amb OpenSSL per a connexions segures.</li>
+<li><strong>Configuració de virtualhost per al port 443</strong> amb activació de SSL i especificació dels certificats.</li>
+<li><strong>Verificació del funcionament</strong> tant del virtualhost HTTP com HTTPS amb accés al dashboard de XAMPP.</li>
+</ol>
+<h2 id="resultat-obtingut"><strong>RESULTAT OBTINGUT:</strong></h2>
+<p>Ara tenim un entorn de desenvolupament web complet amb:</p>
+<ul>
+<li>Servidor Apache funcionant als ports 80 i 443</li>
+<li>Servidor MySQL operatiu amb base de dades "josep.cat"</li>
+<li>Accés al domini josep.cat tant en HTTP com HTTPS</li>
+<li>Certificat SSL autosignat per a connexions segures</li>
+<li>Estructura de directoris organitzada a /opt/lampp/htdocs/josep.cat</li>
+</ul>
+<p>El sistema està llest per al desenvolupament i proves de pàgines web amb suport per a connexions segures HTTPS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_413.png" /></p>
+<p>Entrem a la pàgina oficial de descàrrega de XAMPP per Linux, busquem la versió 8.2.12 que inclou PHP 8.2.12 i fem clic al enllaç "Descargar (64 bit)" per baixar el fitxer de 151 MB.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_414.png" /></p>
+<p>Li assignem permisos d'execució a l'arxiu .run baixat, utilitzant la comanda chmod +x i confirmem l'acció amb la contrasenya de sudo.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_415.png" /></p>
+<p>En la finestra de selecció de components, marquem tant "XAMPP Core Files" com "XAMPP Developer Files" per a una instal·lació completa de totes les eines necessàries per al desenvolupament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_416.png" /></p>
+<p>Confirmem el directori d'instal·lació predeterminat /opt/lampp, que és la ubicació estàndard on XAMPP instal·larà tots els seus components per a un accés centralitzat.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_417.png" /></p>
+<p>L'assistent d'instal·lació ens dona la benvinguda a XAMPP i comença a descomprimir i copiar els fitxers al sistema, mostrant una barra de progrés amb un 7% completat.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_418.png" /></p>
+<p>Finalitzem l'assistent d'instal·lació de XAMPP amb èxit i marquem l'opció "Launch XAMPP" per iniciar el panell de control immediatament després de tancar l'assistent.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_419.png" /></p>
+<p>Des del panell de control de XAMPP, comprovem que els servidors Apache i MySQL estan en funcionament correctament, mentre ProFTPD roman aturat, i tenim opcions per gestionar-los.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_420.png" /></p>
+<p>Accedim al localhost i ens apareix la pàgina de benvinguda de XAMPP amb el dashboard, confirmant que Apache funciona correctament i està llest per servir contingut web.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_421.png" /></p>
+<p>Obrim phpMyAdmin des de XAMPP per gestionar bases de dades, on podem veure la configuració de connexió amb el servidor local i les opcions principals de navegació per a l'administració.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_422.png" /></p>
+<p>Creem una nova base de dades anomenada "josep.cat" amb el cotejament utf8mb4_general_ci des de l'opció "Crear base de datos" a phpMyAdmin.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_424.png" /></p>
+<p>Afegim un nou usuari per a la base de dades amb nom "josep", host "%", contrasenya configurada i autenticació nativa de MySQL, garantint els permisos necessaris per a l'accés remot.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_425.png" /></p>
+<p>Iniciem sessió a phpMyAdmin amb l'usuari "josep" creat prèviament, per verificar que es pot accedir correctament a la interfície d'administració de bases de dades amb aquestes credencials.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_426.png" /></p>
+<p>Després de l'inici de sessió, veiem a phpMyAdmin que la base de dades "josep.cat" apareix llistada sota el servidor localhost, juntament amb les opcions de gestió disponibles per a l'usuari.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_427.png" /></p>
+<p>Creem el directori per al virtualhost "josep.cat" dins de /opt/lampp/htdocs i assignem la propietat de l'usuari actual per garantir permisos d'escritura i lectura.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_428.png" /></p>
+<p>Configurem el fitxer httpd-vhosts.conf amb nano, afegint un nou VirtualHost per a josep.cat al port 80, especificant el directori arrel, logs i permisos del directori perquè Apache pugui servir el contingut.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_429.png" /></p>
+<p>Afegim les entrades "josep.cat" i "www.josep.cat" apuntant a 127.0.0.1 al fitxer /etc/hosts perquè el sistema resolgui aquests dominis localment, permetent accedir-hi sense necessitat de DNS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_430.png" /></p>
+<p>Reiniciem tots els serveis de XAMPP amb la comanda lampp restart, observant com s'aturen i tornen a iniciar Apache, MySQL i ProFTPD per aplicar els canvis de configuració realitzats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_431.png" /></p>
+<p>Creem un fitxer info.php dins de josep.cat i accedim al domini per veure la pàgina d'informació de PHP, confirmant que el virtualhost funciona i mostrant la versió 8.2.12.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_432.png" /></p>
+<p>Generem unes noves claus de certificat mitjançant el Openssl, i creem un nou virtualhost.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_433.png" /></p>
+<p>Afegim un nou bloc VirtualHost per al port 443 al fitxer httpd-vhosts.conf, configurant SSL amb els certificats creats i especificant els logs d'error i accés per a connexions segures.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_434.png" /></p>
+<p>Verifiquem la configuració de SSL a httpd.conf per assegurar-nos que el mòdul està habilitat i que s'inclou el fitxer httpd-ssl.conf per a les connexions segures.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_435.png" /></p>
+<p>Comprovem que el mòdul mod_ssl.so està carregat correctament al fitxer de configuració principal d'Apache, cosa essencial per habilitar suport SSL i TLS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_436.png" /></p>
+<p>Reiniciem tots els serveis de XAMPP amb la comanda lampp restart, observant com s'aturen i tornen a iniciar Apache, MySQL i ProFTPD per aplicar els canvis de configuració realitzats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_437.png" /></p>
+<p>Accedim a www.josep.cat i veiem que es carrega el dashboard de XAMPP correctament a través del navegador, confirmant que el domini resol localment i Apache respon, pero no podem obtindre el resultat de https direccionat pel port 443.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
