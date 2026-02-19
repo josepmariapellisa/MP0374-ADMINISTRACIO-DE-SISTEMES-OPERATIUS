@@ -515,6 +515,23 @@
 <p>Reiniciem tots els serveis de XAMPP amb la comanda lampp restart, observant com s'aturen i tornen a iniciar Apache, MySQL i ProFTPD per aplicar els canvis de configuració realitzats.</p>
 <p><img alt="Captura" src="../custom/Selecci%C3%B3_437.png" /></p>
 <p>Accedim a www.josep.cat i veiem que es carrega el dashboard de XAMPP correctament a través del navegador, confirmant que el domini resol localment i Apache respon, pero no podem obtindre el resultat de https direccionat pel port 443.</p>
+<p><strong><em>SOLUCIO DEFINITIVA CERTIFICAT CA PROPIA HTTPS</em></strong></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_458.png" /></p>
+<p><strong>Creem una Autoritat Certificadora pròpia i generem certificats SSL</strong> per al domini <code>josep.cat</code>, primer generem la CA arrel amb clau RSA 2048, després creem una petició de certificat per al servidor i signem el certificat amb la nostra CA, finalment instal·lem el certificat CA al sistema i configurem els certificats per al servidor web LAMPP.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_459.png" /></p>
+<p><strong>Preparem la base de dades de certificats NSS</strong> per al navegador Chrome, instal·lem <code>libnss3-tools</code> i creem el directori <code>.pki/nssdb</code> on s'emmagatzemaran els certificats de confiança per poder importar la nostra CA pròpia i evitar errors de seguretat al navegador quan accedim al lloc web amb HTTPS.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_460.png" /></p>
+<p><strong>Importem la nostra CA al magatzem de certificats del navegador</strong> utilitzant <code>certutil</code>, assignem les opcions de confiança "CT,C,C" per al certificat arrel i ajustem els permisos del directori <code>.pki</code> perquè l'usuari <code>pellisa</code> pugui gestionar els certificats correctament al Chrome.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_461.png" /></p>
+<p><strong>Activem el mòdul SSL i la configuració HTTPS</strong> al servidor LAMPP, descomentem les línies del mòdul SSL i la inclusió del fitxer httpd-ssl.conf al httpd.conf principal, preparant l'entorn per habilitar connexions segures amb el certificat que hem generat per al domini.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_462.png" /></p>
+<p><strong>Configurem el virtual host SSL</strong> al fitxer httpd-ssl.conf del servidor LAMPP, especifiquem el port 443, el nom del servidor josep.cat, els logs, i indiquem les rutes del certificat i clau generats per a les connexions HTTPS segures al lloc web.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_463.png" /></p>
+<p><strong>Accedim a phpMyAdmin</strong> a través del domini <code>josep.cat/phpmyadmin/</code>, la pàgina es carrega correctament mostrant que el servidor LAMPP està funcionant i podem iniciar sessió per gestionar bases de dades dins de la infraestructura web del nostre entorn corporatiu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_464.png" /></p>
+<p><strong>Accedim a la pàgina de benvinguda de XAMPP</strong> a <code>josep.cat</code>, confirmant que el servidor LAMPP està operatiu i servint contingut web correctament, amb accés a phpMyAdmin, PHPInfo i la documentació bàsica del servidor web.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_465.png" /></p>
+<p><strong>Verifiquem els detalls del certificat SSL</strong> al navegador, confirmem que està emès per la nostra CA pròpia <code>ASIX_Local_Root_CA</code> per al domini <code>josep.cat</code>, amb validesa d'un any i correctament configurat per a les connexions HTTPS al lloc web del servidor LAMPP.</p>
 
 
 
