@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../clientsubu_iis_certificats/">
+        <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../ansible/">
+        <link rel="next" href="../features/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Pràctica 6 - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+        <title>Arquitectura - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-completa-installacio-i-configuracio-de-xampp-amb-virtualhost-ssl" class="md-skip">
+        <a href="#com-esta-fet-el-sistema" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pràctica 6
+              Arquitectura
             
           </span>
         </div>
@@ -302,29 +302,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Pràctica 6
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,40 +313,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#resum-daccions-realitzades" class="md-nav__link">
-    RESUM D'ACCIONS REALITZADES:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultat-obtingut" class="md-nav__link">
-    RESULTAT OBTINGUT:
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -375,17 +321,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
@@ -398,7 +346,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Projecte 1
@@ -449,9 +397,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -460,6 +428,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vista-de-les-parts-del-projecte" class="md-nav__link">
+    Vista de les parts del projecte
+  </a>
+  
+    <nav class="md-nav" aria-label="Vista de les parts del projecte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-servidor-flask" class="md-nav__link">
+    El servidor (Flask)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-cara-de-la-web-frontend" class="md-nav__link">
+    La cara de la web (Frontend)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendiment" class="md-nav__link">
+    Rendiment
+  </a>
+  
+    <nav class="md-nav" aria-label="Rendiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallelisme" class="md-nav__link">
+    Paral·lelisme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    Caché
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimitzacions" class="md-nav__link">
+    Optimitzacions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -658,16 +707,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#resum-daccions-realitzades" class="md-nav__link">
-    RESUM D'ACCIONS REALITZADES:
+  <a href="#vista-de-les-parts-del-projecte" class="md-nav__link">
+    Vista de les parts del projecte
   </a>
+  
+    <nav class="md-nav" aria-label="Vista de les parts del projecte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-servidor-flask" class="md-nav__link">
+    El servidor (Flask)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-cara-de-la-web-frontend" class="md-nav__link">
+    La cara de la web (Frontend)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resultat-obtingut" class="md-nav__link">
-    RESULTAT OBTINGUT:
+  <a href="#rendiment" class="md-nav__link">
+    Rendiment
   </a>
+  
+    <nav class="md-nav" aria-label="Rendiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallelisme" class="md-nav__link">
+    Paral·lelisme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    Caché
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimitzacions" class="md-nav__link">
+    Optimitzacions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -686,93 +782,96 @@
                   
 
 
-<h1 id="practica-completa-installacio-i-configuracio-de-xampp-amb-virtualhost-ssl"><strong>PRÀCTICA COMPLETA: INSTAL·LACIÓ I CONFIGURACIÓ DE XAMPP AMB VIRTUALHOST SSL</strong></h1>
-<p>En aquesta pràctica hem dut a terme una instal·lació completa de XAMPP en un entorn Linux, configurant un entorn de desenvolupament web funcional amb servidors Apache i MySQL, a més de crear un virtualhost segur amb certificat SSL autosignat.</p>
-<h2 id="resum-daccions-realitzades"><strong>RESUM D'ACCIONS REALITZADES:</strong></h2>
-<ol>
-<li><strong>Descàrrega i instal·lació de XAMPP 8.2.12</strong> amb PHP 8.2.12 per a arquitectura de 64 bits.</li>
-<li><strong>Configuració del panell de control</strong> amb inici dels serveis Apache i MySQL.</li>
-<li><strong>Creació de la base de dades "josep.cat"</strong> via phpMyAdmin amb usuari i contrasenya personalitzats.</li>
-<li><strong>Configuració de virtualhost per al port 80</strong> per al domini josep.cat amb accés local via /etc/hosts.</li>
-<li><strong>Generació de certificat SSL autosignat</strong> amb OpenSSL per a connexions segures.</li>
-<li><strong>Configuració de virtualhost per al port 443</strong> amb activació de SSL i especificació dels certificats.</li>
-<li><strong>Verificació del funcionament</strong> tant del virtualhost HTTP com HTTPS amb accés al dashboard de XAMPP.</li>
-</ol>
-<h2 id="resultat-obtingut"><strong>RESULTAT OBTINGUT:</strong></h2>
-<p>Ara tenim un entorn de desenvolupament web complet amb:</p>
+<h1 id="com-esta-fet-el-sistema">Com està fet el sistema</h1>
+<p>Visió general de l'arquitectura del sistema Ansible Web Manager.</p>
+<h2 id="vista-de-les-parts-del-projecte">Vista de les parts del projecte</h2>
+<p>El sistema Ansible Web Manager s'estructura en quatre capes principals: la interfície d'usuari al navegador, un backend desenvolupat amb Flask que gestiona la lògica de l'API, el motor d'Ansible Core que executa els playbooks i inventaris, i finalment els clients (Linux i Windows) que reben les ordres. La comunicació flueix des de l'usuari cap als clients a través del servidor central, garantint una gestió unificada i segura.</p>
+<h3 id="el-servidor-flask">El servidor (Flask)</h3>
+<p>El servidor és el programa que "viu" a l'ordinador principal. S'encarrega de rebre les teves ordres quan prems un botó a la web i de passar-les a l'Ansible perquè les executi.</p>
+<p>L'aplicació <code>app.py</code> gestiona totes les peticions HTTP i coordina les operacions Ansible.</p>
+<p>El backend processa cada petició HTTP verificant primer l'autenticació de l'usuari. Si la petició és vàlida, es dirigeix a la funció <code>run_ansible_adhoc</code>, la qual selecciona el playbooks o mòdul necessari i l'executa contra l'inventari corresponent, retornant finalment el resultat en format JSON cap al navegador.</p>
+<h3 id="la-cara-de-la-web-frontend">La cara de la web (Frontend)</h3>
+<p>És el que tu veus al navegador. Hem creat unes pàgines modernes i fàcils d'usar per gestionar els ordinadors sense haver d'escriure codi:</p>
 <ul>
-<li>Servidor Apache funcionant als ports 80 i 443</li>
-<li>Servidor MySQL operatiu amb base de dades "josep.cat"</li>
-<li>Accés al domini josep.cat tant en HTTP com HTTPS</li>
-<li>Certificat SSL autosignat per a connexions segures</li>
-<li>Estructura de directoris organitzada a /opt/lampp/htdocs/josep.cat</li>
+<li><strong>Panell principal</strong>: Per veure tots els ordinadors i instal·lar apps.</li>
+<li><strong>Pàgina d'inspecció</strong>: Per mirar què passa dins d'un ordinador concret.</li>
+<li><strong>Estils</strong>: Perquè la web es vegi bonica i neta.</li>
 </ul>
-<p>El sistema està llest per al desenvolupament i proves de pàgines web amb suport per a connexions segures HTTPS.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_413.png" /></p>
-<p>Entrem a la pàgina oficial de descàrrega de XAMPP per Linux, busquem la versió 8.2.12 que inclou PHP 8.2.12 i fem clic al enllaç "Descargar (64 bit)" per baixar el fitxer de 151 MB.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_414.png" /></p>
-<p>Li assignem permisos d'execució a l'arxiu .run baixat, utilitzant la comanda chmod +x i confirmem l'acció amb la contrasenya de sudo.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_415.png" /></p>
-<p>En la finestra de selecció de components, marquem tant "XAMPP Core Files" com "XAMPP Developer Files" per a una instal·lació completa de totes les eines necessàries per al desenvolupament.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_416.png" /></p>
-<p>Confirmem el directori d'instal·lació predeterminat /opt/lampp, que és la ubicació estàndard on XAMPP instal·larà tots els seus components per a un accés centralitzat.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_417.png" /></p>
-<p>L'assistent d'instal·lació ens dona la benvinguda a XAMPP i comença a descomprimir i copiar els fitxers al sistema, mostrant una barra de progrés amb un 7% completat.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_418.png" /></p>
-<p>Finalitzem l'assistent d'instal·lació de XAMPP amb èxit i marquem l'opció "Launch XAMPP" per iniciar el panell de control immediatament després de tancar l'assistent.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_419.png" /></p>
-<p>Des del panell de control de XAMPP, comprovem que els servidors Apache i MySQL estan en funcionament correctament, mentre ProFTPD roman aturat, i tenim opcions per gestionar-los.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_420.png" /></p>
-<p>Accedim al localhost i ens apareix la pàgina de benvinguda de XAMPP amb el dashboard, confirmant que Apache funciona correctament i està llest per servir contingut web.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_421.png" /></p>
-<p>Obrim phpMyAdmin des de XAMPP per gestionar bases de dades, on podem veure la configuració de connexió amb el servidor local i les opcions principals de navegació per a l'administració.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_422.png" /></p>
-<p>Creem una nova base de dades anomenada "josep.cat" amb el cotejament utf8mb4_general_ci des de l'opció "Crear base de datos" a phpMyAdmin.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_424.png" /></p>
-<p>Afegim un nou usuari per a la base de dades amb nom "josep", host "%", contrasenya configurada i autenticació nativa de MySQL, garantint els permisos necessaris per a l'accés remot.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_425.png" /></p>
-<p>Iniciem sessió a phpMyAdmin amb l'usuari "josep" creat prèviament, per verificar que es pot accedir correctament a la interfície d'administració de bases de dades amb aquestes credencials.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_426.png" /></p>
-<p>Després de l'inici de sessió, veiem a phpMyAdmin que la base de dades "josep.cat" apareix llistada sota el servidor localhost, juntament amb les opcions de gestió disponibles per a l'usuari.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_427.png" /></p>
-<p>Creem el directori per al virtualhost "josep.cat" dins de /opt/lampp/htdocs i assignem la propietat de l'usuari actual per garantir permisos d'escritura i lectura.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_428.png" /></p>
-<p>Configurem el fitxer httpd-vhosts.conf amb nano, afegint un nou VirtualHost per a josep.cat al port 80, especificant el directori arrel, logs i permisos del directori perquè Apache pugui servir el contingut.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_429.png" /></p>
-<p>Afegim les entrades "josep.cat" i "www.josep.cat" apuntant a 127.0.0.1 al fitxer /etc/hosts perquè el sistema resolgui aquests dominis localment, permetent accedir-hi sense necessitat de DNS.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_430.png" /></p>
-<p>Reiniciem tots els serveis de XAMPP amb la comanda lampp restart, observant com s'aturen i tornen a iniciar Apache, MySQL i ProFTPD per aplicar els canvis de configuració realitzats.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_431.png" /></p>
-<p>Creem un fitxer info.php dins de josep.cat i accedim al domini per veure la pàgina d'informació de PHP, confirmant que el virtualhost funciona i mostrant la versió 8.2.12.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_432.png" /></p>
-<p>Generem unes noves claus de certificat mitjançant el Openssl, i creem un nou virtualhost.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_433.png" /></p>
-<p>Afegim un nou bloc VirtualHost per al port 443 al fitxer httpd-vhosts.conf, configurant SSL amb els certificats creats i especificant els logs d'error i accés per a connexions segures.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_434.png" /></p>
-<p>Verifiquem la configuració de SSL a httpd.conf per assegurar-nos que el mòdul està habilitat i que s'inclou el fitxer httpd-ssl.conf per a les connexions segures.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_435.png" /></p>
-<p>Comprovem que el mòdul mod_ssl.so està carregat correctament al fitxer de configuració principal d'Apache, cosa essencial per habilitar suport SSL i TLS.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_436.png" /></p>
-<p>Reiniciem tots els serveis de XAMPP amb la comanda lampp restart, observant com s'aturen i tornen a iniciar Apache, MySQL i ProFTPD per aplicar els canvis de configuració realitzats.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_437.png" /></p>
-<p>Accedim a www.josep.cat i veiem que es carrega el dashboard de XAMPP correctament a través del navegador, confirmant que el domini resol localment i Apache respon, pero no podem obtindre el resultat de https direccionat pel port 443.</p>
-<p><strong><em>SOLUCIO DEFINITIVA CERTIFICAT CA PROPIA HTTPS</em></strong></p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_458.png" /></p>
-<p><strong>Creem una Autoritat Certificadora pròpia i generem certificats SSL</strong> per al domini <code>josep.cat</code>, primer generem la CA arrel amb clau RSA 2048, després creem una petició de certificat per al servidor i signem el certificat amb la nostra CA, finalment instal·lem el certificat CA al sistema i configurem els certificats per al servidor web LAMPP.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_459.png" /></p>
-<p><strong>Preparem la base de dades de certificats NSS</strong> per al navegador Chrome, instal·lem <code>libnss3-tools</code> i creem el directori <code>.pki/nssdb</code> on s'emmagatzemaran els certificats de confiança per poder importar la nostra CA pròpia i evitar errors de seguretat al navegador quan accedim al lloc web amb HTTPS.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_460.png" /></p>
-<p><strong>Importem la nostra CA al magatzem de certificats del navegador</strong> utilitzant <code>certutil</code>, assignem les opcions de confiança "CT,C,C" per al certificat arrel i ajustem els permisos del directori <code>.pki</code> perquè l'usuari <code>pellisa</code> pugui gestionar els certificats correctament al Chrome.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_461.png" /></p>
-<p><strong>Activem el mòdul SSL i la configuració HTTPS</strong> al servidor LAMPP, descomentem les línies del mòdul SSL i la inclusió del fitxer httpd-ssl.conf al httpd.conf principal, preparant l'entorn per habilitar connexions segures amb el certificat que hem generat per al domini.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_462.png" /></p>
-<p><strong>Configurem el virtual host SSL</strong> al fitxer httpd-ssl.conf del servidor LAMPP, especifiquem el port 443, el nom del servidor josep.cat, els logs, i indiquem les rutes del certificat i clau generats per a les connexions HTTPS segures al lloc web.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_463.png" /></p>
-<p><strong>Accedim a phpMyAdmin</strong> a través del domini <code>josep.cat/phpmyadmin/</code>, la pàgina es carrega correctament mostrant que el servidor LAMPP està funcionant i podem iniciar sessió per gestionar bases de dades dins de la infraestructura web del nostre entorn corporatiu.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_464.png" /></p>
-<p><strong>Accedim a la pàgina de benvinguda de XAMPP</strong> a <code>josep.cat</code>, confirmant que el servidor LAMPP està operatiu i servint contingut web correctament, amb accés a phpMyAdmin, PHPInfo i la documentació bàsica del servidor web.</p>
-<p><img alt="Captura" src="../custom/Selecci%C3%B3_465.png" /></p>
-<p><strong>Verifiquem els detalls del certificat SSL</strong> al navegador, confirmem que està emès per la nostra CA pròpia <code>ASIX_Local_Root_CA</code> per al domini <code>josep.cat</code>, amb validesa d'un any i correctament configurat per a les connexions HTTPS al lloc web del servidor LAMPP.</p>
+<p>UI[Interfície Principal] --&gt; HOSTS[Grid d'Hosts]
+UI --&gt; APPS[Cataleg d'Apps]
+HOSTS --&gt; ADD[Afegir Host Modal]
+HOSTS --&gt; SCAN[Escaneig Xarxa Modal]
+HOSTS --&gt; EXAM[Mode Examen Modal]</p>
+<pre><code>
+### Estructura de Fitxers
+
+</code></pre>
+<p>webapp/
+├── app.py                 # Backend Flask
+├── index.html             # Panell principal
+├── inspect.html           # Inspecció de host
+├── style.css              # Estils
+├── apps.json              # Catàleg apps Linux
+├── windows_apps.json      # Catàleg apps Windows
+├── users.json             # Usuaris web
+├── last_run.json          # Última execució
+└── scan_results.json      # Resultats escaneig</p>
+<pre><code>
+## Flux de Dades
+
+### Instal·lació d'Apps
+
+Quan l'usuari decideix aplicar canvis, la Web UI envia una petició POST al servidor Flask amb la llista d'aplicacions i hosts. El servidor actualitza els fitxers YAML dels playbooks dinàmicament i invoca el motor d'Ansible, que estableix connexions SSH paral·lels amb cada client per realitzar la instal·lació i retornar el resum d'estat a la interfície.
+
+### Escaneig de Xarxa
+
+L'escaneig de xarxa es basa en la detecció activa d'equips dins d'una subxarxa específica. El servidor realitza pings massius per comprovar la disponibilitat IP i posteriorment verifica l'estat del port 22. Els resultats es transmeten a la web UI, permetent a l'usuari seleccionar quins nous hosts vol incorporar permanentment al fitxer d'inventari del projecte.
+
+## Modes d'Operació
+
+### Mode Examen (iptables)
+
+El Mode Examen utilitza iptables per aïllar els equips dels alumnes, permetent només el tràfic estrictament necessari cap a la LAN i serveis de gestió, mentre que el Control d'Entrada utilitza xinput per deshabilitar o habilitar els dispositius de teclat i ratolí de la sessió gràfica.
+
+
+## Seguretat
+
+### Autenticació Web
+
+- Passwords hashejats amb SHA-256
+- Decorador `@login_required` a rutes sensibles
+- Sessions gestionades per Flask
+
+### Connexió SSH
+
+- Claus ed25519 sense password
+- `StrictHostKeyChecking no` per automatització
+- Usuari `ansible` separat amb sudo restringit
+
+### Permisos Sudo
+
+```bash
+# /etc/sudoers.d/ansible
+ansible ALL=(ALL) NOPASSWD:ALL
+</code></pre>
+<h2 id="rendiment">Rendiment</h2>
+<h3 id="parallelisme">Paral·lelisme</h3>
+<ul>
+<li>Ansible executa en paral·lel per defecte (5 hosts)</li>
+<li>Upload de fitxers amb subprocess paral·lel</li>
+<li>Escaneig de xarxa amb Pool de processos</li>
+</ul>
+<h3 id="cache">Caché</h3>
+<ul>
+<li>Resultats d'escaneig guardats a <code>scan_results.json</code></li>
+<li>Classes guardades per recuperar ràpidament</li>
+</ul>
+<h3 id="optimitzacions">Optimitzacions</h3>
+<ul>
+<li>Ping timeout: 1 segon</li>
+<li>SSH connect timeout: 3 segons</li>
+<li>Reintents: 1 per defecte</li>
+</ul>
 
 
 

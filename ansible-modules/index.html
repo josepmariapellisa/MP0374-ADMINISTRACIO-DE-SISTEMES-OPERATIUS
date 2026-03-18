@@ -1,0 +1,2254 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../features/">
+      
+      
+        <link rel="next" href="../ansible-files/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Moduls Ansible - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eines-de-treball-dansible" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Moduls Ansible
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eines-per-a-linux" class="md-nav__link">
+    Eines per a Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Eines per a Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leina-de-comandes-shell" class="md-nav__link">
+    L'eina de comandes (shell)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'eina de comandes (shell)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cases-dus-al-projecte" class="md-nav__link">
+    Cases d'Ús al Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leina-dinstallacio-apt" class="md-nav__link">
+    L'eina d'instal·lació (apt)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'eina d'instal·lació (apt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_1" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats-del-paquet" class="md-nav__link">
+    Estats del Paquet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideracions" class="md-nav__link">
+    Consideracions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leina-de-comandes-simples-command" class="md-nav__link">
+    L'eina de comandes simples (command)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'eina de comandes simples (command)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-recomanat" class="md-nav__link">
+    Ús Recomanat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinsystemd" class="md-nav__link">
+    ansible.builtin.systemd
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.systemd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_2" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats-del-servei" class="md-nav__link">
+    Estats del Servei
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltincopy" class="md-nav__link">
+    ansible.builtin.copy
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.copy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_1" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinfile" class="md-nav__link">
+    ansible.builtin.file
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_2" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats" class="md-nav__link">
+    Estats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_3" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinuser" class="md-nav__link">
+    ansible.builtin.user
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_3" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_4" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinsetup" class="md-nav__link">
+    ansible.builtin.setup
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categories-dinformacio-facts" class="md-nav__link">
+    Categories d'informació (Facts)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us" class="md-nav__link">
+    Ús
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eines-per-a-windows" class="md-nav__link">
+    Eines per a Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Eines per a Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_command" class="md-nav__link">
+    ansible.windows.win_command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_package" class="md-nav__link">
+    ansible.windows.win_package
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.windows.win_package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_4" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_service" class="md-nav__link">
+    ansible.windows.win_service
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.windows.win_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres" class="md-nav__link">
+    Paràmetres
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_copy" class="md-nav__link">
+    ansible.windows.win_copy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_file" class="md-nav__link">
+    ansible.windows.win_file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_regedit" class="md-nav__link">
+    ansible.windows.win_regedit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduls-de-xarxa" class="md-nav__link">
+    Mòduls de Xarxa
+  </a>
+  
+    <nav class="md-nav" aria-label="Mòduls de Xarxa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinwait_for" class="md-nav__link">
+    ansible.builtin.wait_for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinget_url" class="md-nav__link">
+    ansible.builtin.get_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinuri" class="md-nav__link">
+    ansible.builtin.uri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduls-de-sistema" class="md-nav__link">
+    Mòduls de Sistema
+  </a>
+  
+    <nav class="md-nav" aria-label="Mòduls de Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltincron" class="md-nav__link">
+    ansible.builtin.cron
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinhostname" class="md-nav__link">
+    ansible.builtin.hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinreboot" class="md-nav__link">
+    ansible.builtin.reboot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    Referència Ràpida
+  </a>
+  
+    <nav class="md-nav" aria-label="Referència Ràpida">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduls-per-categoria" class="md-nav__link">
+    Mòduls per Categoria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduls-vs-funcionalitat-del-projecte" class="md-nav__link">
+    Mòduls vs Funcionalitat del Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    Recursos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eines-per-a-linux" class="md-nav__link">
+    Eines per a Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Eines per a Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leina-de-comandes-shell" class="md-nav__link">
+    L'eina de comandes (shell)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'eina de comandes (shell)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cases-dus-al-projecte" class="md-nav__link">
+    Cases d'Ús al Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leina-dinstallacio-apt" class="md-nav__link">
+    L'eina d'instal·lació (apt)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'eina d'instal·lació (apt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_1" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats-del-paquet" class="md-nav__link">
+    Estats del Paquet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideracions" class="md-nav__link">
+    Consideracions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leina-de-comandes-simples-command" class="md-nav__link">
+    L'eina de comandes simples (command)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'eina de comandes simples (command)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-recomanat" class="md-nav__link">
+    Ús Recomanat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinsystemd" class="md-nav__link">
+    ansible.builtin.systemd
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.systemd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_2" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats-del-servei" class="md-nav__link">
+    Estats del Servei
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltincopy" class="md-nav__link">
+    ansible.builtin.copy
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.copy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_1" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinfile" class="md-nav__link">
+    ansible.builtin.file
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_2" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats" class="md-nav__link">
+    Estats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_3" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinuser" class="md-nav__link">
+    ansible.builtin.user
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_3" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-al-projecte_4" class="md-nav__link">
+    Ús al Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinsetup" class="md-nav__link">
+    ansible.builtin.setup
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.builtin.setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categories-dinformacio-facts" class="md-nav__link">
+    Categories d'informació (Facts)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us" class="md-nav__link">
+    Ús
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eines-per-a-windows" class="md-nav__link">
+    Eines per a Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Eines per a Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_command" class="md-nav__link">
+    ansible.windows.win_command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_package" class="md-nav__link">
+    ansible.windows.win_package
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.windows.win_package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-principals_4" class="md-nav__link">
+    Paràmetres Principals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_service" class="md-nav__link">
+    ansible.windows.win_service
+  </a>
+  
+    <nav class="md-nav" aria-label="ansible.windows.win_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres" class="md-nav__link">
+    Paràmetres
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_copy" class="md-nav__link">
+    ansible.windows.win_copy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_file" class="md-nav__link">
+    ansible.windows.win_file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblewindowswin_regedit" class="md-nav__link">
+    ansible.windows.win_regedit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduls-de-xarxa" class="md-nav__link">
+    Mòduls de Xarxa
+  </a>
+  
+    <nav class="md-nav" aria-label="Mòduls de Xarxa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinwait_for" class="md-nav__link">
+    ansible.builtin.wait_for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinget_url" class="md-nav__link">
+    ansible.builtin.get_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinuri" class="md-nav__link">
+    ansible.builtin.uri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduls-de-sistema" class="md-nav__link">
+    Mòduls de Sistema
+  </a>
+  
+    <nav class="md-nav" aria-label="Mòduls de Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltincron" class="md-nav__link">
+    ansible.builtin.cron
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinhostname" class="md-nav__link">
+    ansible.builtin.hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblebuiltinreboot" class="md-nav__link">
+    ansible.builtin.reboot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    Referència Ràpida
+  </a>
+  
+    <nav class="md-nav" aria-label="Referència Ràpida">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduls-per-categoria" class="md-nav__link">
+    Mòduls per Categoria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduls-vs-funcionalitat-del-projecte" class="md-nav__link">
+    Mòduls vs Funcionalitat del Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    Recursos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="eines-de-treball-dansible">Eines de treball d'Ansible</h1>
+<p>Documentació completa dels mòduls d'Ansible utilitzats al projecte.</p>
+<h2 id="eines-per-a-linux">Eines per a Linux</h2>
+<p>En el món d'Ansible, anomenem "mòduls" a les eines específiques que fan feines concretes. És com una caixa de brossa on cada eina serveix per a una cosa diferent.</p>
+<h3 id="leina-de-comandes-shell">L'eina de comandes (shell)</h3>
+<p>Aquesta és l'eina més flexible. Permet escriure comandes directament a l'ordinador de l'alumne com si hi fossis davant. La fem servir per a gairebé tot: bloquejar webs, apagar el teclat o llistar fitxers.</p>
+<ul>
+<li><strong>Funcionament</strong>: Tu escrius la comanda i Ansible s'encarrega d'enviar-la i portar-te la resposta.</li>
+<li><strong>Seguretat</strong>: Cal vigilar que la comanda estigui ben escrita per no fer canvis que no toquen.</li>
+</ul>
+<h4 id="us-al-projecte">Ús al Projecte</h4>
+<pre><code class="language-python"># A app.py - Executar una comanda de shell
+success, stdout, stderr = run_ansible_adhoc(
+    hostname,
+    &quot;shell&quot;,
+    &quot;whoami&quot;,
+    ssh_user=&quot;ansible&quot;,
+    platform=&quot;linux&quot;
+)
+</code></pre>
+<pre><code class="language-yaml"># A playbooks - Exemple d'ús
+- name: Llistar paquets instal·lats
+  ansible.builtin.shell:
+    cmd: dpkg -l
+  register: pkg_list
+
+- name: Executar amb chdir
+  ansible.builtin.shell:
+    cmd: ./install.sh
+    chdir: /opt/myapp
+
+- name: Només executar si no existeix el fitxer
+  ansible.builtin.shell:
+    cmd: wget http://example.com/file.tar.gz
+    creates: /tmp/file.tar.gz
+</code></pre>
+<h4 id="cases-dus-al-projecte">Cases d'Ús al Projecte</h4>
+<table>
+<thead>
+<tr>
+<th>Funcionalitat</th>
+<th>Comanda</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bloquejar web</strong></td>
+<td><code>sed -i '/# BLOCKED_IES/d' /etc/hosts</code></td>
+<td>Esborra entrades bloquejades</td>
+</tr>
+<tr>
+<td><strong>Mode Examen</strong></td>
+<td><code>iptables -F OUTPUT</code></td>
+<td>Neteja regles de firewall</td>
+</tr>
+<tr>
+<td><strong>Bloquejar programa</strong></td>
+<td><code>which steam \| xargs chmod -x</code></td>
+<td>Elimina bit d'execució</td>
+</tr>
+<tr>
+<td><strong>Desbloquejar programa</strong></td>
+<td><code>which steam \| xargs chmod +x</code></td>
+<td>Afegeix bit d'execució</td>
+</tr>
+<tr>
+<td><strong>Entrada control</strong></td>
+<td><code>xinput disable 2</code></td>
+<td>Bloqueja teclat/ratolí</td>
+</tr>
+<tr>
+<td><strong>Llistar paquets</strong></td>
+<td><code>dpkg -l</code></td>
+<td>Llista paquets instal·lats</td>
+</tr>
+<tr>
+<td><strong>Detecció apps</strong></td>
+<td><code>dpkg -S '/usr/share/applications/*.desktop'</code></td>
+<td>Busca aplicacions GUI</td>
+</tr>
+</tbody>
+</table>
+<p>Millor pràctica: Quan possible, usar <code>command</code> o mòduls específics.</p>
+<hr />
+<h3 id="leina-dinstallacio-apt">L'eina d'instal·lació (apt)</h3>
+<p>Aquesta eina serveix per gestionar els programes instal·lats. És la que fa que apareguin programes nous com VLC o Firefox als ordinadors dels alumnes.</p>
+<ul>
+<li><strong>Tasques</strong>: Pot instal·lar coses noves (<code>present</code>), esborrar programes que no volem (<code>absent</code>) o actualitzar-los tots a l'última versió (<code>latest</code>).</li>
+<li><strong>Avantatges</strong>: No cal saber com es baixa el programa, només cal dir-li el nom i Ansible s'encarrega de tot.</li>
+</ul>
+<h4 id="us-al-projecte_1">Ús al Projecte</h4>
+<pre><code class="language-yaml"># playbooks/apps.yml
+- name: Instal·lar aplicacions del catàleg
+  apt:
+    name: &quot;{{ item }}&quot;
+    state: present
+    update_cache: yes
+  loop: &quot;{{ selected_apps }}&quot;
+</code></pre>
+<h4 id="estats-del-paquet">Estats del Paquet</h4>
+<table>
+<thead>
+<tr>
+<th>Estat</th>
+<th>Descripció</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>present</code></td>
+<td>Paquet instal·lat</td>
+<td><code>apt: name=vlc state=present</code></td>
+</tr>
+<tr>
+<td><code>absent</code></td>
+<td>Paquet eliminat</td>
+<td><code>apt: name=vlc state=absent</code></td>
+</tr>
+<tr>
+<td><code>latest</code></td>
+<td>Última versió</td>
+<td><code>apt: name=vlc state=latest</code></td>
+</tr>
+<tr>
+<td><code>build-dep</code></td>
+<td>Dependències de construcció</td>
+<td><code>apt: name=vlc state=build-dep</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="consideracions">Consideracions</h4>
+<ul>
+<li>Requereix <code>become: true</code> (privilegis root)</li>
+<li><code>update_cache=yes</code> pot ser lent, usar amb <code>cache_valid_time</code></li>
+<li>Només funciona a Debian/Ubuntu (usar <code>dnf</code>, <code>yum</code>, <code>pacman</code> per altres distribucions)</li>
+</ul>
+<hr />
+<h3 id="leina-de-comandes-simples-command">L'eina de comandes simples (command)</h3>
+<p>És molt semblant a l'eina shell, però més segura. La fem servir quan només volem executar una comanda senzilla sense fer coses complicades com ajuntar moltes comandes en una sola línia.</p>
+<h4 id="us-recomanat">Ús Recomanat</h4>
+<pre><code class="language-yaml"># ✅ BON: Usar command per comandes simples
+- name: Comprovar espai de disc
+  ansible.builtin.command:
+    cmd: df -h
+  register: disk_space
+
+# ⚠️ MILLOR EVITAR: Usar shell si no cal
+- name: Descarregar fitxer
+  ansible.builtin.shell:
+    cmd: wget http://example.com/file.tar.gz | tar xzf -
+
+# ✅ MILLOR: Usar mòduls específics
+- name: Descarregar fitxer
+  ansible.builtin.get_url:
+    url: http://example.com/file.tar.gz
+    dest: /tmp/file.tar.gz
+</code></pre>
+<hr />
+<h3 id="ansiblebuiltinsystemd">ansible.builtin.systemd</h3>
+<p>Gestiona serveis systemd.</p>
+<h4 id="parametres-principals">Paràmetres Principals</h4>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Nom del servei</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td><code>started</code>, <code>stopped</code>, <code>restarted</code>, <code>reloaded</code></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td>bool</td>
+<td>Habilita/deshabilita inici automàtic</td>
+</tr>
+<tr>
+<td><code>daemon_reload</code></td>
+<td>bool</td>
+<td>Recarrega configuració systemd</td>
+</tr>
+</tbody>
+</table>
+<h4 id="us-al-projecte_2">Ús al Projecte</h4>
+<pre><code class="language-yaml"># Activar SSH al client
+- name: Assegurar que SSH estigui actiu
+  ansible.builtin.systemd:
+    name: ssh
+    state: started
+    enabled: yes
+</code></pre>
+<h4 id="estats-del-servei">Estats del Servei</h4>
+<hr />
+<h3 id="ansiblebuiltincopy">ansible.builtin.copy</h3>
+<p>Copia fitxers des de la màquina controladora als hosts remots.</p>
+<h4 id="parametres-principals_1">Paràmetres Principals</h4>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>string</td>
+<td>Fitxer origen (controladora)</td>
+</tr>
+<tr>
+<td><code>dest</code></td>
+<td>string</td>
+<td>Fitxer destí (remote)</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>string</td>
+<td>Permisos (ex: '0644', '0755')</td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td>string</td>
+<td>Propietari</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>string</td>
+<td>Grup</td>
+</tr>
+<tr>
+<td><code>backup</code></td>
+<td>bool</td>
+<td>Crea còpia de seguretat</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td>string</td>
+<td>Contingut (en lloc de src)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exemples">Exemples</h4>
+<pre><code class="language-yaml"># Copiar fitxer
+- name: Copiar configuració
+  ansible.builtin.copy:
+    src: /path/to/local/config.conf
+    dest: /etc/myapp/config.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+# Crear fitxer amb contingut
+- name: Crear fitxer de configuració
+  ansible.builtin.copy:
+    content: |
+      [settings]
+      debug=true
+    dest: /etc/myapp/settings.conf
+</code></pre>
+<hr />
+<h3 id="ansiblebuiltinfile">ansible.builtin.file</h3>
+<p>Gestiona fitxers, directoris i enllaços.</p>
+<h4 id="parametres-principals_2">Paràmetres Principals</h4>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>Camí del fitxer/directori</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td><code>file</code>, <code>directory</code>, <code>link</code>, <code>absent</code>, <code>touch</code></td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>string</td>
+<td>Permisos</td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td>string</td>
+<td>Propietari</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>string</td>
+<td>Grup</td>
+</tr>
+<tr>
+<td><code>src</code></td>
+<td>string</td>
+<td>Origen (per enllaços)</td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>bool</td>
+<td>Força creació/enllaç</td>
+</tr>
+</tbody>
+</table>
+<h4 id="estats">Estats</h4>
+<h4 id="us-al-projecte_3">Ús al Projecte</h4>
+<pre><code class="language-yaml"># Crear directori .ssh
+- name: Crear directori .ssh per a usuari
+  ansible.builtin.file:
+    path: /home/ansible/.ssh
+    state: directory
+    owner: ansible
+    group: ansible
+    mode: '0700'
+
+# Assegurar authorized_keys
+- name: Crear fitxer authorized_keys
+  ansible.builtin.file:
+    path: /home/ansible/.ssh/authorized_keys
+    state: touch
+    owner: ansible
+    group: ansible
+    mode: '0600'
+</code></pre>
+<hr />
+<h3 id="ansiblebuiltinuser">ansible.builtin.user</h3>
+<p>Gestiona comptes d'usuari.</p>
+<h4 id="parametres-principals_3">Paràmetres Principals</h4>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Nom de l'usuari</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td><code>present</code>, <code>absent</code></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>Hash de la contrasenya</td>
+</tr>
+<tr>
+<td><code>shell</code></td>
+<td>string</td>
+<td>Shell per defecte</td>
+</tr>
+<tr>
+<td><code>home</code></td>
+<td>string</td>
+<td>Directori home</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>list</td>
+<td>Grups addicionals</td>
+</tr>
+<tr>
+<td><code>append</code></td>
+<td>bool</td>
+<td>Afegir grups en lloc de substituir</td>
+</tr>
+</tbody>
+</table>
+<h4 id="us-al-projecte_4">Ús al Projecte</h4>
+<pre><code class="language-yaml"># linux_client.sh - Crear usuari ansible
+- name: Crear usuari ansible sense password
+  ansible.builtin.user:
+    name: ansible
+    password: ''
+    shell: /bin/bash
+    create_home: yes
+    groups: sudo
+    append: yes
+</code></pre>
+<hr />
+<h3 id="ansiblebuiltinsetup">ansible.builtin.setup</h3>
+<p>Recull informació del sistema (facts). S'executa automàticament al playbook.</p>
+<h4 id="categories-dinformacio-facts">Categories d'informació (Facts)</h4>
+<p>El sistema recull molta informació automàticament. Aquí tens les categories més importants:</p>
+<pre><code class="language-mermaid">%%{init: {'theme': 'neutral'}}%%
+mindmap
+  root((Facts))
+    Sistema
+      ansible_distribution
+      ansible_os_family
+      ansible_kernel
+      ansible_machine
+    Xarxa
+      ansible_default_ipv4
+      ansible_all_ipv4_addresses
+      ansible_hostname
+      ansible_fqdn
+    Hardware
+      ansible_memtotal_mb
+      ansible_processor_cores
+      ansible_processor_vcpus
+      ansible_devices
+    Programari
+      ansible_python_version
+      ansible_pkg_mgr
+</code></pre>
+<h4 id="us">Ús</h4>
+<pre><code class="language-yaml"># Recollir facts explícitament
+- name: Recollir facts
+  ansible.builtin.setup:
+  register: facts
+
+# Filtrar per subset
+- name: Només facts de xarxa
+  ansible.builtin.setup:
+    gather_subset:
+      - network
+</code></pre>
+<hr />
+<h2 id="eines-per-a-windows">Eines per a Windows</h2>
+<p>Als ordinadors amb Windows fem servir eines molt semblants però adaptades al seu sistema. La més important és <code>win_shell</code>, que ens permet parlar amb el sistema de Microsoft per instal·lar programes o configurar serveis.</p>
+<hr />
+<h3 id="ansiblewindowswin_command">ansible.windows.win_command</h3>
+<p>Executa comandes de forma més segura que <code>win_shell</code>.</p>
+<pre><code class="language-yaml"># ✅ Millor per comandes simples
+- name: Comprovar versió
+  ansible.windows.win_command:
+    cmd: cmd.exe /c ver
+
+# ⚠️ Usar win_shell només si cal
+- name: Executar script de PowerShell
+  ansible.windows.win_shell: |
+    Get-Service | Where-Object {$_.Status -eq 'Running'}
+</code></pre>
+<hr />
+<h3 id="ansiblewindowswin_package">ansible.windows.win_package</h3>
+<p>Instal·la/desinstal·la paquets de software Windows.</p>
+<h4 id="parametres-principals_4">Paràmetres Principals</h4>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>Ruta de l'instal·lador</td>
+</tr>
+<tr>
+<td><code>product_id</code></td>
+<td>string</td>
+<td>GUID del producte</td>
+</tr>
+<tr>
+<td><code>arguments</code></td>
+<td>string</td>
+<td>Arguments de l'instal·lador</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td><code>present</code>, <code>absent</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-yaml">- name: Instal·lar aplicació des de MSI
+  ansible.windows.win_package:
+    path: C:\temp\app.msi
+    state: present
+</code></pre>
+<hr />
+<h3 id="ansiblewindowswin_service">ansible.windows.win_service</h3>
+<p>Gestiona serveis Windows.</p>
+<h4 id="parametres">Paràmetres</h4>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Nom del servei</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td><code>started</code>, <code>stopped</code>, <code>restarted</code></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td>string</td>
+<td><code>auto</code>, <code>manual</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-yaml">- name: Assegurar que WinRM estigui actiu
+  ansible.windows.win_service:
+    name: WinRM
+    state: started
+    enabled: yes
+</code></pre>
+<hr />
+<h3 id="ansiblewindowswin_copy">ansible.windows.win_copy</h3>
+<p>Copia fitxers a hosts Windows.</p>
+<pre><code class="language-yaml">- name: Copiar fitxer
+  ansible.windows.win_copy:
+    src: /path/to/local/file.txt
+    dest: C:\temp\file.txt
+</code></pre>
+<hr />
+<h3 id="ansiblewindowswin_file">ansible.windows.win_file</h3>
+<p>Gestiona fitxers i directoris Windows.</p>
+<pre><code class="language-yaml">- name: Crear directori
+  ansible.windows.win_file:
+    path: C:\temp
+    state: directory
+</code></pre>
+<hr />
+<h3 id="ansiblewindowswin_regedit">ansible.windows.win_regedit</h3>
+<p>Gestiona el registre de Windows.</p>
+<pre><code class="language-yaml">- name: Afegir clau de registre
+  ansible.windows.win_regedit:
+    path: HKLM:\Software\MyApp
+    name: version
+    data: 1.0
+</code></pre>
+<hr />
+<h2 id="moduls-de-xarxa">Mòduls de Xarxa</h2>
+<h3 id="ansiblebuiltinwait_for">ansible.builtin.wait_for</h3>
+<p>Espera una condició abans de continuar.</p>
+<pre><code class="language-yaml">- name: Esperar que el port 22 estigui obert
+  ansible.builtin.wait_for:
+    port: 22
+    host: &quot;{{ inventory_hostname }}&quot;
+    delay: 5
+    timeout: 300
+</code></pre>
+<h3 id="ansiblebuiltinget_url">ansible.builtin.get_url</h3>
+<p>Descarrega fitxers d'Internet.</p>
+<pre><code class="language-yaml">- name: Descarregar fitxer
+  ansible.builtin.get_url:
+    url: https://example.com/file.tar.gz
+    dest: /tmp/file.tar.gz
+    mode: '0644'
+</code></pre>
+<h3 id="ansiblebuiltinuri">ansible.builtin.uri</h3>
+<p>Interacciona amb serveis web.</p>
+<pre><code class="language-yaml">- name: Fer petició HTTP
+  ansible.builtin.uri:
+    url: https://api.example.com/status
+    method: GET
+    return_content: yes
+</code></pre>
+<hr />
+<h2 id="moduls-de-sistema">Mòduls de Sistema</h2>
+<h3 id="ansiblebuiltincron">ansible.builtin.cron</h3>
+<p>Gestiona tasques programades (cron).</p>
+<pre><code class="language-yaml">- name: Afegir tasca cron
+  ansible.builtin.cron:
+    name: &quot;Actualitzar diàriament&quot;
+    minute: &quot;0&quot;
+    hour: &quot;2&quot;
+    job: &quot;apt-get update &amp;&amp; apt-get upgrade -y&quot;
+</code></pre>
+<h3 id="ansiblebuiltinhostname">ansible.builtin.hostname</h3>
+<p>Canvia el hostname del sistema.</p>
+<pre><code class="language-yaml">- name: Canviar hostname
+  ansible.builtin.hostname:
+    name: pc201
+</code></pre>
+<h3 id="ansiblebuiltinreboot">ansible.builtin.reboot</h3>
+<p>Reinicia el sistema.</p>
+<pre><code class="language-yaml">- name: Reiniciar i esperar
+  ansible.builtin.reboot:
+    reboot_timeout: 600
+</code></pre>
+<hr />
+<h2 id="referencia-rapida">Referència Ràpida</h2>
+<h3 id="moduls-per-categoria">Mòduls per Categoria</h3>
+<p>Aquestes són les eines organitzades pel que fan:</p>
+<pre><code class="language-mermaid">%%{init: {'theme': 'neutral'}}%%
+mindmap
+  root((Mòduls Ansible))
+    Linux
+      shell
+      apt
+      systemd
+      copy
+      file
+      user
+      setup
+    Windows
+      win_shell
+      win_command
+      win_package
+      win_service
+      win_copy
+      win_file
+    Xarxa
+      wait_for
+      get_url
+      uri
+    Sistema
+      cron
+      hostname
+      reboot
+      service
+</code></pre>
+<h3 id="moduls-vs-funcionalitat-del-projecte">Mòduls vs Funcionalitat del Projecte</h3>
+<table>
+<thead>
+<tr>
+<th>Funcionalitat</th>
+<th>Mòdul Linux</th>
+<th>Mòdul Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instal·lar apps</td>
+<td><code>apt</code></td>
+<td><code>win_shell</code> (choco)</td>
+</tr>
+<tr>
+<td>Executar comandes</td>
+<td><code>shell</code></td>
+<td><code>win_shell</code></td>
+</tr>
+<tr>
+<td>Bloquejar webs</td>
+<td><code>shell</code> (sed/iptables)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Control entrada</td>
+<td><code>shell</code> (xinput)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Serveis</td>
+<td><code>systemd</code></td>
+<td><code>win_service</code></td>
+</tr>
+<tr>
+<td>Fitxers</td>
+<td><code>copy</code>, <code>file</code></td>
+<td><code>win_copy</code>, <code>win_file</code></td>
+</tr>
+<tr>
+<td>Usuaris</td>
+<td><code>user</code></td>
+<td><code>win_user</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">Recursos</h2>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/">Ansible Module Index</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/collections/ansible/windows/">Windows Modules</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/user_guide/best_practices.html">Best Practices</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

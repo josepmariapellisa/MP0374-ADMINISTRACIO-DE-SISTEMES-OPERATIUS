@@ -1,0 +1,904 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ServidorXAMPP/">
+      
+      
+        <link rel="next" href="../installation/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Instal·lació Bàsica Ansible - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projecte-de-gestio-centralitzada-amb-ansible-flask-i-clients-heterogenis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instal·lació Bàsica Ansible
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    Introducció
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducció">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primera-fase-implementacio-amb-client-ubuntu" class="md-nav__link">
+    Primera Fase: Implementació amb Client Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segona-fase-expansio-a-client-windows" class="md-nav__link">
+    Segona Fase: Expansió a Client Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tercera-fase-desenvolupament-del-frontend-amb-flask" class="md-nav__link">
+    Tercera Fase: Desenvolupament del Frontend amb Flask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectius-del-projecte" class="md-nav__link">
+    Objectius del Projecte
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    Introducció
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducció">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primera-fase-implementacio-amb-client-ubuntu" class="md-nav__link">
+    Primera Fase: Implementació amb Client Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segona-fase-expansio-a-client-windows" class="md-nav__link">
+    Segona Fase: Expansió a Client Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tercera-fase-desenvolupament-del-frontend-amb-flask" class="md-nav__link">
+    Tercera Fase: Desenvolupament del Frontend amb Flask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectius-del-projecte" class="md-nav__link">
+    Objectius del Projecte
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="projecte-de-gestio-centralitzada-amb-ansible-flask-i-clients-heterogenis">Projecte de Gestió Centralitzada amb Ansible, Flask i Clients Heterogenis</h1>
+<h2 id="introduccio">Introducció</h2>
+<p>En el món de les infraestructures informàtiques actuals, la diversitat de sistemes operatius en una mateixa xarxa és una realitat quotidiana. La gestió manual de múltiples equips, especialment quan treballem amb plataformes heterogènies com Ubuntu i Windows, pot esdevenir una tasca complexa, propensa a errors i poc eficient.</p>
+<p>Davant aquest repte, neix el nostre projecte: una solució de gestió centralitzada que combina el poder d'Ansible com a eina d'automatització, amb la flexibilitat d'un frontal web desenvolupat amb Flask. L'objectiu principal és crear un sistema unificat que permeti administrar de manera senzilla i intuïtiva tant clients Linux (Ubuntu) com Windows, des d'una única interfície.</p>
+<p>El projecte s'ha desenvolupat seguint un enfocament progressiu i metodològic, dividit en tres fases clarament diferenciades:</p>
+<h3 id="primera-fase-implementacio-amb-client-ubuntu">Primera Fase: Implementació amb Client Ubuntu</h3>
+<p>En aquesta etapa inicial, vam establir les bases del projecte configurant un servidor Ubuntu com a node de control d'Ansible. Vam dissenyar els primers playbooks per gestionar un client Ubuntu, automatitzant tasques com la instal·lació de programari, la configuració del sistema i la gestió d'usuaris. Aquesta fase ens va permetre validar l'arquitectura bàsica i familiaritzar-nos amb el funcionament d'Ansible en un entorn natiu.</p>
+<h3 id="segona-fase-expansio-a-client-windows">Segona Fase: Expansió a Client Windows</h3>
+<p>Un cop consolidada la gestió sobre Ubuntu, vam abordar el repte d'integrar un client Windows a la nostra infraestructura. Aquesta fase va requerir una configuració específica per superar les diferències inherents entre sistemes, incloent l'ús de WinRM (Windows Remote Management) com a protocol de connexió alternatiu a SSH. Vam adaptar els nostres playbooks i vam crear nous mòduls específics per a Windows, demostrant la versatilitat d'Ansible per operar en entorns heterogenis.</p>
+<h3 id="tercera-fase-desenvolupament-del-frontend-amb-flask">Tercera Fase: Desenvolupament del Frontend amb Flask</h3>
+<p>Finalment, vam desenvolupar una interfície web intuïtiva utilitzant Flask per democratitzar l'accés a les funcionalitats d'Ansible. Aquest frontal permet als usuaris, independentment del seu coneixement tècnic sobre Ansible, executar playbooks, visualitzar l'estat dels clients i gestionar les tasques més comunes des d'un entorn gràfic amigable. La integració entre Flask i Ansible es realitza mitjançant crides al sistema o l'ús de l'API d'Ansible, oferint una experiència d'usuari fluida i eficient.</p>
+<h2 id="objectius-del-projecte">Objectius del Projecte</h2>
+<ul>
+<li><strong>Automatització Centralitzada</strong>: Crear un punt únic de gestió per a clients amb diferents sistemes operatius.</li>
+<li><strong>Accessibilitat</strong>: Proporcionar una interfície web intuïtiva que simplifiqui les tasques administratives.</li>
+<li><strong>Escalabilitat</strong>: Dissenyar una solució que permeti afegir nous clients amb facilitat, independentment de la seva plataforma.</li>
+<li><strong>Documentació i Reproducibilitat</strong>: Establir una base sòlida de coneixement que permeti replicar el projecte en altres entorns.</li>
+</ul>
+<p>Aquest document recull el procés complet de desenvolupament, les decisions tècniques adoptades i els resultats obtinguts, amb l'objectiu de servir com a guia i referència per a futures implementacions similars.</p>
+<p><strong><em>PRÒCES DE CONFIGURACIÓ</em></strong></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_466.png" /></p>
+<p>Instalem el paquet <em>openssh-server</em> al client Ubuntu per permetre la connexió remota. Aquest pas és necessari perquè Ansible pugui gestionar el client a través de SSH.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_467.png" /></p>
+<p>Configurem el tallafocs UFW per permetre les connexions SSH entrants. Aquesta regla garanteix que el servidor Ansible pugui comunicar-se correctament amb el client Ubuntu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_468.png" /></p>
+<p>Habilitem el servei SSH perquè s'iniciï automàticament en cada reinici del sistema. D'aquesta manera, assegurem que el client Ubuntu estigui sempre accessible per al servidor Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_469.png" /></p>
+<p>Verifiquem que Python 3 estigui instal·lat al client Ubuntu, ja que és un requisit necessari per al funcionament d'Ansible. El sistema confirma que disposem de la versió 3.10.12, compatible amb les nostres necessitats.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_470.png" /></p>
+<p>Creem l'usuari "ansible" al servidor Ubuntu per gestionar les connexions amb els clients. Observem un avís sobre la seguretat de la contrasenya, però continuem amb el procés de creació.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_471.png" /></p>
+<p>Afegim l'usuari "ansible" al fitxer sudoers per permetre-li executar comandes amb privilegis administratius sense contrasenya. Aquesta configuració és necessària perquè Ansible pugui gestionar el servidor de forma automatitzada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_472.png" /></p>
+<p>Modifiquem el fitxer de configuració SSH al client Ubuntu per reforçar la seguretat. Deshabilitem l'autenticació per contrasenya i l'accés root, i habilitem l'autenticació per clau pública, preparant el sistema per a connexions segures des d'Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_473.png" /></p>
+<p>Comprovem que el servei SSH està actiu i funcionant correctament al client Ubuntu. Confirmem que està habilitat per iniciar-se automàticament i que ha carregat sense errors, garantint la connectivitat remota.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_474.png" /></p>
+<p>Iniciem la instal·lació d'Ansible al client Ubuntu per preparar-lo com a node de control. El sistema mostra totes les dependències necessàries que s'instal·laran juntament amb Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_475.png" /></p>
+<p>Comprovem que Ansible s'ha instal·lat correctament al client Ubuntu. El sistema confirma la versió de Python associada, assegurant que tot està preparat per començar a treballar.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_476.png" /></p>
+<p>Generem un parell de claus SSH amb l'algoritme ed25519 per a les connexions segures d'Ansible. La clau privada es guarda amb el nom "ansible_lab" i s'utilitzarà per autenticar-se als clients sense contrasenya.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_477.png" /></p>
+<p>Establim els permisos adequats (600) per a la clau privada d'Ansible. Aquesta configuració de seguretat és necessària perquè SSH accepti utilitzar la clau per a les connexions.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_478.png" /></p>
+<p>Desarem la copia de la clau Publica al client per tenir una confiança entre ells correctament i no haber de iniciar sessio</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_479.png" /></p>
+<p>Creem l'estructura de carpetes necessària per organitzar el projecte Ansible. Generem els directoris per als playbooks i les variables de grup per mantenir una jerarquia clara i ordenada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_480.png" /></p>
+<p>Creem el fitxer d'inventari d'Ansible definint el servidor "lamp" amb la seva IP i variables de connexió. Especifiquem l'usuari ansible, la clau privada i l'intèrpret de Python per a una gestió correcta.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_481.png" /></p>
+<p>Creem un playbook d'Ansible per assegurar que els serveis Apache i MySQL estiguin actius. També afegim una tasca per instal·lar Telegram Desktop, demostrant la gestió de paquets i serveis.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_482.png" /></p>
+<p>Executem un ping d'Ansible per verificar la connectivitat amb el servidor "lamp". La resposta "pong" confirma que la connexió SSH funciona correctament amb la clau privada configurada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_483.png" /></p>
+<p>Aqui veiem que el proces de l'exucio del Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_484.png" /></p>
+<p>Comprovem que l'aplicació Telegram Desktop s'ha instal·lat correctament al sistema client. La icona apareix al menú d'aplicacions, confirmant que el playbook d'Ansible ha executat les tasques amb èxit.</p>
+<p><strong><em>CLIENT WINDOWS</em></strong></p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_488.png" /></p>
+<p>Iniciem la instal·lació d'OpenSSH al client Windows per habilitar la gestió remota. Aquest component permetrà que Ansible es connecti mitjançant SSH en lloc de WinRM, simplificant la configuració.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_489.png" /></p>
+<p>Comprovem que el servei SSHd està actiu al client Windows. El sistema confirma que el servei està en execució, preparat per rebre connexions remotes des del servidor Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_490.png" /></p>
+<p>Afegim una regla al tallafocs de Windows per permetre connexions entrants pel port 22 (SSH). Aquesta configuració és necessària perquè el servidor Ansible pugui accedir al client Windows de forma remota.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_491.png" /></p>
+<p>Configurem el servei SSH perquè s'iniciï automàticament en cada reinici del sistema Windows. Assegurem així que el client estigui sempre accessible per al servidor Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_492.png" /></p>
+<p>Establim PowerShell com a shell per defecte per a les connexions SSH a Windows. Aquesta configuració al registre del sistema assegura que Ansible pugui executar comandes correctament en connectar-se al client Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_493.png" /></p>
+<p>Iniciem el servei SSH manualment al client Windows per posar-lo en funcionament immediatament. D'aquesta manera activem la connectivitat remota sense necessitat de reiniciar el sistema.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_494.png" /></p>
+<p>Realitzem una connexió SSH des del servidor Ubuntu al client Windows per verificar la connectivitat. Acceptem la clau del host per establir la connexió per primera vegada.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_495.png" /></p>
+<p>Confirmem que la connexió SSH des del servidor Ubuntu al client Windows s'ha realitzat correctament. El terminal mostra el prompt de Windows, indicant que la comunicació remota funciona perfectament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_496.png" /></p>
+<p>Intentem connectar-nos al client Windows utilitzant l'usuari local "pellisa". El sistema sol·licita la contrasenya per completar l'autenticació.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_497.png" /></p>
+<p>Afegim el client Windows a l'inventari d'Ansible amb les variables de connexió específiques. Configurem el tipus de shell com a PowerShell i desactivem la comprovació estricta de claus per facilitar la connexió.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_498.png" /></p>
+<p>Instal·lem l'eina sshpass al servidor Ubuntu per permetre l'autenticació amb contrasenya en les connexions SSH. Aquest paquet serà útil per connectar-nos al client Windows mentre no tinguem configurada l'autenticació per clau pública.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_499.png" /></p>
+<p>Comentem temporalment la configuració del servidor Ubuntu i deixem actiu només el client Windows. Ajustem les variables per utilitzar l'usuari "pellisa" amb connexió SSH i shell PowerShell.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_501.png" /></p>
+<p>Executem el mòdul win_ping per verificar la connectivitat d'Ansible amb el client Windows. La resposta "pong" confirma que Ansible pot comunicar-se correctament amb Windows mitjançant SSH i autenticació per contrasenya.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_502.png" /></p>
+<p>Generem un nou parell de claus RSA de 4096 bits per configurar l'autenticació sense contrasenya amb el client Windows. Aquest pas millorarà la seguretat i facilitarà les connexions automatitzades d'Ansible.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_503.png" /></p>
+<p>Creem el directori i el fitxer per a les claus autoritzades d'administradors a Windows. Aquest fitxer permetrà configurar l'autenticació per clau pública per a les connexions SSH.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_504.png" /></p>
+<p>Afegim la clau pública generada al servidor Ubuntu al fitxer d'autorització de Windows. Aquest pas completa la configuració per permetre l'autenticació SSH per clau pública sense contrasenya.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_505.png" /></p>
+<p>Mostrem el contingut de la clau privada RSA generada al servidor Ubuntu per verificar-ne la creació. Aquesta clau s'utilitzarà per autenticar-se al client Windows sense necessitat de contrasenya.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_506.png" /></p>
+<p>Configurem els permisos del fitxer de claus autoritzades per garantir que només els usuaris amb privilegis hi puguin accedir. Observem un error en assignar permisos a Administradors, que caldrà resoldre per completar la configuració.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_507.png" /></p>
+<p>Editem el fitxer de configuració SSH a Windows per especificar la ubicació del fitxer de claus autoritzades per al grup d'administradors. Aquesta directiva permetrà l'autenticació per clau pública per als usuaris administradors.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_508.png" /></p>
+<p>Generem un nou parell de claus ed25519 sense frase de contrasenya per simplificar l'autenticació automatitzada. Mostrem la clau pública que haurem de copiar al client Windows per completar la configuració.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_510.png" /></p>
+<p>Afegim la nova clau pública ed25519 al fitxer de claus autoritzades de Windows mitjançant PowerShell. Aquesta configuració permetrà l'autenticació SSH sense contrasenya des del servidor Ubuntu.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_511.png" /></p>
+<p>Executem el mòdul win_ping d'Ansible i obtenim una resposta "pong" sense necessitat d'introduir contrasenya. Confirmem que l'autenticació per clau pública funciona correctament amb el client Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_514.png" /></p>
+<p>Instal·lem la col·lecció de Chocolatey per a Ansible per ampliar les capacitats de gestió de paquets a Windows. Aquesta col·lecció permetrà instal·lar programari de manera més eficient als clients Windows.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_517.png" /></p>
+<p>Creem un playbook d'Ansible que utilitza Chocolatey per instal·lar 7-Zip al client Windows. El playbook verifica el codi de retorn per confirmar que la instal·lació s'ha completat amb èxit.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_518.png" /></p>
+<p>Aqui executem el playbook i mostrem els processos d'instal·lació.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_519.png" /></p>
+<p>Creem un playbook per instal·lar WinRAR al client Windows utilitzant Chocolatey. El playbook executa la comanda d'instal·lació i mostra un missatge de confirmació quan el procés finalitza correctament.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_520.png" /></p>
+<p>Aqui executem el playbook i mostrem els processos d'instal·lació.</p>
+<p><img alt="Captura" src="../custom/Selecci%C3%B3_521.png" /></p>
+<p>Comprovem al menú d'inici de Windows que les aplicacions WhatsApp, 7-Zip i WinRAR s'han instal·lat correctament. Les recomanacions mostren els programes recentment afegits, confirmant l'èxit dels playbooks d'Ansible.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

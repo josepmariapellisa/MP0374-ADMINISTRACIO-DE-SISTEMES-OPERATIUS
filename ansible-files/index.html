@@ -1,0 +1,1552 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ansible-modules/">
+      
+      
+        <link rel="next" href="../scripts/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Arxius Ansible - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#on-es-guarden-les-dades-els-fitxers-dansible" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arxius Ansible
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#com-sorganitzen-les-carpetes" class="md-nav__link">
+    Com s'organitzen les carpetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#larxiu-de-configuracio-general-ansiblecfg" class="md-nav__link">
+    L'arxiu de configuració general (ansible.cfg)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'arxiu de configuració general (ansible.cfg)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-clau" class="md-nav__link">
+    Paràmetres Clau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-llistes-dordinadors-inventaris" class="md-nav__link">
+    Les llistes d'ordinadors (Inventaris)
+  </a>
+  
+    <nav class="md-nav" aria-label="Les llistes d'ordinadors (Inventaris)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inventoryini-linux" class="md-nav__link">
+    inventory.ini (Linux)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccions" class="md-nav__link">
+    Seccions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-un-host" class="md-nav__link">
+    Afegir un Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_inventoryini" class="md-nav__link">
+    windows_inventory.ini
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_1" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#els-llibres-dinstruccions-playbooks" class="md-nav__link">
+    Els llibres d'instruccions (Playbooks)
+  </a>
+  
+    <nav class="md-nav" aria-label="Els llibres d'instruccions (Playbooks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appsyml-linux" class="md-nav__link">
+    apps.yml (Linux)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-playbook" class="md-nav__link">
+    Estructura del Playbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_2" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_appsyml" class="md-nav__link">
+    windows_apps.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_3" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalitzacio-i-variables" class="md-nav__link">
+    Personalització i variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalització i variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group_varsalumnesappsyml" class="md-nav__link">
+    group_vars/alumnes/apps.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-disponibles" class="md-nav__link">
+    Variables Disponibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_4" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varsalumneswindows_appsyml" class="md-nav__link">
+    group_vars/alumnes/windows_apps.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_5" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalitzacio-comu" class="md-nav__link">
+    Personalització Comú
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalització Comú">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-una-nova-tarea-a-tots-els-hosts" class="md-nav__link">
+    Afegir una Nova Tarea a Tots els Hosts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-el-metode-dinstallacio" class="md-nav__link">
+    Canviar el Mètode d'Instal·lació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-un-nou-inventari" class="md-nav__link">
+    Afegir un Nou Inventari
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-el-grup-per-defecte" class="md-nav__link">
+    Canviar el Grup per Defecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provar-canvis" class="md-nav__link">
+    Provar Canvis
+  </a>
+  
+    <nav class="md-nav" aria-label="Provar Canvis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provar-un-playbook" class="md-nav__link">
+    Provar un Playbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provar-una-tasta" class="md-nav__link">
+    Provar una Tasta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    Recursos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#com-sorganitzen-les-carpetes" class="md-nav__link">
+    Com s'organitzen les carpetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#larxiu-de-configuracio-general-ansiblecfg" class="md-nav__link">
+    L'arxiu de configuració general (ansible.cfg)
+  </a>
+  
+    <nav class="md-nav" aria-label="L'arxiu de configuració general (ansible.cfg)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-clau" class="md-nav__link">
+    Paràmetres Clau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-llistes-dordinadors-inventaris" class="md-nav__link">
+    Les llistes d'ordinadors (Inventaris)
+  </a>
+  
+    <nav class="md-nav" aria-label="Les llistes d'ordinadors (Inventaris)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inventoryini-linux" class="md-nav__link">
+    inventory.ini (Linux)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccions" class="md-nav__link">
+    Seccions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-un-host" class="md-nav__link">
+    Afegir un Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_inventoryini" class="md-nav__link">
+    windows_inventory.ini
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_1" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#els-llibres-dinstruccions-playbooks" class="md-nav__link">
+    Els llibres d'instruccions (Playbooks)
+  </a>
+  
+    <nav class="md-nav" aria-label="Els llibres d'instruccions (Playbooks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appsyml-linux" class="md-nav__link">
+    apps.yml (Linux)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-playbook" class="md-nav__link">
+    Estructura del Playbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_2" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_appsyml" class="md-nav__link">
+    windows_apps.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_3" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalitzacio-i-variables" class="md-nav__link">
+    Personalització i variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalització i variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group_varsalumnesappsyml" class="md-nav__link">
+    group_vars/alumnes/apps.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-disponibles" class="md-nav__link">
+    Variables Disponibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_4" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varsalumneswindows_appsyml" class="md-nav__link">
+    group_vars/alumnes/windows_apps.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-fer-canvis_5" class="md-nav__link">
+    On Fer Canvis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalitzacio-comu" class="md-nav__link">
+    Personalització Comú
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalització Comú">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-una-nova-tarea-a-tots-els-hosts" class="md-nav__link">
+    Afegir una Nova Tarea a Tots els Hosts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-el-metode-dinstallacio" class="md-nav__link">
+    Canviar el Mètode d'Instal·lació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-un-nou-inventari" class="md-nav__link">
+    Afegir un Nou Inventari
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-el-grup-per-defecte" class="md-nav__link">
+    Canviar el Grup per Defecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provar-canvis" class="md-nav__link">
+    Provar Canvis
+  </a>
+  
+    <nav class="md-nav" aria-label="Provar Canvis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provar-un-playbook" class="md-nav__link">
+    Provar un Playbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provar-una-tasta" class="md-nav__link">
+    Provar una Tasta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    Recursos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="on-es-guarden-les-dades-els-fitxers-dansible">On es guarden les dades: els fitxers d'Ansible</h1>
+<p>Documentació dels fitxers d'Ansible per a personalització i manteniment.</p>
+<h2 id="com-sorganitzen-les-carpetes">Com s'organitzen les carpetes</h2>
+<pre><code>ansible_project/
+├── ansible.cfg              # Configuració global d'Ansible
+├── inventories/
+│   ├── inventory.ini        # Inventari de hosts Linux
+│   └── windows_inventory.ini # Inventari de hosts Windows
+├── playbooks/
+│   ├── apps.yml             # Playbook d'instal·lació d'apps Linux
+│   ├── windows_apps.yml     # Playbook d'instal·lació d'apps Windows
+│   └── base.yml             # Configuració base d'hosts
+└── group_vars/
+    └── alumnes/
+        ├── apps.yml         # Variables per a apps Linux
+        └── windows_apps.yml # Variables per a apps Windows
+</code></pre>
+<p>L'estructura de directoris està pensada per separar clarament la configuració (<code>ansible.cfg</code>), la definició d'equips (inventaris) i la lògica d'execució (playbooks). Les variables es guarden apart a <code>group_vars</code> per permetre personalitzacions sense haver de modificar els playbooks principals.</p>
+<h2 id="larxiu-de-configuracio-general-ansiblecfg">L'arxiu de configuració general (ansible.cfg)</h2>
+<p>Aquest fitxer és el que diu a Ansible com ha de treballar. És com el llibre de regles del joc:</p>
+<ul>
+<li><strong>On són els ordinadors</strong>: Indica quin fitxer d'inventari ha de mirar per saber quins ordinadors hi ha a l'aula.</li>
+<li><strong>Seguretat</strong>: Li diu quina clau secreta ha de fer servir per connectar-se amb els alumnes.</li>
+<li><strong>Temps d'espera</strong>: Defineix quant de temps ha d'esperar si un ordinador triga a respondre.</li>
+</ul>
+<pre><code class="language-ini">[defaults]
+host_key_checking = False
+inventory = inventories/inventory.ini
+private_key_file = ~/.ssh/ansible_lab
+remote_user = ansible
+timeout = 30
+gathering = smart
+fact_caching = jsonfile
+fact_caching_connection = /tmp/ansible_facts
+fact_caching_timeout = 3600
+
+[ssh_connection]
+pipelining = True
+</code></pre>
+<h3 id="parametres-clau">Paràmetres Clau</h3>
+<table>
+<thead>
+<tr>
+<th>Paràmetre</th>
+<th>Descripció</th>
+<th>Per Canviar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>inventory</code></td>
+<td>Inventari per defecte</td>
+<td>Si vols usar un altre inventari</td>
+</tr>
+<tr>
+<td><code>private_key_file</code></td>
+<td>Clau SSH per defecte</td>
+<td>Si la teva clau és en un altre lloc</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>Timeout en segons</td>
+<td>Augmenta si tens connexions lentes</td>
+</tr>
+<tr>
+<td><code>host_key_checking</code></td>
+<td>Verificació clau host</td>
+<td>Mantingues a <code>False</code> per automatització</td>
+</tr>
+</tbody>
+</table>
+<h3 id="on-fer-canvis">On Fer Canvis</h3>
+<pre><code class="language-bash"># Si vols canviar la clau SSH:
+# Edita la línia private_key_file
+nano ~/ansible_project/ansible.cfg
+
+# Si vols un altre inventari per defecte:
+# Edita la línia inventory
+</code></pre>
+<h2 id="les-llistes-dordinadors-inventaris">Les llistes d'ordinadors (Inventaris)</h2>
+<p>L'inventari és una llista simple on escrivim les adreces (IP) de cada ordinador de l'aula.</p>
+<ul>
+<li><strong>Fitxer per a Linux</strong>: Es diu <code>inventory.ini</code> i conté els ordinadors que usen Ubuntu.</li>
+<li><strong>Fitxer per a Windows</strong>: Es diu <code>windows_inventory.ini</code> i serveix per als ordinadors amb Windows.</li>
+<li><strong>Com afegir-ne un</strong>: Pots fer-ho a mà editant el fitxer o a través de la web fent un escaneig de xarxa.</li>
+</ul>
+<h3 id="inventoryini-linux">inventory.ini (Linux)</h3>
+<pre><code class="language-ini">[alumnes]
+pc201 ansible_host=192.168.203.201
+pc202 ansible_host=192.168.203.202
+pc203 ansible_host=192.168.203.203
+
+[alumnes:vars]
+ansible_user=ansible
+ansible_ssh_private_key_file=~/.ssh/ansible_lab
+ansible_become=true
+</code></pre>
+<h3 id="seccions">Seccions</h3>
+<table>
+<thead>
+<tr>
+<th>Secció</th>
+<th>Descripció</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[alumnes]</code></td>
+<td>Grup d'hosts</td>
+<td><code>pc201 ansible_host=192.168.203.201</code></td>
+</tr>
+<tr>
+<td><code>[alumnes:vars]</code></td>
+<td>Variables del grup</td>
+<td><code>ansible_user=ansible</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="afegir-un-host">Afegir un Host</h3>
+<pre><code class="language-bash"># Opció 1: Manual
+echo &quot;pc204 ansible_host=192.168.203.204&quot; &gt;&gt; ~/ansible_project/inventories/inventory.ini
+
+# Opció 2: Via web
+# Clic &quot;Escanejar xarxa&quot; → Selecciona hosts → &quot;Afegir seleccionats&quot;
+</code></pre>
+<h3 id="windows_inventoryini">windows_inventory.ini</h3>
+<pre><code class="language-ini">[windows]
+win-pc01 ansible_host=192.168.203.50
+win-pc02 ansible_host=192.168.203.51
+
+[windows:vars]
+ansible_user=ansible
+ansible_password=Ansible123!
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+</code></pre>
+<h3 id="on-fer-canvis_1">On Fer Canvis</h3>
+<pre><code class="language-bash"># Per afegir hosts manualment:
+nano ~/ansible_project/inventories/inventory.ini
+
+# Per afegir hosts Windows:
+nano ~/ansible_project/inventories/windows_inventory.ini
+</code></pre>
+<h2 id="els-llibres-dinstruccions-playbooks">Els llibres d'instruccions (Playbooks)</h2>
+<p>Un "Playbook" és una llista de tasques que volem que Ansible faci. Per exemple: "Primer actualitza l'ordinador i després instal·la el VLC".</p>
+<ul>
+<li><strong>Lliçons per a Linux</strong>: El fitxer principal és <code>apps.yml</code>.</li>
+<li><strong>Lliçons per a Windows</strong>: Fem servir <code>windows_apps.yml</code>.</li>
+<li><strong>Com funcionen</strong>: Es llegeixen d'adalt a avall, fent una tasca darrera de l'altre fins que s'acaben totes.</li>
+</ul>
+<h3 id="appsyml-linux">apps.yml (Linux)</h3>
+<p>Playbook per instal·lar aplicacions en hosts Linux.</p>
+<pre><code class="language-yaml">---
+- name: Instal·lar aplicacions seleccionades
+  hosts: alumnes
+  become: true
+
+  pre_tasks:
+    - name: Reparar dependències trencades (dpkg)
+      command: dpkg --configure -a
+      changed_when: false
+      ignore_errors: true
+
+    - name: Actualitzar cache APT
+      apt:
+        update_cache: yes
+        cache_valid_time: 300
+
+  tasks:
+    - name: Instal·lar aplicacions del catàleg
+      apt:
+        name: &quot;{{ item }}&quot;
+        state: present
+        update_cache: yes
+      loop: &quot;{{ selected_apps }}&quot;
+      when: selected_apps | length &gt; 0
+
+    - name: Instal·lar paquets APT personalitzats
+      apt:
+        name: &quot;{{ item }}&quot;
+        state: present
+      loop: &quot;{{ custom_apt_packages }}&quot;
+      when: custom_apt_packages | length &gt; 0
+</code></pre>
+<h3 id="estructura-del-playbook">Estructura del Playbook</h3>
+<p>Un playbook típic segueix una estructura seqüencial d'execució: primer es realitzen les tasques prèvies de manteniment (com actualitzar el catàleg de paquets APT), i després es procedeix amb la instal·lació de les aplicacions realment seleccionades a la web, garantint que el sistema estigui en un estat òptim abans de fer canvis.</p>
+<h3 id="on-fer-canvis_2">On Fer Canvis</h3>
+<pre><code class="language-bash"># Si vols afegir tasques prèvies:
+nano ~/ansible_project/playbooks/apps.yml
+# Afegeix sota la secció pre_tasks
+
+# Si vols modificar com s'instal·len les apps:
+# Edita la secció tasks
+</code></pre>
+<h3 id="windows_appsyml">windows_apps.yml</h3>
+<p>Playbook per instal·lar aplicacions en hosts Windows via Chocolatey.</p>
+<pre><code class="language-yaml">---
+- name: Instal·lar aplicacions seleccionades (Windows via Chocolatey)
+  hosts: windows
+  gather_facts: false
+  tasks:
+    - name: Instal·lar aplicacions del catàleg
+      ansible.windows.win_shell: &quot;choco install {{ item }} -y&quot;
+      loop: &quot;{{ selected_apps }}&quot;
+      when: selected_apps | length &gt; 0
+</code></pre>
+<h3 id="on-fer-canvis_3">On Fer Canvis</h3>
+<pre><code class="language-bash"># Si vols usar un altre gestor de paquets:
+nano ~/ansible_project/playbooks/windows_apps.yml
+# Canvia 'choco install' per 'winget install' o altres
+
+# Si vols afegir tasques addicionals:
+# Afegeix sota la secció tasks
+</code></pre>
+<h2 id="personalitzacio-i-variables">Personalització i variables</h2>
+<p>Les variables són com "espais buits" que omplim amb informació a l'últim moment. Per exemple, podem tenir una llista de programes que volem instal·lar.</p>
+<ul>
+<li><strong>Variables de classe</strong>: Es guarden a la carpeta <code>group_vars</code>.</li>
+<li><strong>Per què serveixen?</strong>: Així no hem de tocar el fitxer de playbooks cada vegada que vulguem canviar un programa; només canviem la llista de variables.</li>
+</ul>
+<h3 id="group_varsalumnesappsyml">group_vars/alumnes/apps.yml</h3>
+<p>Variables per a la instal·lació d'apps Linux.</p>
+<pre><code class="language-yaml">custom_apt_packages: []
+selected_apps:
+  - gimp
+  - filezilla
+</code></pre>
+<h3 id="variables-disponibles">Variables Disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipus</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>selected_apps</code></td>
+<td>llista</td>
+<td>Apps a instal·lar des del catàleg</td>
+</tr>
+<tr>
+<td><code>custom_apt_packages</code></td>
+<td>llista</td>
+<td>Paquets APT personalitzats</td>
+</tr>
+</tbody>
+</table>
+<h3 id="on-fer-canvis_4">On Fer Canvis</h3>
+<pre><code class="language-bash"># Aquest fitxer es modifica automàticament per la web
+# Però pots editarlo manualment:
+nano ~/ansible_project/group_vars/alumnes/apps.yml
+
+# Per afegir paquets personalitzats que sempre s'instal·lin:
+custom_apt_packages:
+  - vim
+  - htop
+  - tree
+</code></pre>
+<h3 id="group_varsalumneswindows_appsyml">group_vars/alumnes/windows_apps.yml</h3>
+<p>Variables per a la instal·lació d'apps Windows.</p>
+<pre><code class="language-yaml">custom_choco_packages: []
+selected_apps: []
+</code></pre>
+<h3 id="on-fer-canvis_5">On Fer Canvis</h3>
+<pre><code class="language-bash"># Per afegir paquets personalitzats:
+nano ~/ansible_project/group_vars/alumnes/windows_apps.yml
+
+custom_choco_packages:
+  - vscode
+  - notepadplusplus
+</code></pre>
+<h2 id="personalitzacio-comu">Personalització Comú</h2>
+<h3 id="afegir-una-nova-tarea-a-tots-els-hosts">Afegir una Nova Tarea a Tots els Hosts</h3>
+<pre><code class="language-bash"># Edita base.yml o afegeix a apps.yml
+nano ~/ansible_project/playbooks/apps.yml
+
+# Afegeix sota la secció tasks:
+- name: La meva tasca personalitzada
+  &lt;modul_ansible&gt;:
+    &lt;paràmetres&gt;
+</code></pre>
+<h3 id="canviar-el-metode-dinstallacio">Canviar el Mètode d'Instal·lació</h3>
+<pre><code class="language-bash"># Per usar un altre gestor de paquets (ex: flatpak):
+nano ~/ansible_project/playbooks/apps.yml
+
+- name: Instal·lar via Flatpak
+  flatpak:
+    name: &quot;{{ item }}&quot;
+    state: present
+  loop: &quot;{{ selected_flatpaks }}&quot;
+</code></pre>
+<h3 id="afegir-un-nou-inventari">Afegir un Nou Inventari</h3>
+<pre><code class="language-bash"># Crea un nou inventari per a un altre grup
+nano ~/ansible_project/inventories/professors.ini
+
+[professors]
+prof1 ansible_host=192.168.1.100
+prof2 ansible_host=192.168.1.101
+
+[professors:vars]
+ansible_user=ansible
+ansible_ssh_private_key_file=~/.ssh/ansible_lab
+ansible_become=true
+</code></pre>
+<h3 id="canviar-el-grup-per-defecte">Canviar el Grup per Defecte</h3>
+<pre><code class="language-bash"># Si vols que els playbooks s'executin en un altre grup:
+nano ~/ansible_project/playbooks/apps.yml
+
+# Canvia la línia hosts:
+hosts: professors  # En lloc d'alumnes
+</code></pre>
+<h2 id="provar-canvis">Provar Canvis</h2>
+<h3 id="provar-un-playbook">Provar un Playbook</h3>
+<pre><code class="language-bash"># Prova sense fer canvis (dry-run)
+ansible-playbook playbooks/apps.yml --check
+
+# Prova només en un host
+ansible-playbook playbooks/apps.yml --limit pc201
+
+# Prova amb verbose
+ansible-playbook playbooks/apps.yml -v
+</code></pre>
+<h3 id="provar-una-tasta">Provar una Tasta</h3>
+<pre><code class="language-bash"># Provar un mòdul Ansible directament
+ansible pc201 -m apt -a &quot;name=vlc state=present&quot;
+
+# Provar un comandament
+ansible pc201 -m shell -a &quot;whoami&quot;
+</code></pre>
+<h2 id="recursos">Recursos</h2>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/playbook_guide.html">Ansible Playbooks</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/">Ansible Modules</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/inventory_guide.html">Ansible Inventory</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

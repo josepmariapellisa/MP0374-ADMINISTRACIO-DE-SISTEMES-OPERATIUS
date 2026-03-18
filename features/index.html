@@ -1,0 +1,1426 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../ansible-modules/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Features - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-pot-fer-aquest-sistema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-mode-examen" class="md-nav__link">
+    El Mode Examen
+  </a>
+  
+    <nav class="md-nav" aria-label="El Mode Examen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regles-iptables-activar" class="md-nav__link">
+    Regles iptables (Activar)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categories-bloquejades" class="md-nav__link">
+    Categories Bloquejades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activardesactivar" class="md-nav__link">
+    Activar/Desactivar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-de-teclat-i-ratoli" class="md-nav__link">
+    Control de teclat i ratolí
+  </a>
+  
+    <nav class="md-nav" aria-label="Control de teclat i ratolí">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dispositius-xinput" class="md-nav__link">
+    Dispositius Xinput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitacions" class="md-nav__link">
+    Limitacions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cerador-dordinadors-escaneig-de-xarxa" class="md-nav__link">
+    Cerador d'ordinadors (Escaneig de xarxa)
+  </a>
+  
+    <nav class="md-nav" aria-label="Cerador d'ordinadors (Escaneig de xarxa)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorisme-descaneig" class="md-nav__link">
+    Algorisme d'Escaneig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-guardades" class="md-nav__link">
+    Classes Guardades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bloqueig-de-programes-installats" class="md-nav__link">
+    Bloqueig de programes instal·lats
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloqueig de programes instal·lats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categories-de-programes" class="md-nav__link">
+    Categories de Programes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-estat" class="md-nav__link">
+    Comprovar Estat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviament-de-fitxers" class="md-nav__link">
+    Enviament de fitxers
+  </a>
+  
+    <nav class="md-nav" aria-label="Enviament de fitxers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#destins" class="md-nav__link">
+    Destins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barra-de-progres" class="md-nav__link">
+    Barra de Progrés
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dapps" class="md-nav__link">
+    Gestió d'Apps
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió d'Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cataleg-dapps" class="md-nav__link">
+    Catàleg d'Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    Instal·lació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualitzar-cataleg" class="md-nav__link">
+    Actualitzar Catàleg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtrat-de-programes" class="md-nav__link">
+    Filtrat de Programes
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtrat de Programes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pestanyes-de-filtrat" class="md-nav__link">
+    Pestanyes de Filtrat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandes-remotes" class="md-nav__link">
+    Comandes Remotes
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandes Remotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcio-run_ansible_adhoc" class="md-nav__link">
+    Funció run_ansible_adhoc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-mode-examen" class="md-nav__link">
+    El Mode Examen
+  </a>
+  
+    <nav class="md-nav" aria-label="El Mode Examen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regles-iptables-activar" class="md-nav__link">
+    Regles iptables (Activar)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categories-bloquejades" class="md-nav__link">
+    Categories Bloquejades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activardesactivar" class="md-nav__link">
+    Activar/Desactivar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-de-teclat-i-ratoli" class="md-nav__link">
+    Control de teclat i ratolí
+  </a>
+  
+    <nav class="md-nav" aria-label="Control de teclat i ratolí">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dispositius-xinput" class="md-nav__link">
+    Dispositius Xinput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitacions" class="md-nav__link">
+    Limitacions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cerador-dordinadors-escaneig-de-xarxa" class="md-nav__link">
+    Cerador d'ordinadors (Escaneig de xarxa)
+  </a>
+  
+    <nav class="md-nav" aria-label="Cerador d'ordinadors (Escaneig de xarxa)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorisme-descaneig" class="md-nav__link">
+    Algorisme d'Escaneig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-guardades" class="md-nav__link">
+    Classes Guardades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bloqueig-de-programes-installats" class="md-nav__link">
+    Bloqueig de programes instal·lats
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloqueig de programes instal·lats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categories-de-programes" class="md-nav__link">
+    Categories de Programes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-estat" class="md-nav__link">
+    Comprovar Estat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviament-de-fitxers" class="md-nav__link">
+    Enviament de fitxers
+  </a>
+  
+    <nav class="md-nav" aria-label="Enviament de fitxers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#destins" class="md-nav__link">
+    Destins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barra-de-progres" class="md-nav__link">
+    Barra de Progrés
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dapps" class="md-nav__link">
+    Gestió d'Apps
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió d'Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cataleg-dapps" class="md-nav__link">
+    Catàleg d'Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    Instal·lació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualitzar-cataleg" class="md-nav__link">
+    Actualitzar Catàleg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtrat-de-programes" class="md-nav__link">
+    Filtrat de Programes
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtrat de Programes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pestanyes-de-filtrat" class="md-nav__link">
+    Pestanyes de Filtrat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandes-remotes" class="md-nav__link">
+    Comandes Remotes
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandes Remotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcio-run_ansible_adhoc" class="md-nav__link">
+    Funció run_ansible_adhoc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="que-pot-fer-aquest-sistema">Què pot fer aquest sistema</h1>
+<p>Descripció detallada de totes les funcionalitats del sistema.</p>
+<h2 id="el-mode-examen">El Mode Examen</h2>
+<p>Serveix per bloquejar l'accés a Internet durant les proves perquè els alumnes no es puguin distreure o buscar respostes. Permet aplicar un mur virtual que només deixa oberta la connexió amb la xarxa del centre i el servidor.</p>
+<p>El Mode Examen és una funcionalitat crítica que permet als professors bloquejar l'accés a Internet de forma massiva. El sistema utilitza regles d'iptables per denegar tot el tràfic sortint cap als ports 80 i 443 (HTTP/HTTPS), mentre que manté obertes les rutes cap a la xarxa local (VLANs del centre) i el port 22 per garantir que la gestió via Ansible i SSH continuï funcionant correctament.</p>
+<h3 id="regles-iptables-activar">Regles iptables (Activar)</h3>
+<pre><code class="language-bash">iptables -F OUTPUT                          # Neteja regles
+iptables -A OUTPUT -p tcp --dport 22 -j ACCEPT           # SSH
+iptables -A OUTPUT -d 192.168.0.0/16 -j ACCEPT          # Xarxa local
+iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT              # Xarxa privada A
+iptables -A OUTPUT -d 172.16.0.0/12 -j ACCEPT           # Xarxa privada B
+iptables -A OUTPUT -d 127.0.0.0/8 -j ACCEPT             # Localhost
+iptables -A OUTPUT -p tcp --dport 80 -j REJECT --reject-with tcp-reset    # HTTP
+iptables -A OUTPUT -p tcp --dport 443 -j REJECT --reject-with tcp-reset   # HTTPS
+</code></pre>
+<h3 id="categories-bloquejades">Categories Bloquejades</h3>
+<table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Llocs</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IA</td>
+<td>chatgpt.com, claude.ai, gemini.google.com</td>
+<td>OpenAI, Anthropic, Google</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>facebook.com, twitter.com, discord.com, instagram.com</td>
+<td>Xarxes socials</td>
+</tr>
+<tr>
+<td>Gaming</td>
+<td>steam.com, epicgames.com, roblox.com</td>
+<td>Plataformes jocs</td>
+</tr>
+<tr>
+<td>Streaming</td>
+<td>youtube.com, twitch.tv, netflix.com</td>
+<td>Vídeo streaming</td>
+</tr>
+</tbody>
+</table>
+<h3 id="activardesactivar">Activar/Desactivar</h3>
+<pre><code class="language-javascript">// Via web
+bulkExamMode(true)   // Activar
+bulkExamMode(false)  // Desactivar
+</code></pre>
+<h2 id="control-de-teclat-i-ratoli">Control de teclat i ratolí</h2>
+<p>Aquesta eina permet "congelar" l'activitat dels alumnes deshabilitant els seus perifèrics d'entrada. És ideal per quan vols tota l'atenció de la classe a la pissarra.</p>
+<ul>
+<li><strong>Funcionament</strong>: El sistema identifica l'identificador (ID) del ratolí i el teclat a l'ordinador de l'alumne i li diu que deixi de rebre senyals.</li>
+<li><strong>Limitacions</strong>: Cal que l'altre ordinador tingui una sessió iniciada amb escriptori gràfic. No sol funcionar bé en ordinadors virtuals sense configuració extra.</li>
+</ul>
+<p>El control d'entrada permet captar l'atenció dels alumnes bloquejant els seus perifèrics. Mitjançant la utilitat <code>xinput</code>, el sistema identifica els identificadors (IDs) dels dispositius de teclat i ratolí de la sessió gràfica activa i els inhabilita temporalment. Una vegada el professor decideix alliberar el control, s'executa la comanda inversa per rehabilitar els drivers d'entrada sense necessitat de reiniciar la sessió.</p>
+<h3 id="dispositius-xinput">Dispositius Xinput</h3>
+<pre><code>⎡ Virtual core pointer           id=2  [master pointer]
+⎜   ↳ Virtual core XTEST pointer
+⎜   ↳ xwayland-pointer
+⎣ Virtual core keyboard          id=3  [master keyboard]
+    ↳ Virtual core XTEST keyboard
+    ↳ xwayland-keyboard
+</code></pre>
+<p><strong>id=2</strong>: Master pointer (controla tots els ratolins)
+<strong>id=3</strong>: Master keyboard (controla tots els teclats)</p>
+<h3 id="limitacions">Limitacions</h3>
+<ul>
+<li><strong>Requereix sessió gràfica</strong>: Només funciona si hi ha un usuari loguejat amb X11/Wayland</li>
+<li><strong>No funciona en VMs sense dispositius d'entrada virtuals</strong>: VirtualBox, VMware necessiten configuració específica</li>
+<li><strong>Wayland</strong>: Funciona via Xwayland però pot tenir comportaments diferents</li>
+</ul>
+<h2 id="cerador-dordinadors-escaneig-de-xarxa">Cerador d'ordinadors (Escaneig de xarxa)</h2>
+<p>Aquesta funció ajuda a trobar els ordinadors de l'aula automàticament sense haver de saber l'adreça de cada un.</p>
+<ul>
+<li><strong>El procés</strong>: El servidor envia un "hola" (ping) a cada adreça possible de l'aula. Si algú respon, el sistema comprova si té la porta de control (SSH) oberta i si està preparat per rebre ordres.</li>
+<li><strong>Resultat</strong>: Et mostra una taula neta amb qui està a punt i qui no, per triar-los amb un clic.</li>
+</ul>
+<p>L'escaneig de xarxa és un procés de tres capes: primer es realitza un ping per detectar si la màquina està encesa, després es comprova si el port 22 (SSH) està obert i, finalment, s'intenta una connexió amb l'usuari <code>ansible</code>. Si totes les proves són positives, el host es marca com a "Ansible OK" i s'afegeix a la llista d'equips gestionables.</p>
+<h3 id="algorisme-descaneig">Algorisme d'Escaneig</h3>
+<pre><code class="language-python">for ip in range(1, 255):
+    # 1. Ping test
+    if ping(ip, timeout=1):
+        # 2. SSH port check
+        if ssh_connect(ip, user=&quot;ansible&quot;, timeout=3):
+            status = &quot;ansible_ok&quot;
+        else:
+            status = &quot;active_no_client&quot;
+    else:
+        status = &quot;inactive&quot;
+</code></pre>
+<h3 id="classes-guardades">Classes Guardades</h3>
+<p>Els resultats d'escaneig es guarden per recuperar-los ràpidament:</p>
+<pre><code class="language-json">{
+  &quot;203_20240312&quot;: {
+    &quot;subnet&quot;: &quot;192.168.203.0/24&quot;,
+    &quot;hosts&quot;: [...],
+    &quot;active_count&quot;: 25,
+    &quot;timestamp&quot;: &quot;2024-03-12T10:30:00&quot;
+  }
+}
+</code></pre>
+<h2 id="bloqueig-de-programes-installats">Bloqueig de programes instal·lats</h2>
+<p>Aquesta funció serveix per impedir que els alumnes obrin certs programes que ja tenen a l'ordinador, com jocs o navegadors antics.</p>
+<ul>
+<li><strong>Mètode</strong>: El sistema els treu el "permís d'execució". És com si l'ordinador ja no recordés com s'ha d'obrir aquell programa fins que el professor el desbloquegi.</li>
+<li><strong>Categories</strong>: Pots triar bloquejar només els jocs de Steam, els navegadors de xarxa o eines com Discord.</li>
+</ul>
+<pre><code class="language-bash"># Bloquejar
+which steam | xargs chmod -x
+
+# Desbloquejar
+which steam | xargs chmod +x
+</code></pre>
+<h3 id="categories-de-programes">Categories de Programes</h3>
+<table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Patrons</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Games</td>
+<td>steam, lutris, wine, heroic, minecraft</td>
+<td>Steam, Lutris, Heroic</td>
+</tr>
+<tr>
+<td>Steam</td>
+<td>steam, valve</td>
+<td>Steam</td>
+</tr>
+<tr>
+<td>Browsers</td>
+<td>firefox, chrome, chromium, brave</td>
+<td>Firefox, Chrome</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>discord, telegram, slack, zoom</td>
+<td>Discord, Telegram</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>python, node, npm, git, vim</td>
+<td>Python, Git, VSCode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comprovar-estat">Comprovar Estat</h3>
+<pre><code class="language-bash"># Llistar paquets bloquejats
+for pkg in $(dpkg -l | grep '^ii' | awk '{print $2}'); do
+    bin=$(which $pkg 2&gt;/dev/null || dpkg -L $pkg 2&gt;/dev/null | grep -E '^/usr/(bin|sbin)/' | head -1)
+    if [ -n &quot;$bin&quot; ] &amp;&amp; [ ! -x &quot;$bin&quot; ]; then
+        echo &quot;$pkg&quot;
+    fi
+done
+</code></pre>
+<h2 id="enviament-de-fitxers">Enviament de fitxers</h2>
+<p>Pots repartir exercicis o documents a tots els alumnes de cop sense necessitat de fer-ho un per un. El servidor puja el fitxer primer a la seva memòria i després l'envia a través del túnel segur a cada client.</p>
+<p>La transferència massiva es realitza de forma seqüencial però optimitzada. El fitxer es puja primer al servidor des del navegador del professor i després el sistema s'encarrega d'enviar-lo a cada host seleccionat utilitzant SCP (Secure Copy). El destí és <code>/var/tmp/</code> per defecte a Linux, una ruta segura i accessible per a tots els usuaris que evita problemes de permisos.</p>
+<h3 id="destins">Destins</h3>
+<table>
+<thead>
+<tr>
+<th>Plataforma</th>
+<th>Destí</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>/var/tmp/</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>C:\ansible_temp\</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="barra-de-progres">Barra de Progrés</h3>
+<pre><code class="language-javascript">xhr.upload.onprogress = function(e) {
+    if (e.lengthComputable) {
+        const percent = Math.round((e.loaded / e.total) * 100);
+        progressBar.style.width = percent + '%';
+    }
+};
+</code></pre>
+<h2 id="gestio-dapps">Gestió d'Apps</h2>
+<p>Instal·lació i desinstal·lació d'aplicacions.</p>
+<h3 id="cataleg-dapps">Catàleg d'Apps</h3>
+<pre><code class="language-json">{
+  &quot;vlc&quot;: {
+    &quot;name&quot;: &quot;VLC Media Player&quot;,
+    &quot;description&quot;: &quot;Reproductor multimèdia&quot;,
+    &quot;category&quot;: &quot;multimedia&quot;,
+    &quot;package&quot;: &quot;vlc&quot;
+  },
+  &quot;firefox&quot;: {
+    &quot;name&quot;: &quot;Firefox&quot;,
+    &quot;description&quot;: &quot;Navegador web&quot;,
+    &quot;category&quot;: &quot;internet&quot;,
+    &quot;package&quot;: &quot;firefox&quot;
+  }
+}
+</code></pre>
+<h3 id="installacio">Instal·lació</h3>
+<pre><code class="language-yaml"># playbooks/apps.yml
+- name: Install apps
+  apt:
+    name: &quot;{{ apps_to_install }}&quot;
+    state: present
+  become: yes
+</code></pre>
+<h3 id="actualitzar-cataleg">Actualitzar Catàleg</h3>
+<p>Des de GitHub per tenir les darreres versions:</p>
+<pre><code class="language-bash">curl -s https://raw.githubusercontent.com/.../apps.json &gt; webapp/apps.json
+</code></pre>
+<h2 id="filtrat-de-programes">Filtrat de Programes</h2>
+<p>Filtrat per categoria al panell d'inspecció.</p>
+<pre><code class="language-javascript">const CATEGORY_PATTERNS = {
+    games: ['steam', 'lutris', 'wine', 'heroic'],
+    browsers: ['firefox', 'chrome', 'chromium'],
+    social: ['discord', 'telegram', 'slack'],
+    development: ['python', 'node', 'npm', 'git']
+};
+</code></pre>
+<h3 id="pestanyes-de-filtrat">Pestanyes de Filtrat</h3>
+<ul>
+<li><strong>Tots</strong>: Tots els programes</li>
+<li><strong>Games</strong>: Jocs i plataformes</li>
+<li><strong>Steam</strong>: Específic de Steam</li>
+<li><strong>Browsers</strong>: Navegadors web</li>
+<li><strong>Social</strong>: Xarxes socials i chat</li>
+<li><strong>Development</strong>: Eines de desenvolupament</li>
+<li><strong>Blocked</strong>: Programes bloquejats</li>
+</ul>
+<h2 id="comandes-remotes">Comandes Remotes</h2>
+<p>Execució de comandes ad-hoc en hosts.</p>
+<h3 id="funcio-run_ansible_adhoc">Funció run_ansible_adhoc</h3>
+<pre><code class="language-python">def run_ansible_adhoc(hostname, module, args, ssh_user, platform):
+    &quot;&quot;&quot;Executa un mòdul Ansible en un host.&quot;&quot;&quot;
+    if platform == &quot;linux&quot;:
+        # Ansible module (shell, apt, etc.)
+        ansible_module = module
+    else:
+        # Windows module (win_shell, win_package, etc.)
+        ansible_module = f&quot;ansible.windows.{module}&quot;
+
+    # Executa
+    result = subprocess.run([
+        &quot;ansible&quot;, hostname,
+        &quot;-i&quot;, inventory_file,
+        &quot;-m&quot;, ansible_module,
+        &quot;-a&quot;, args,
+        &quot;-u&quot;, ssh_user
+    ], capture_output=True)
+</code></pre>
+<h3 id="exemples">Exemples</h3>
+<pre><code class="language-bash"># Llistar paquets
+ansible pc201 -m shell -a &quot;dpkg -l&quot; -u ansible
+
+# Instal·lar app
+ansible pc201 -m apt -a &quot;name=vlc&quot; -b
+
+# Bloquejar web
+ansible pc201 -m shell -a &quot;echo '127.0.0.1 chatgpt.com &gt;&gt; /etc/hosts'&quot; -b
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

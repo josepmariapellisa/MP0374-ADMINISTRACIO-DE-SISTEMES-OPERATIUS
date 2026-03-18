@@ -1,0 +1,1596 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../troubleshooting/">
+      
+      
+        <link rel="next" href="../LICENSE/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>User Guide - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-dus-per-a-no-tecnics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    Introducció
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-iniciar-el-sistema" class="md-nav__link">
+    Com iniciar el sistema
+  </a>
+  
+    <nav class="md-nav" aria-label="Com iniciar el sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-preparar-el-servidor" class="md-nav__link">
+    Com preparar el servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-iniciar-sessio-login" class="md-nav__link">
+    Com iniciar sessió (Login)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dusuaris" class="md-nav__link">
+    Gestió d'usuaris
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió d'usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-un-usuari-nou" class="md-nav__link">
+    Afegir un usuari nou
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir un usuari nou">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pas-1-anar-al-fitxer-dusuaris" class="md-nav__link">
+    Pas 1: Anar al fitxer d'usuaris
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-2-edita-el-fitxer" class="md-nav__link">
+    Pas 2: Edita el fitxer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-3-afegeix-el-nou-usuari" class="md-nav__link">
+    Pas 3: Afegeix el nou usuari
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-4-generar-contrasenya-amb-python" class="md-nav__link">
+    Pas 4: Generar contrasenya amb Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-contrasenya-dun-usuari" class="md-nav__link">
+    Canviar contrasenya d'un usuari
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afegir-equips" class="md-nav__link">
+    Afegir equips
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir equips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-utilitzar-lescaneig-automatic" class="md-nav__link">
+    Com utilitzar l'escaneig automàtic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-afegir-equips-manualment" class="md-nav__link">
+    Com afegir equips manualment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-programes" class="md-nav__link">
+    Instal·lar programes
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lar programes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-installar-programes" class="md-nav__link">
+    Com instal·lar programes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-activar-i-desactivar-el-mode-examen" class="md-nav__link">
+    Com activar i desactivar el Mode Examen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bloquejar-webs" class="md-nav__link">
+    Bloquejar webs
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloquejar webs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pas-1-ves-a-la-pagina-de-lordinador" class="md-nav__link">
+    Pas 1: Ves a la pàgina de l'ordinador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-2-selecciona-la-pestanya-webs" class="md-nav__link">
+    Pas 2: Selecciona la pestanya "Webs"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-3-trieu-les-webs" class="md-nav__link">
+    Pas 3: Trieu les webs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-bloquejar-el-teclat-i-el-ratoli" class="md-nav__link">
+    Com bloquejar el teclat i el ratolí
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altres-funcions" class="md-nav__link">
+    Altres funcions
+  </a>
+  
+    <nav class="md-nav" aria-label="Altres funcions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#veure-que-te-installat-un-ordinador" class="md-nav__link">
+    Veure què té instal·lat un ordinador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloquejar-un-programa" class="md-nav__link">
+    Bloquejar un programa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-fitxers" class="md-nav__link">
+    Env fitxers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemes-comuns" class="md-nav__link">
+    Problemes comuns
+  </a>
+  
+    <nav class="md-nav" aria-label="Problemes comuns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-puc-fer-login" class="md-nav__link">
+    No puc fer login
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-es-connecta-als-ordinadors" class="md-nav__link">
+    No es connecta als ordinadors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-examen-no-funciona" class="md-nav__link">
+    Mode Examen no funciona
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-pagina-no-carrega" class="md-nav__link">
+    La pàgina no carrega
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossari" class="md-nav__link">
+    Glossari
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#necessites-ajuda" class="md-nav__link">
+    Necessites ajuda?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    Introducció
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-iniciar-el-sistema" class="md-nav__link">
+    Com iniciar el sistema
+  </a>
+  
+    <nav class="md-nav" aria-label="Com iniciar el sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-preparar-el-servidor" class="md-nav__link">
+    Com preparar el servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-iniciar-sessio-login" class="md-nav__link">
+    Com iniciar sessió (Login)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dusuaris" class="md-nav__link">
+    Gestió d'usuaris
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió d'usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-un-usuari-nou" class="md-nav__link">
+    Afegir un usuari nou
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir un usuari nou">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pas-1-anar-al-fitxer-dusuaris" class="md-nav__link">
+    Pas 1: Anar al fitxer d'usuaris
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-2-edita-el-fitxer" class="md-nav__link">
+    Pas 2: Edita el fitxer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-3-afegeix-el-nou-usuari" class="md-nav__link">
+    Pas 3: Afegeix el nou usuari
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-4-generar-contrasenya-amb-python" class="md-nav__link">
+    Pas 4: Generar contrasenya amb Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-contrasenya-dun-usuari" class="md-nav__link">
+    Canviar contrasenya d'un usuari
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afegir-equips" class="md-nav__link">
+    Afegir equips
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir equips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-utilitzar-lescaneig-automatic" class="md-nav__link">
+    Com utilitzar l'escaneig automàtic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-afegir-equips-manualment" class="md-nav__link">
+    Com afegir equips manualment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-programes" class="md-nav__link">
+    Instal·lar programes
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lar programes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-installar-programes" class="md-nav__link">
+    Com instal·lar programes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-activar-i-desactivar-el-mode-examen" class="md-nav__link">
+    Com activar i desactivar el Mode Examen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bloquejar-webs" class="md-nav__link">
+    Bloquejar webs
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloquejar webs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pas-1-ves-a-la-pagina-de-lordinador" class="md-nav__link">
+    Pas 1: Ves a la pàgina de l'ordinador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-2-selecciona-la-pestanya-webs" class="md-nav__link">
+    Pas 2: Selecciona la pestanya "Webs"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-3-trieu-les-webs" class="md-nav__link">
+    Pas 3: Trieu les webs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-bloquejar-el-teclat-i-el-ratoli" class="md-nav__link">
+    Com bloquejar el teclat i el ratolí
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altres-funcions" class="md-nav__link">
+    Altres funcions
+  </a>
+  
+    <nav class="md-nav" aria-label="Altres funcions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#veure-que-te-installat-un-ordinador" class="md-nav__link">
+    Veure què té instal·lat un ordinador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloquejar-un-programa" class="md-nav__link">
+    Bloquejar un programa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-fitxers" class="md-nav__link">
+    Env fitxers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemes-comuns" class="md-nav__link">
+    Problemes comuns
+  </a>
+  
+    <nav class="md-nav" aria-label="Problemes comuns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-puc-fer-login" class="md-nav__link">
+    No puc fer login
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-es-connecta-als-ordinadors" class="md-nav__link">
+    No es connecta als ordinadors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-examen-no-funciona" class="md-nav__link">
+    Mode Examen no funciona
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-pagina-no-carrega" class="md-nav__link">
+    La pàgina no carrega
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossari" class="md-nav__link">
+    Glossari
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#necessites-ajuda" class="md-nav__link">
+    Necessites ajuda?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="guia-dus-per-a-no-tecnics">Guia d'Ús - Per a No Tècnics</h1>
+<p>Guia pas a pas per utilitzar l'Ansible Web Manager.</p>
+<h2 id="introduccio">Introducció</h2>
+<p>Aquesta eina et permet <strong>controlar tots els ordinadors de l'aula</strong> des d'una pàgina web centralitzada. En lloc d'anar ordinador per ordinador, pots realitzar accions de forma massiva amb un sol clic. El servidor és com el "cap" que envia ordres a la resta d'equips que anomenem "clients".</p>
+<p><strong>Quines accions pots realitzar?</strong>
+- Instal·lar programes a tots els ordinadors alhora.
+- Bloquejar l'accés a Internet per fer exàmens sense distraccions.
+- Bloquejar el teclat i el ratolí dels alumnes per explicar alguna cosa important.
+- Enviar fitxers o exercicis a tota la classe de cop.
+- Consultar quins programes té instal·lat cada alumne.</p>
+<hr />
+<h2 id="com-iniciar-el-sistema">Com iniciar el sistema</h2>
+<h3 id="com-preparar-el-servidor">Com preparar el servidor</h3>
+<p>Per posar en marxa el gestor, segueix aquests passos al terminal del servidor:</p>
+<ol>
+<li><strong>Obre el terminal</strong>: Inicia sessió amb el teu usuari habitual.</li>
+<li><strong>Entra al directori del projecte</strong>: Utilitza <code>cd ~/ansible_project</code>.</li>
+<li><strong>Activa el motor</strong>: Escriu <code>source venv/bin/activate</code>. Això prepara les eines de Python necessàries.</li>
+<li><strong>Engega la web</strong>: Executa <code>python3 app.py</code>.</li>
+<li><strong>Accedeix a la web</strong>: Obre un navegador i entra a <code>http://localhost:8080</code>.</li>
+</ol>
+<p>O des d'un altre ordinador de la xarxa:</p>
+<pre><code>http://192.168.1.115:8080
+</code></pre>
+<p><em>(Canvia <code>192.168.1.115</code> per la IP del teu servidor)</em></p>
+<h3 id="com-iniciar-sessio-login">Com iniciar sessió (Login)</h3>
+<table>
+<thead>
+<tr>
+<th>Camp</th>
+<th>Què posar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Usuari</td>
+<td><code>profe</code></td>
+</tr>
+<tr>
+<td>Contrasenya</td>
+<td><code>profe</code></td>
+</tr>
+</tbody>
+</table>
+<p>El procés d'entrada és molt senzill: primer cal assegurar-se que el servidor estigui engegat, després obrim el navegador en qualsevol dispositiu de la mateixa xarxa i, finalment, introduïm les nostres credencials de professor per accedir al panell de control principal de l'aula.</p>
+<hr />
+<h2 id="gestio-dusuaris">Gestió d'usuaris</h2>
+<h3 id="afegir-un-usuari-nou">Afegir un usuari nou</h3>
+<p><strong>Per què?</strong> Per permetre que altres professors utilitzin el sistema.</p>
+<h4 id="pas-1-anar-al-fitxer-dusuaris">Pas 1: Anar al fitxer d'usuaris</h4>
+<p>El fitxer està a: <code>~/ansible_project/webapp/users.json</code></p>
+<h4 id="pas-2-edita-el-fitxer">Pas 2: Edita el fitxer</h4>
+<pre><code class="language-bash"># Obre el fitxer amb un editor de text
+nano ~/ansible_project/webapp/users.json
+</code></pre>
+<h4 id="pas-3-afegeix-el-nou-usuari">Pas 3: Afegeix el nou usuari</h4>
+<p>El fitxer té aquest aspecte:</p>
+<pre><code class="language-json">{
+  &quot;profe&quot;: {
+    &quot;password&quot;: &quot;hash_aleatori&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;created_at&quot;: &quot;2024-03-12T10:00:00&quot;
+  }
+}
+</code></pre>
+<p>Per afegir un usuari nou (per exemple, "anna"), afegeix això:</p>
+<pre><code class="language-json">{
+  &quot;profe&quot;: {
+    &quot;password&quot;: &quot;hash_aleatori&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;created_at&quot;: &quot;2024-03-12T10:00:00&quot;
+  },
+  &quot;anna&quot;: {
+    &quot;password&quot;: &quot;hash_aleatori&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;created_at&quot;: &quot;2024-03-12T10:30:00&quot;
+  }
+}
+</code></pre>
+<p><strong>Però com conec el hash de la contrasenya?</strong></p>
+<h4 id="pas-4-generar-contrasenya-amb-python">Pas 4: Generar contrasenya amb Python</h4>
+<p>Executa això al terminal:</p>
+<pre><code class="language-bash">cd ~/ansible_project/webapp
+python3 &lt;&lt; 'EOF'
+import hashlib
+import json
+import datetime
+
+nom_usuari = &quot;anna&quot;                # El nom de la persona nova
+contrasenya = &quot;password123&quot;        # La clau que farà servir
+
+hash_contrasenya = hashlib.sha256(contrasenya.encode()).hexdigest()
+
+print(f\&quot;Usuari: {nom_usuari}\&quot;)
+print(f\&quot;Password: {contrasenya}\&quot;)
+print(f\&quot;Hash: {hash_contrasenya}\&quot;)
+print(f\&quot;\&quot;)
+print(f\&quot;Copia això al users.json:\&quot;)
+print(f'  \&quot;{nom_usuari}\&quot;: {{\')
+print(f'    \&quot;password\&quot;: \&quot;{hash_contrasenya}\&quot;,')
+print(f'    \&quot;role\&quot;: \&quot;admin\&quot;,')
+print(f'    \&quot;created_at\&quot;: \&quot;{datetime.datetime.now().isoformat()}\&quot;')
+print(f'  }},')
+EOF
+</code></pre>
+<p>Això t'ho genera tot:</p>
+<pre><code>Usuari: anna
+Password: password123
+Hash: 8192e0c8b...
+
+Copia això al users.json:
+  &quot;anna&quot;: {
+    &quot;password&quot;: &quot;8192e0c8b...&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;created_at&quot;: &quot;2024-03-12T10:30:00&quot;
+  },
+</code></pre>
+<ol>
+<li>
+<p><strong>Copia al fitxer</strong>: Copia el text de dalt i afegeix-lo al <code>users.json</code>.</p>
+</li>
+<li>
+<p><strong>Guarda i surt</strong>: A <code>nano</code>, prem <code>Ctrl + O</code> (guardar), <code>Enter</code> i <code>Ctrl + X</code> (sortir).</p>
+</li>
+</ol>
+<h3 id="canviar-contrasenya-dun-usuari">Canviar contrasenya d'un usuari</h3>
+<p>Repeteix els passos anteriors, però amb el mateix nom d'usuari i la nova contrasenya. El hash nou substituirà l'antic.</p>
+<hr />
+<h2 id="afegir-equips">Afegir equips</h2>
+<h3 id="com-utilitzar-lescaneig-automatic">Com utilitzar l'escaneig automàtic</h3>
+<p>L'escaneig et permet trobar ordinadors a la xarxa sense haver d'escriure les seves adreces una per una:</p>
+<ol>
+<li><strong>Prem el botó Escanejar</strong>: Està situat a la part superior de la pantalla.</li>
+<li><strong>Selecciona l'aula</strong>: Tria el nom o el rang de xarxa que vulguis revisar (per exemple, Aula 203).</li>
+<li><strong>Inicia la cerca</strong>: Prem el botó blau per començar. El sistema enviarà un petit missatge a cada ordinador per veure si respon.</li>
+<li><strong>Tria els equips</strong>: Quan surti la llista, marca la casella dels ordinadors que vulguis incloure. Fixa't que els verds són els que ja estan a punt.</li>
+<li><strong>Desa els canvis</strong>: Prem "Afegir seleccionats" i ja els tindràs a la pantalla principal per sempre.</li>
+</ol>
+<p>I ja estan! Apareixeran a la llista principal.</p>
+<h3 id="com-afegir-equips-manualment">Com afegir equips manualment</h3>
+<p>Si preferies afegir un ordinador concret pel seu nom:</p>
+<ol>
+<li><strong>Prem Afegir client</strong>: Està al costat de la lupa d'escaneig.</li>
+<li><strong>Escriu les dades</strong>: Posa un nom fàcil de reconèixer (com "pc-01") i la seva adreça IP.</li>
+<li><strong>Selecciona el sistema</strong>: Indica si és un ordinador amb Linux o amb Windows.</li>
+<li><strong>Desa el client</strong>: L'ordinador apareixerà immediatament a la graella principal.</li>
+</ol>
+<hr />
+<h2 id="installar-programes">Instal·lar programes</h2>
+<p>Aquesta funció serveix per posar programari nou als ordinadors dels alumnes sense haver d'anar un per un. El servidor s'encarrega d'enviar i instal·lar el programa automàticament.</p>
+<h3 id="com-installar-programes">Com instal·lar programes</h3>
+<p>Pots enviar programes a molts ordinadors a la vegada seguint aquests passos:</p>
+<ol>
+<li><strong>Tria els ordinadors</strong>: Marca els quadres dels equips on vulguis fer canvis.</li>
+<li><strong>Selecciona el que necessites</strong>: Veuràs una llista de programes (VLC, Firefox, etc.). Marca els que falten.</li>
+<li><strong>Aplica els canvis</strong>: Prem el botó "Aplicar". El servidor es connectarà a cada un i farà la instal·lació sense que tu hagis de fer res més.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Programa</th>
+<th>Per a què serveix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLC</td>
+<td>Reproduir vídeos</td>
+</tr>
+<tr>
+<td>GIMP</td>
+<td>Editar imatges</td>
+</tr>
+<tr>
+<td>FileZilla</td>
+<td>Transferir fitxers FTP</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>Navegar per internet</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Aplica la configuració</strong>: Prem el botó gran de sota de tot.</li>
+<li><strong>Espera el resultat</strong>: Veuràs una barra de progrés. Quan acabi, sortirà un missatge de color verd dient que tot ha anat bé.</li>
+</ol>
+<hr />
+<h3 id="com-activar-i-desactivar-el-mode-examen">Com activar i desactivar el Mode Examen</h3>
+<p>Aquesta eina permet que els alumnes estiguin concentrats durant les proves. En activar-la, el sistema impedeix que puguin entrar a pàgines web com jocs, xarxes socials o ajudants de treball (IA).</p>
+<p>Seguiu aquests passos:
+1. <strong>Selecciona els alumnes</strong>: Tria qui ha de fer el bloqueig.
+2. <strong>Activa el silenci digital</strong>: Prem el botó vermell. Això posa un mur virtual que només deixa passar el que és necessari per l'examen.
+3. <strong>Acaba l'examen</strong>: Quan hagin acabat, selecciona els mateixos alumnes i prem el botó verd de restaurar. L'ordinador tornarà al seu estat normal de navegació immediatament.</p>
+<hr />
+<h2 id="bloquejar-webs">Bloquejar webs</h2>
+<p>A part del Mode Examen, pots bloquejar webs concretes.</p>
+<h3 id="pas-1-ves-a-la-pagina-de-lordinador">Pas 1: Ves a la pàgina de l'ordinador</h3>
+<p>Fes clic a un ordinador (ex: <code>pc201</code>).</p>
+<h3 id="pas-2-selecciona-la-pestanya-webs">Pas 2: Selecciona la pestanya "Webs"</h3>
+<p>A la part superior de la pàgina de l'ordinador.</p>
+<h3 id="pas-3-trieu-les-webs">Pas 3: Trieu les webs</h3>
+<p>Pots:
+- <strong>Bloquejar categories</strong>: IA, Xarxes Socials, Jocs...
+- <strong>Bloquejar webs concretes</strong>: Escriu els dominis (ex: <code>marca.es,elpais.com</code>)</p>
+<ol>
+<li><strong>Blocar</strong>: Prem el botó de bloquejar.</li>
+</ol>
+<p>Per tornar-ho a deixar com estava, només cal prémer el botó de desbloquejar tot.</p>
+<hr />
+<h3 id="com-bloquejar-el-teclat-i-el-ratoli">Com bloquejar el teclat i el ratolí</h3>
+<p>Si vols que la classe s'aturi i miri a la pissarra:</p>
+<ol>
+<li><strong>Selecciona els ordinadors</strong>: Tria tota la classe o només uns quants.</li>
+<li><strong>Bloqueja l'entrada</strong>: Prem el botó d'inhabilitar perifèrics. El ratolí deixarà de moure's al moment.</li>
+<li><strong>Torna a la feina</strong>: Quan hagis acabat l'explicació, prem el botó de desbloquejar i tot funcionarà com abans.</li>
+</ol>
+<hr />
+<h2 id="altres-funcions">Altres funcions</h2>
+<h3 id="veure-que-te-installat-un-ordinador">Veure què té instal·lat un ordinador</h3>
+<ol>
+<li>Fes clic a un ordinador</li>
+<li>Veuràs la llista de programes</li>
+<li>Pots filtrar per categoria:</li>
+<li>Jocs</li>
+<li>Navegadors</li>
+<li>Xarxes socials</li>
+<li>Programació</li>
+</ol>
+<h3 id="bloquejar-un-programa">Bloquejar un programa</h3>
+<ol>
+<li>Fes clic a un ordinador</li>
+<li>Troba el programa</li>
+<li>Prem el botó de bloquejar.</li>
+</ol>
+<p>El programa encara és there, però no es pot executar.</p>
+<h3 id="env-fitxers">Env fitxers</h3>
+<ol>
+<li>Selecciona els ordinadors</li>
+<li>A la secció "Transferència de Fitxers", tria el fitxer</li>
+<li>Prem el botó d'enviar als ordinadors.</li>
+</ol>
+<p>El fitxer s'envia a <code>/var/tmp/</code> (Linux) o <code>C:\ansible_temp\</code> (Windows).</p>
+<hr />
+<h2 id="problemes-comuns">Problemes comuns</h2>
+<h3 id="no-puc-fer-login">No puc fer login</h3>
+<p><strong>Problema:</strong> Et diu "Credencials incorrectes"</p>
+<p><strong>Solució:</strong>
+1. Comprova que l'usuari és <code>profe</code> i la contrasenya <code>profe</code>
+2. Si no funcion, cal restaurar les credencials:</p>
+<pre><code class="language-bash">rm ~/ansible_project/webapp/users.json
+# Reinicia l'aplicació
+</code></pre>
+<h3 id="no-es-connecta-als-ordinadors">No es connecta als ordinadors</h3>
+<p><strong>Problema:</strong> "Connection refused" o "Permission denied"</p>
+<p><strong>Solució:</strong>
+1. Comprova que els ordinadors estan encesos
+2. Comprova que tenen la xarxa connectada
+3. Reinstal·la el client:</p>
+<pre><code class="language-bash">wget http://192.168.1.115/linux_client.sh
+sudo ./linux_client.sh
+</code></pre>
+<h3 id="mode-examen-no-funciona">Mode Examen no funciona</h3>
+<p><strong>Problema:</strong> Els alumnes encara poden navegar</p>
+<p><strong>Solució:</strong>
+1. Comprova que els ordinadors són Linux (Windows no suportat)
+2. Torna-ho a provar
+3. Si encara no funciona, reinicia els ordinadors</p>
+<h3 id="la-pagina-no-carrega">La pàgina no carrega</h3>
+<p><strong>Problema:</strong> No pots obrir <code>localhost:8080</code></p>
+<p><strong>Solució:</strong>
+1. Comprova que l'aplicació està iniciada:</p>
+<pre><code class="language-bash">ps aux | grep app.py
+</code></pre>
+<ol>
+<li>Si no surt res, inicia-la:</li>
+</ol>
+<pre><code class="language-bash">cd ~/ansible_project/webapp
+python3 app.py
+</code></pre>
+<hr />
+<h2 id="glossari">Glossari</h2>
+<table>
+<thead>
+<tr>
+<th>Paraula</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host</strong></td>
+<td>Un ordinador/client</td>
+</tr>
+<tr>
+<td><strong>VLAN</strong></td>
+<td>Una xarxa / aula (ex: 192.168.203.x)</td>
+</tr>
+<tr>
+<td><strong>Inventari</strong></td>
+<td>La llista d'ordinadors controlats</td>
+</tr>
+<tr>
+<td><strong>Playbook</strong></td>
+<td>Un conjunt d'accions per fer als ordinadors</td>
+</tr>
+<tr>
+<td><strong>Mòdul</strong></td>
+<td>Una eina d'Ansible (ex: instal·lar programes)</td>
+</tr>
+<tr>
+<td><strong>SSH</strong></td>
+<td>Protocol per connectar-se als ordinadors</td>
+</tr>
+<tr>
+<td>** sudo**</td>
+<td>Executar com a administrador</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="necessites-ajuda">Necessites ajuda?</h2>
+<ol>
+<li>Mira el fitxer <code>docs/troubleshooting.md</code> per problemes més complexos</li>
+<li>Parla amb l'administrador del sistema</li>
+<li>Revisa els logs: <code>sudo journalctl -u ansible-web-manager -f</code></li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

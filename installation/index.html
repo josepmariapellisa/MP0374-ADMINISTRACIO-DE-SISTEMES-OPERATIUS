@@ -1,0 +1,1605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ansible/">
+      
+      
+        <link rel="next" href="../architecture/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Instal·lació Frontend + Ansible - MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-per-installar-el-sistema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-header__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instal·lació Frontend + Ansible
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" class="md-nav__button md-logo" aria-label="MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MP0374-ADMINISTRACIÓ DE SISTEMES OPERATIUS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientsubu_iis_certificats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServidorXAMPP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Bàsica Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació Frontend + Ansible
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-del-servidor" class="md-nav__link">
+    Instal·lació del Servidor
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació del Servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura-del-servidor" class="md-nav__link">
+    Arquitectura del Servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-es-connecten-els-equips" class="md-nav__link">
+    Com es connecten els equips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-preparar-i-installar-el-servidor" class="md-nav__link">
+    Com preparar i instal·lar el servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proces-dinstallacio" class="md-nav__link">
+    Proces d'Instal·lació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sortida-de-lscript" class="md-nav__link">
+    Sortida de l'Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-iniciar-i-entrar-a-la-web" class="md-nav__link">
+    Com iniciar i entrar a la web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-servidor" class="md-nav__link">
+    Troubleshooting - Servidor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-clients-linux" class="md-nav__link">
+    Instal·lació de Clients Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació de Clients Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proces-dinstallacio-del-client" class="md-nav__link">
+    Proces d'Instal·lació del Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sortida-esperada" class="md-nav__link">
+    Sortida Esperada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-verificar-que-tot-funciona" class="md-nav__link">
+    Com verificar que tot funciona
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-client-linux" class="md-nav__link">
+    Troubleshooting - Client Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-clients-windows" class="md-nav__link">
+    Instal·lació de Clients Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació de Clients Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proces-dinstallacio-del-client-windows" class="md-nav__link">
+    Proces d'Instal·lació del Client Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-a-linventari-windows" class="md-nav__link">
+    Afegir a l'Inventari Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-connexio" class="md-nav__link">
+    Verificar Connexió
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-client-windows" class="md-nav__link">
+    Troubleshooting - Client Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-post-installacio" class="md-nav__link">
+    Configuració Post-Instal·lació
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuració Post-Instal·lació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canviar-credencials-web" class="md-nav__link">
+    Canviar Credencials Web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-firewall" class="md-nav__link">
+    Configurar Firewall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-des-daltres-maquines" class="md-nav__link">
+    Accés des d'Altres Màquines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualitzar-el-projecte" class="md-nav__link">
+    Actualitzar el Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacio-final" class="md-nav__link">
+    Verificació Final
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificació Final">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checklist-de-verificacio" class="md-nav__link">
+    Checklist de Verificació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-complet" class="md-nav__link">
+    Test Complet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annex-apte-automatic" class="md-nav__link">
+    Annex: Apte Automàtic
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moduls Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arxius Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-del-servidor" class="md-nav__link">
+    Instal·lació del Servidor
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació del Servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura-del-servidor" class="md-nav__link">
+    Arquitectura del Servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-es-connecten-els-equips" class="md-nav__link">
+    Com es connecten els equips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-preparar-i-installar-el-servidor" class="md-nav__link">
+    Com preparar i instal·lar el servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proces-dinstallacio" class="md-nav__link">
+    Proces d'Instal·lació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sortida-de-lscript" class="md-nav__link">
+    Sortida de l'Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-iniciar-i-entrar-a-la-web" class="md-nav__link">
+    Com iniciar i entrar a la web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-servidor" class="md-nav__link">
+    Troubleshooting - Servidor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-clients-linux" class="md-nav__link">
+    Instal·lació de Clients Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació de Clients Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proces-dinstallacio-del-client" class="md-nav__link">
+    Proces d'Instal·lació del Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sortida-esperada" class="md-nav__link">
+    Sortida Esperada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-verificar-que-tot-funciona" class="md-nav__link">
+    Com verificar que tot funciona
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-client-linux" class="md-nav__link">
+    Troubleshooting - Client Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-clients-windows" class="md-nav__link">
+    Instal·lació de Clients Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació de Clients Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proces-dinstallacio-del-client-windows" class="md-nav__link">
+    Proces d'Instal·lació del Client Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-a-linventari-windows" class="md-nav__link">
+    Afegir a l'Inventari Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-connexio" class="md-nav__link">
+    Verificar Connexió
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-client-windows" class="md-nav__link">
+    Troubleshooting - Client Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-post-installacio" class="md-nav__link">
+    Configuració Post-Instal·lació
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuració Post-Instal·lació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canviar-credencials-web" class="md-nav__link">
+    Canviar Credencials Web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-firewall" class="md-nav__link">
+    Configurar Firewall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-des-daltres-maquines" class="md-nav__link">
+    Accés des d'Altres Màquines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualitzar-el-projecte" class="md-nav__link">
+    Actualitzar el Projecte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacio-final" class="md-nav__link">
+    Verificació Final
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificació Final">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checklist-de-verificacio" class="md-nav__link">
+    Checklist de Verificació
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-complet" class="md-nav__link">
+    Test Complet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annex-apte-automatic" class="md-nav__link">
+    Annex: Apte Automàtic
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="guia-per-installar-el-sistema">Guia per instal·lar el sistema</h1>
+<p>Guia d'instal·lació completa del servidor i clients Ansible Web Manager.</p>
+<p>El procés d'instal·lació s'ha dissenyat per ser el més senzill possible. Tant el servidor com els clients disposen d'scripts automatitzats que preparen tot l'entorn. Básicament, només cal triar quin component es vol instal·lar (servidor, client Linux o client Windows), complir uns requisits mínims de sistema i executar l'script corresponent que s'encarrega d'instal·lar les dependències i configurar la seguretat.</p>
+<hr />
+<h2 id="installacio-del-servidor">Instal·lació del Servidor</h2>
+<p>El servidor és el "cervell" de l'aula. Perquè funcioni bé, necessitem un ordinador amb aquestes característiques:
+- <strong>Sistema Operatiu</strong>: Ubuntu (és el sistema que millor entén les nostres ordres).
+- <strong>Python</strong>: És el llenguatge que fem servir per parlar amb l'ordinador.
+- <strong>Memòria RAM</strong>: Com més en tingui, més ordinadors podrà controlar a la vegada.
+- <strong>Espai en disc</strong>: Per guardar els registres de tot el que passa a l'aula.</p>
+<h3 id="arquitectura-del-servidor">Arquitectura del Servidor</h3>
+<pre><code class="language-mermaid">%%{init: {'theme': 'neutral'}}%%
+graph TB
+    subgraph &quot;Servidor Ansible&quot;
+        WEB[Flask Web App&lt;br/&gt;:8080]
+        ANS[Ansible Core]
+        INV[Inventaris]
+        KEY[SSH Keys&lt;br/&gt;ansible_lab]
+    end
+
+    subgraph &quot;Clients&quot;
+        L1[Linux Client 1]
+        L2[Linux Client 2]
+        L3[Linux Client N]
+    end
+
+    USER[Professor/Navegador] --&gt;|HTTP| WEB
+    WEB --&gt; ANS
+    ANS --&gt; KEY
+    ANS --&gt; INV
+    ANS --&gt; L1
+    ANS --&gt; L2
+    ANS --&gt; L3
+</code></pre>
+<h3 id="com-es-connecten-els-equips">Com es connecten els equips</h3>
+<p>El sistema funciona com una estrella: el <strong>Servidor Ansible</strong> està al centre i es connecta a cada <strong>Client</strong> (ordinador de l'alumne) mitjançant un túnel segur (SSH per a Linux o WinRM per a Windows). El professor dóna les ordres des del seu navegador, el servidor les processa i les envia a tots els ordinadors seleccionats alhora.</p>
+<h3 id="com-preparar-i-installar-el-servidor">Com preparar i instal·lar el servidor</h3>
+<p>Seguiu aquests passos per deixar el servidor a punt:</p>
+<ol>
+<li><strong>Actualitza l'ordinador</strong>: Com la majoria de sistemes, primer cal descarregar les millores més recents amb <code>sudo apt update</code>.</li>
+<li><strong>Instal·la les eines base</strong>: Necessitem alguns programes ajudants com <code>curl</code> o <code>git</code> per descarregar el projecte.</li>
+<li><strong>Executa l'instal·lador</strong>: Entra a la carpeta del projecte i activa l'script amb <code>./install_server.sh</code>. Aquest script farà tota la feina difícil per tu: instal·larà Ansible (el gestor), crearà claus de seguretat i prepararà la pàgina web.</li>
+</ol>
+<h3 id="proces-dinstallacio">Proces d'Instal·lació</h3>
+<p>L'script d'instal·lació del servidor segueix una seqüència lògica: primer verifica que s'està executant amb privilegis de root, després actualitza els repositoris del sistema i instal·la paquets crítics com Python i Ansible Core. Un cop instal·lada la base, descarrega les llibreries de Python necessàries (Flask i PyYAML), genera les claus SSH per a la comunicació segura, crea el fitxer de configuració global d'Ansible i, finalment, configura la webapp i el servei del sistema per a que s'iniciï automàticament.</p>
+<p>L'script realitza les següents accions:</p>
+<table>
+<thead>
+<tr>
+<th>Pas</th>
+<th>Acció</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Actualitzar repositoris</td>
+<td><code>apt-get update</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Instal·lar paquets</td>
+<td>python3, ansible, openssh-server, git</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Instal·lar Python packages</td>
+<td>flask, pyyaml, requests</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Configurar claus SSH</td>
+<td>Generar o reutilitzar <code>ansible_lab</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Crear configuració Ansible</td>
+<td><code>ansible.cfg</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Configurar webapp</td>
+<td>usuaris, inventaris</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Crear servei systemd</td>
+<td><code>ansible-web-manager.service</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sortida-de-lscript">Sortida de l'Script</h3>
+<pre><code>═══════════════════════════════════════════════════════════════
+  Ansible Web Manager - Instal·lador del Servidor
+═══════════════════════════════════════════════════════════════
+
+[INFO] Actualitzant repositoris...
+[OK] Paquets del sistema instal·lats
+[INFO] Instal·lant paquets Python...
+[OK] Paquets Python instal·lats
+[INFO] Configurant claus SSH...
+[OK] Clau SSH configurada
+────────────────────────────────────────────────────────────────
+Clau pública (copia aquesta al linux_client.sh):
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBpIdwr5ssTSLAGS0l5OWXE2M3Ju4FtdNyLNA/phvVY8 ansibleadmin@server
+────────────────────────────────────────────────────────────────
+[OK] Configuració d'Ansible creada
+[OK] Aplicació web configurada
+[INFO] Configurant servei systemd...
+[OK] Servei systemd configurat
+
+═══════════════════════════════════════════════════════════════
+[OK] Instal·lació completada!
+═══════════════════════════════════════════════════════════════
+
+📁 Directori del projecte: /home/ansibleadmin/ansible_project
+🔑 Clau SSH: ~/.ssh/ansible_lab
+
+🌐 Per iniciar l'aplicació web:
+   cd ~/ansible_project/webapp
+   python3 app.py
+
+🔗 Accés web:
+   URL: http://localhost:8080
+   Usuari: profe
+   Contrasenya: profe
+═══════════════════════════════════════════════════════════════
+</code></pre>
+<h3 id="com-iniciar-i-entrar-a-la-web">Com iniciar i entrar a la web</h3>
+<p>Una vegada instal·lat, ja pots començar a treballar:</p>
+<ol>
+<li><strong>Engega el servei</strong>: Pots fer-ho manualment amb <code>python3 app.py</code> o deixar que el sistema ho faci sol.</li>
+<li><strong>Obre el navegador</strong>: Entra a l'adreça <code>http://localhost:8080</code>.</li>
+<li><strong>Identifica't</strong>: Escriu l'usuari i la contrasenya (per defecte són <code>profe</code> i <code>profe</code>).</li>
+</ol>
+<p>Obrir el navegador i anar a <code>http://localhost:8080</code>:
+- <strong>Usuari</strong>: <code>profe</code>
+- <strong>Contrasenya</strong>: <code>profe</code></p>
+<p>⚠️ <strong>Canviar contrasenya</strong>: Després del primer login, anar a <code>/users</code> per canviar-la.</p>
+<h3 id="troubleshooting-servidor">Troubleshooting - Servidor</h3>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python3: command not found</code></td>
+<td>Python no instal·lat</td>
+<td><code>sudo apt install python3</code></td>
+</tr>
+<tr>
+<td><code>ImportError: No module named flask</code></td>
+<td>Paquets Python no instal·lats</td>
+<td><code>pip3 install flask pyyaml</code></td>
+</tr>
+<tr>
+<td><code>Permission denied</code></td>
+<td>No s'executa com a root</td>
+<td>Usar <code>sudo</code></td>
+</tr>
+<tr>
+<td><code>Port 8080 already in use</code></td>
+<td>Port ja en ús</td>
+<td><code>sudo lsof -i :8080</code> i matar el procés</td>
+</tr>
+<tr>
+<td><code>Connection refused</code></td>
+<td>Servei no iniciat</td>
+<td><code>sudo systemctl start ansible-web-manager</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="installacio-de-clients-linux">Instal·lació de Clients Linux</h2>
+<p>Els clients són els ordinadors dels alumnes. Perquè el servidor els pugui controlar, hem de fer-los "amics":</p>
+<ol>
+<li><strong>Descarrega l'ajudant</strong>: Agafa l'script <code>linux_client.sh</code> des del servidor.</li>
+<li><strong>Prepara el fitxer</strong>: Dona-li permisos perquè es pugui executar (<code>chmod +x</code>).</li>
+<li><strong>Instal·la el client</strong>: Executa l'script amb <code>sudo ./linux_client.sh</code>. Això instal·larà un sistema anomenat SSH, que és com un túnel segur perquè el servidor hi pugui entrar sense demanar contrasenya cada vegada.</li>
+</ol>
+<h3 id="proces-dinstallacio-del-client">Proces d'Instal·lació del Client</h3>
+<p>L'script <code>linux_client.sh</code> automatitza la preparació del client: verifica els permisos de root, actualitza el sistema, instal·la i activa el servidor SSH per permetre connexions remotes, crea l'usuari <code>ansible</code> (si no existeix), li atorga privilegis de sudo sense contrasenya i afegeix la clau pública del servidor per permetre l'accés sense intervenció manual.</p>
+<h3 id="sortida-esperada">Sortida Esperada</h3>
+<pre><code>[1/4] Actualitzant índex APT...
+...
+[2/4] Instal·lant SSH server i sudo...
+...
+[3/4] Activant servei SSH...
+...
+[4/4] Creant usuari ansible (si cal)...
+...
+[5/5] Donant permisos sudo (NOPASSWD) a ansible...
+...
+[6/6] Configurant authorized_keys...
+...
+✅ Client preparat.
+Prova des del servidor:
+  ssh -i ~/.ssh/ansible_lab ansible@&lt;IP_CLIENT&gt; 'whoami &amp;&amp; hostname'
+</code></pre>
+<h3 id="com-verificar-que-tot-funciona">Com verificar que tot funciona</h3>
+<p>És important comprovar que el servidor realment pot parlar amb el client:</p>
+<ol>
+<li><strong>Prova la connexió</strong>: Des del servidor, escriu <code>ssh ansible@&lt;IP_DEL_CLIENT&gt;</code>. Si entres directament, és que tot ha anat bé.</li>
+<li><strong>Afegeix-lo a la web</strong>: Entra a la pàgina de gestió i utilitza l'escaneig automàtic per trobar el nou ordinador i afegir-lo a la teva llista de classe.</li>
+</ol>
+<h3 id="troubleshooting-client-linux">Troubleshooting - Client Linux</h3>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Permission denied</code></td>
+<td>Clau SSH no afegida</td>
+<td>Reexecutar script o afegir manualment</td>
+</tr>
+<tr>
+<td><code>Connection refused</code></td>
+<td>SSH no actiu</td>
+<td><code>sudo systemctl start ssh</code></td>
+</tr>
+<tr>
+<td><code>Host key verification failed</code></td>
+<td>Clau host desconeguda</td>
+<td><code>ssh-keygen -R &lt;IP&gt;</code> o esperar un moment</td>
+</tr>
+<tr>
+<td><code>sudo: no tty present</code></td>
+<td>Configuració sudo</td>
+<td>Revisar <code>/etc/sudoers.d/ansible</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="installacio-de-clients-windows">Instal·lació de Clients Windows</h2>
+<p>Windows funciona una mica diferent, però el procés és gairebé el mateix:</p>
+<ol>
+<li><strong>Obre el PowerShell</strong>: És la "caixa negra" de Windows. L'has d'obrir com a administrador.</li>
+<li><strong>Dóna permisos</strong>: Escriu la comanda <code>Set-ExecutionPolicy</code> per permetre que Windows accepti el nostre script.</li>
+<li><strong>Instal·la el client</strong>: Descarrega i executa <code>windows_client.ps1</code>. Això configurarà el protocol WinRM, que és el llenguatge que usa Windows per parlar amb el nostre servidor.</li>
+</ol>
+<h3 id="proces-dinstallacio-del-client-windows">Proces d'Instal·lació del Client Windows</h3>
+<p>L'script de Windows realitza tasques similars però adaptades al sistema de Microsoft: abilita el protocol WinRM per a la gestió remota, configura les llistes de TrustedHosts per acceptar connexions del servidor, crea l'usuari administrador <code>ansible</code>, obre els ports necessaris al Firewall de Windows i configura l'autenticació bàsica per a la comunicació amb Ansible.</p>
+<h3 id="afegir-a-linventari-windows">Afegir a l'Inventari Windows</h3>
+<pre><code class="language-ini"># A ~/ansible_project/inventories/windows_inventory.ini
+[windows]
+win-pc01 ansible_host=192.168.203.50
+win-pc02 ansible_host=192.168.203.51
+
+[windows:vars]
+ansible_user=ansible
+ansible_password=Ansible123!
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+</code></pre>
+<h3 id="verificar-connexio">Verificar Connexió</h3>
+<pre><code class="language-bash"># Des del servidor
+ansible windows -m win_ping -i ~/ansible_project/inventories/windows_inventory.ini
+
+# Ha de retornar:
+# win-pc01 | SUCCESS =&gt; {
+#     &quot;changed&quot;: false,
+#     &quot;ping&quot;: &quot;pong&quot;
+# }
+</code></pre>
+<h3 id="troubleshooting-client-windows">Troubleshooting - Client Windows</h3>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>401 Unauthorized</code></td>
+<td>Password incorrecte</td>
+<td>Verificar credencials a l'inventari</td>
+</tr>
+<tr>
+<td><code>WinRM connection failed</code></td>
+<td>WinRM no habilitat</td>
+<td><code>Enable-PSRemoting -Force</code></td>
+</tr>
+<tr>
+<td><code>Access Denied</code></td>
+<td>Usuari no admin</td>
+<td>Afegir a grup Administradors</td>
+</tr>
+<tr>
+<td><code>Timeout</code></td>
+<td>Firewall bloquejant</td>
+<td>Obrir ports 5985/5986</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="configuracio-post-installacio">Configuració Post-Instal·lació</h2>
+<h3 id="canviar-credencials-web">Canviar Credencials Web</h3>
+<pre><code class="language-python"># Opció 1: Via Python
+import json
+import hashlib
+
+users = {
+    &quot;profe2&quot;: {
+        &quot;password&quot;: hashlib.sha256(&quot;nova_pass&quot;.encode()).hexdigest(),
+        &quot;role&quot;: &quot;admin&quot;,
+        &quot;created_at&quot;: &quot;2024-03-12&quot;
+    }
+}
+
+with open(&quot;webapp/users.json&quot;, &quot;w&quot;) as f:
+    json.dump(users, f, indent=2)
+</code></pre>
+<h3 id="configurar-firewall">Configurar Firewall</h3>
+<pre><code class="language-bash"># Obrir port 8080
+sudo ufw allow 8080/tcp
+
+# Obrir port 22 (SSH)
+sudo ufw allow 22/tcp
+
+# Activar firewall
+sudo ufw enable
+</code></pre>
+<h3 id="acces-des-daltres-maquines">Accés des d'Altres Màquines</h3>
+<pre><code class="language-bash"># Permetre accés des de tota la xarxa local
+sudo ufw allow from 192.168.0.0/16 to any port 8080
+
+# O des de IP específiques
+sudo ufw allow from 192.168.1.0/24 to any port 8080
+</code></pre>
+<h3 id="actualitzar-el-projecte">Actualitzar el Projecte</h3>
+<pre><code class="language-bash">cd ~/ansible_project
+git pull origin main
+
+# O manualment
+git add .
+git commit -m &quot;Actualització&quot;
+git push
+</code></pre>
+<hr />
+<h2 id="verificacio-final">Verificació Final</h2>
+<h3 id="checklist-de-verificacio">Checklist de Verificació</h3>
+<p>El procés de verificació final assegura que tot l'ecosistema funcioni correctament. Comença comprovant l'estat del servidor, seguit de la verificació dels clients. Un cop confirmada la connectivitat bàsica, es realitzen tests d'accés web i de comunicació Ansible (<code>ping</code>) per garantir que el sistema estigui completament llest per per ser utilitzat a l'aula.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Comanda</th>
+<th>Resultat Esperat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versió Python</strong></td>
+<td><code>python3 --version</code></td>
+<td>Python 3.8+</td>
+</tr>
+<tr>
+<td><strong>Versió Ansible</strong></td>
+<td><code>ansible --version</code></td>
+<td>ansible 2.12+</td>
+</tr>
+<tr>
+<td><strong>Clau SSH</strong></td>
+<td><code>ls -la ~/.ssh/ansible_lab</code></td>
+<td>Fitxer existeix</td>
+</tr>
+<tr>
+<td><strong>Config Ansible</strong></td>
+<td><code>cat ansible.cfg</code></td>
+<td>Fitxer existeix</td>
+</tr>
+<tr>
+<td><strong>Servei Web</strong></td>
+<td><code>curl http://localhost:8080</code></td>
+<td>Resposta HTML</td>
+</tr>
+<tr>
+<td><strong>Connexió Client</strong></td>
+<td><code>ssh -i ~/.ssh/ansible_lab ansible@pc201 whoami</code></td>
+<td>"ansible"</td>
+</tr>
+<tr>
+<td><strong>Ping Ansible</strong></td>
+<td><code>ansible pc201 -m ping</code></td>
+<td>"pong"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-complet">Test Complet</h3>
+<pre><code class="language-bash"># 1. Test servidor
+python3 --version
+ansible --version
+ls -la ~/.ssh/ansible_lab*
+
+# 2. Test web
+curl -s http://localhost:8080 | grep &quot;Ansible&quot;
+
+# 3. Test client (exemple pc201)
+ansible pc201 -m ping -i ~/ansible_project/inventories/inventory.ini
+
+# 4. Test web des de client
+curl -s http://192.168.1.115:8080 | grep &quot;Ansible&quot;
+</code></pre>
+<hr />
+<h2 id="annex-apte-automatic">Annex: Apte Automàtic</h2>
+<pre><code class="language-bash">#!/bin/bash
+# Script de verificació automàtica
+
+echo &quot;=== Verificant Servidor Ansible ===&quot;
+
+# Test 1: Python
+if command -v python3 &amp;&gt; /dev/null; then
+    echo &quot;✅ Python: $(python3 --version)&quot;
+else
+    echo &quot;❌ Python no trobat&quot;
+fi
+
+# Test 2: Ansible
+if command -v ansible &amp;&gt; /dev/null; then
+    echo &quot;✅ Ansible: $(ansible --version | head -1)&quot;
+else
+    echo &quot;❌ Ansible no trobat&quot;
+fi
+
+# Test 3: Clau SSH
+if [ -f ~/.ssh/ansible_lab ]; then
+    echo &quot;✅ Clau SSH existeix&quot;
+else
+    echo &quot;❌ Clau SSH no trobada&quot;
+fi
+
+# Test 4: Servei web
+if curl -s http://localhost:8080 &gt; /dev/null; then
+    echo &quot;✅ Servei web actiu&quot;
+else
+    echo &quot;❌ Servei web no respon&quot;
+fi
+
+# Test 5: Inventari
+if [ -f ~/ansible_project/inventories/inventory.ini ]; then
+    echo &quot;✅ Inventari existeix&quot;
+else
+    echo &quot;❌ Inventari no trobat&quot;
+fi
+
+echo &quot;=== Verificació Completada ===&quot;
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
